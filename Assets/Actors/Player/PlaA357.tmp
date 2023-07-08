@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://cb3fcw70u4e1o"]
+
+[ext_resource type="Script" path="res://Assets/Actors/Player/Player.gd" id="1_yuspw"]
+[ext_resource type="Texture2D" uid="uid://d6v02ecgp5er" path="res://Art/tempblock.png" id="2_hl5qr"]
+[ext_resource type="Script" path="res://Assets/Actors/Player/StateManager.gd" id="3_idanp"]
+[ext_resource type="Texture2D" uid="uid://dupocwwahagv6" path="res://Art/tempblock_exit.png" id="3_jvcg3"]
+[ext_resource type="Script" path="res://Assets/Actors/Player/Player States/PlayerMoveState.gd" id="4_cvw7v"]
+[ext_resource type="Script" path="res://Assets/Actors/Player/Player States/PlayerIdleState.gd" id="5_laydl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1xjfw"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"catching",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"dashing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hl5qr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"shooting",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oy5j2"]
+radius = 28.2843
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0bjwr"]
+radius = 33.2415
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_yuspw")
+animation_node = NodePath("Animations")
+state_manager_node = NodePath("StateManager")
+
+[node name="Animations" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.289063, 0.289062)
+sprite_frames = SubResource("SpriteFrames_1xjfw")
+animation = &"idle"
+
+[node name="Sprite2D" type="Sprite2D" parent="Animations"]
+position = Vector2(129, 0)
+texture = ExtResource("3_jvcg3")
+
+[node name="PhysicsCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_oy5j2")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_0bjwr")
+
+[node name="StateManager" type="Node" parent="."]
+script = ExtResource("3_idanp")
+first_state = NodePath("PlayerIdleState")
+
+[node name="PlayerMoveState" type="Node" parent="StateManager"]
+script = ExtResource("4_cvw7v")
+idle_node = NodePath("../PlayerIdleState")
+state_type = 6
+
+[node name="PlayerIdleState" type="Node" parent="StateManager"]
+script = ExtResource("5_laydl")
+move_node = NodePath("../PlayerMoveState")
+state_type = 3
+
+[node name="Center" type="Node2D" parent="."]

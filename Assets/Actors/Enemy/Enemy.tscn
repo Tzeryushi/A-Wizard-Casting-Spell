@@ -1,0 +1,108 @@
+[gd_scene load_steps=14 format=3 uid="uid://do862rnkiybck"]
+
+[ext_resource type="Script" path="res://Assets/Actors/Enemy/Enemy.gd" id="1_sk3ix"]
+[ext_resource type="Texture2D" uid="uid://dewtq636216g7" path="res://Art/tempblock_fallthrough.png" id="2_75ns1"]
+[ext_resource type="PackedScene" uid="uid://brec14f0yf1mg" path="res://Assets/Spells/BaseSpell.tscn" id="2_vviyn"]
+[ext_resource type="Script" path="res://Assets/Actors/StateManager.gd" id="3_7uipb"]
+[ext_resource type="PackedScene" uid="uid://t401ys66ffnc" path="res://Assets/Bodies/GreenBody.tscn" id="3_yte7j"]
+[ext_resource type="Shader" path="res://Art/Shaders/EnemyGlow.gdshader" id="6_pchv7"]
+[ext_resource type="Texture2D" uid="uid://bco7v1gf2puv5" path="res://Art/tempwall.png" id="7_lyw1e"]
+[ext_resource type="Texture2D" uid="uid://b7jn0k8jxpfef" path="res://Art/corona.png" id="7_qahn7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e83ly"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_75ns1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q6g5o"]
+radius = 29.1548
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k2rty"]
+radius = 43.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3txsp"]
+radius = 31.0644
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t06y1"]
+resource_local_to_scene = true
+shader = ExtResource("6_pchv7")
+shader_parameter/cutoff_one = 2.0
+shader_parameter/cutoff_two = 0.0
+shader_parameter/smooth_size = 0.338
+shader_parameter/invert_mask = true
+shader_parameter/masking_color = Color(1, 1, 1, 1)
+shader_parameter/mask = ExtResource("7_qahn7")
+
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("navigation_agent") groups=["Enemy"]]
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_sk3ix")
+_spell_scene = ExtResource("2_vviyn")
+_body_scene = ExtResource("3_yte7j")
+_spell_restriction_time = 3.0
+_spell_velocity = 150.0
+_spell_acceleration = 15.0
+navigation_agent = NodePath("NavigationAgent2D")
+animation_node = NodePath("Animations")
+state_manager_node = NodePath("StateManager")
+health = 2
+acceleration = 5.0
+decceleration = 3.0
+max_movement_speed = 300.0
+
+[node name="Animations" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_e83ly")
+animation = &"idle"
+
+[node name="PhysicsCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_q6g5o")
+
+[node name="FlipArea" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FlipArea"]
+shape = SubResource("CircleShape2D_k2rty")
+debug_color = Color(0.807843, 0.00392157, 0.992157, 0.419608)
+
+[node name="Hurtbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_3txsp")
+
+[node name="StateManager" type="Node" parent="."]
+script = ExtResource("3_7uipb")
+
+[node name="SightLine" type="RayCast2D" parent="."]
+target_position = Vector2(600, 0)
+collision_mask = 3
+
+[node name="FollowLine" type="RayCast2D" parent="."]
+target_position = Vector2(900, 0)
+collision_mask = 2
+
+[node name="Center" type="Node2D" parent="."]
+
+[node name="SpellRestrictionTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="SpellSpawnLocation" type="Node2D" parent="."]
+position = Vector2(71, 0)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="GlowSprite" type="Sprite2D" parent="."]
+modulate = Color(1.3, 1.1, 1.3, 0.74)
+z_index = -1
+material = SubResource("ShaderMaterial_t06y1")
+scale = Vector2(2.46875, 2.46875)
+texture = ExtResource("7_lyw1e")
+
+[connection signal="timeout" from="SpellRestrictionTimer" to="." method="_on_spell_restriction_timer_timeout"]

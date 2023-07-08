@@ -1,0 +1,33 @@
+res://Scenes/BaseScene.gd
+res://Main.tscn
+res://Assets/Actors/Actor.gd
+res://Assets/Actors/Player/Player.gd
+res://Assets/Actors/Actor.tscn
+res://Assets/Actors/Player/Player.tscn
+res://Assets/Actors/BaseState.gd
+res://Assets/GLOBALS.gd
+res://Assets/Actors/Player/Player States/PlayerState.gd
+res://Assets/Actors/Player/Player States/PlayerMoveState.gd
+res://Assets/Actors/Player/Player States/PlayerIdleState.gd
+res://Assets/Actors/Player/StateManager.gd
+res://Assets/Actors/Player/Player States/PlayerFlipState.gd
+res://Assets/Actors/Enemy/Enemy.tscn
+res://Assets/Actors/Enemy/Enemy.gd
+res://Assets/Spells/BaseSpell.tscn
+res://Assets/Spells/BaseSpell.gd
+res://Assets/Actors/Player/Mouse.gd
+res://Assets/Spells/Trail.gd
+res://Assets/Bodies/BaseBody.tscn
+res://Assets/Bodies/BaseBody.gd
+res://Assets/Bodies/GreenBody.tscn
+res://Assets/Bodies/BodyModel.gd
+res://Assets/Bodies/BodyResources/GreenBody.tres
+res://Assets/Bodies/BodyResources/GenericBody.tres
+res://Assets/Spells/GreenWizardSpell.tscn
+res://Assets/Spells/GreenWizardSpell.gd
+res://Assets/Spells/SpellResource.gd
+res://Assets/Spells/SpellList.tres
+res://Scenes/BaseLevel.gd
+res://Scenes/TestScene.tscn
+res://Scenes/TileData.gd
+res://Art/Shaders/EnemyGlow.gdshader

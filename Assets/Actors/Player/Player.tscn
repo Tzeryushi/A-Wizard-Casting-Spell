@@ -1,0 +1,145 @@
+[gd_scene load_steps=16 format=3 uid="uid://cb3fcw70u4e1o"]
+
+[ext_resource type="Script" path="res://Assets/Actors/Player/Player.gd" id="1_yuspw"]
+[ext_resource type="Resource" uid="uid://bge7uiekmtoky" path="res://Assets/Spells/SpellList.tres" id="2_f8kle"]
+[ext_resource type="Texture2D" uid="uid://d6v02ecgp5er" path="res://Art/tempblock.png" id="2_hl5qr"]
+[ext_resource type="Texture2D" uid="uid://dupocwwahagv6" path="res://Art/tempblock_exit.png" id="3_jvcg3"]
+[ext_resource type="Script" path="res://Assets/Actors/Player/Player States/PlayerMoveState.gd" id="4_cvw7v"]
+[ext_resource type="Script" path="res://Assets/Actors/StateManager.gd" id="4_ipnlw"]
+[ext_resource type="Script" path="res://Assets/Actors/Player/Player States/PlayerIdleState.gd" id="5_laydl"]
+[ext_resource type="Script" path="res://Assets/Actors/Player/Player States/PlayerFlipState.gd" id="7_4paf0"]
+[ext_resource type="Script" path="res://Assets/Actors/Player/Mouse.gd" id="8_duj1e"]
+[ext_resource type="Texture2D" uid="uid://egl8o8peiml1" path="res://Art/circle-01.png" id="8_ok0ca"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1xjfw"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"catching",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"dashing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hl5qr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"shooting",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oy5j2"]
+radius = 28.2843
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0bjwr"]
+radius = 33.2415
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wm0y4"]
+radius = 43.1045
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vcaqb"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"hovering",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_ok0ca")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"invisible",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+z_index = 2
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_yuspw")
+_spell_list = ExtResource("2_f8kle")
+animation_node = NodePath("Animations")
+state_manager_node = NodePath("StateManager")
+
+[node name="Animations" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.289063, 0.289062)
+sprite_frames = SubResource("SpriteFrames_1xjfw")
+animation = &"idle"
+
+[node name="Sprite2D" type="Sprite2D" parent="Animations"]
+position = Vector2(129, 0)
+texture = ExtResource("3_jvcg3")
+
+[node name="PhysicsCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_oy5j2")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_0bjwr")
+
+[node name="StateManager" type="Node" parent="."]
+script = ExtResource("4_ipnlw")
+first_state = NodePath("PlayerIdleState")
+
+[node name="PlayerMoveState" type="Node" parent="StateManager"]
+script = ExtResource("4_cvw7v")
+idle_node = NodePath("../PlayerIdleState")
+flip_node = NodePath("../PlayerFlipState")
+state_type = 6
+
+[node name="PlayerIdleState" type="Node" parent="StateManager"]
+script = ExtResource("5_laydl")
+move_node = NodePath("../PlayerMoveState")
+flip_node = NodePath("../PlayerFlipState")
+state_type = 3
+
+[node name="PlayerFlipState" type="Node" parent="StateManager"]
+script = ExtResource("7_4paf0")
+idle_node = NodePath("../PlayerIdleState")
+move_node = NodePath("../PlayerMoveState")
+state_type = 6
+
+[node name="Center" type="Node2D" parent="."]
+
+[node name="Mouse" type="Node2D" parent="."]
+position = Vector2(103, 0)
+script = ExtResource("8_duj1e")
+
+[node name="MouseBox" type="Area2D" parent="Mouse"]
+collision_layer = 0
+collision_mask = 16
+
+[node name="MouseDetectionArea" type="CollisionShape2D" parent="Mouse/MouseBox"]
+shape = SubResource("CircleShape2D_wm0y4")
+
+[node name="MouseSprites" type="AnimatedSprite2D" parent="Mouse"]
+scale = Vector2(0.335938, 0.335938)
+sprite_frames = SubResource("SpriteFrames_vcaqb")
+animation = &"idle"
+
+[node name="SpellSpawnLocation" type="Node2D" parent="."]
+position = Vector2(59, 0)
+
+[node name="SpellRestrictionTimer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="Mouse/MouseBox" to="Mouse" method="_on_mouse_box_area_entered"]
+[connection signal="area_exited" from="Mouse/MouseBox" to="Mouse" method="_on_mouse_box_area_exited"]
+[connection signal="timeout" from="SpellRestrictionTimer" to="." method="_on_spell_restriction_timer_timeout"]

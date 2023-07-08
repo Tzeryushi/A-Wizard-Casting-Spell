@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://ulsdvyhxi71d"]
+
+[ext_resource type="Script" path="res://Assets/Bodies/BaseBody.gd" id="1_pfmfe"]
+[ext_resource type="Resource" uid="uid://bvvvq4huvdh5s" path="res://Assets/Bodies/BodyResources/GenericBody.tres" id="2_g2gc4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8apvd"]
+radius = 42.0119
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0d2vc"]
+radius = 19.0263
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s6e8j"]
+radius = 51.0
+
+[node name="BaseBody" type="RigidBody2D" groups=["Body"]]
+collision_layer = 32
+collision_mask = 13
+script = ExtResource("1_pfmfe")
+body_info = ExtResource("2_g2gc4")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+
+[node name="PlaceholderImage" type="Polygon2D" parent="."]
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(15, -44, 0, -18, -36, -43, -46, -19, -15, -1, -47, 40, -17, 55, 2, 16, 38, 35, 54, -4, 21, -4, 46, -31)
+
+[node name="PickupHitbox" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 2
+
+[node name="PickupRadius" type="CollisionShape2D" parent="PickupHitbox"]
+shape = SubResource("CircleShape2D_8apvd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0d2vc")
+
+[node name="FlipHitbox" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 0
+
+[node name="FlipRadius" type="CollisionShape2D" parent="FlipHitbox"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_s6e8j")
+
+[connection signal="body_entered" from="PickupHitbox" to="." method="_on_pickup_hitbox_body_entered"]

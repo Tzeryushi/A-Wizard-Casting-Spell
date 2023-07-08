@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://t401ys66ffnc"]
+
+[ext_resource type="PackedScene" uid="uid://ulsdvyhxi71d" path="res://Assets/Bodies/BaseBody.tscn" id="1_vfics"]
+[ext_resource type="Resource" uid="uid://bbui702vxse0s" path="res://Assets/Bodies/BodyResources/GreenBody.tres" id="2_5h43c"]
+
+[node name="GreenBody" instance=ExtResource("1_vfics")]
+body_info = ExtResource("2_5h43c")

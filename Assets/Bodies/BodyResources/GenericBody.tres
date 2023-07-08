@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BodyModel" load_steps=2 format=3 uid="uid://bvvvq4huvdh5s"]
+
+[ext_resource type="Script" path="res://Assets/Bodies/BodyModel.gd" id="1_obbcy"]
+
+[resource]
+script = ExtResource("1_obbcy")
+wizard_type = 0
+damage = 1
+speed = 400.0
+lifetime = 2.0
+acceleration = 0.0
+color = Color(0.913725, 0.913725, 0.913725, 1)
