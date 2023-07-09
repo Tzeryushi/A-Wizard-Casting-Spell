@@ -1,0 +1,69 @@
+[gd_scene load_steps=13 format=3 uid="uid://c5c43qfqmlofk"]
+
+[ext_resource type="PackedScene" uid="uid://duqfc8ur47bnm" path="res://Assets/Actors/Enemy/GreenWizard/GreenWizard.tscn" id="1_2gppr"]
+[ext_resource type="Script" path="res://Assets/Actors/Enemy/BlueWizard/BlueWizard.gd" id="2_fs8wf"]
+[ext_resource type="Shader" path="res://Art/Shaders/EnemyGlow.gdshader" id="3_1i21c"]
+[ext_resource type="PackedScene" uid="uid://df6jnfl0vrlb4" path="res://Assets/Spells/EnemySpells/BlueSpell.tscn" id="3_275fr"]
+[ext_resource type="PackedScene" uid="uid://oc4b5qvhs2ux" path="res://Assets/Bodies/BlueBody.tscn" id="4_2d42u"]
+[ext_resource type="Texture2D" uid="uid://b7jn0k8jxpfef" path="res://Art/corona.png" id="4_etbb5"]
+[ext_resource type="Texture2D" uid="uid://ctnb1hhno7awn" path="res://Assets/Actors/Enemy/BlueWizard/Sprites/BlueWizard0003.png" id="5_5slxq"]
+[ext_resource type="Texture2D" uid="uid://b2vvjcbkmhxiq" path="res://Assets/Actors/Enemy/BlueWizard/Sprites/BlueWizard0004.png" id="6_f8ckc"]
+[ext_resource type="Texture2D" uid="uid://5wuer3kvdo2" path="res://Assets/Actors/Enemy/BlueWizard/Sprites/BlueWizard0001.png" id="7_ls8xq"]
+[ext_resource type="Texture2D" uid="uid://ct8v2j8m1p042" path="res://Assets/Actors/Enemy/BlueWizard/Sprites/BlueWizard0002.png" id="8_4l47k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ee0fw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_5slxq")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_f8ckc")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ls8xq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_4l47k")
+}],
+"loop": false,
+"name": &"windup",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ynu31"]
+resource_local_to_scene = true
+shader = ExtResource("3_1i21c")
+shader_parameter/cutoff_one = 2.0
+shader_parameter/cutoff_two = 0.0
+shader_parameter/smooth_size = 0.338
+shader_parameter/invert_mask = true
+shader_parameter/masking_color = Color(1, 1, 1, 1)
+shader_parameter/mask = ExtResource("4_etbb5")
+
+[node name="BlueWizard" instance=ExtResource("1_2gppr")]
+script = ExtResource("2_fs8wf")
+_spell_scene = ExtResource("3_275fr")
+_body_scene = ExtResource("4_2d42u")
+health = 3
+
+[node name="Animations" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_ee0fw")
+
+[node name="GlowSprite" parent="." index="11"]
+material = SubResource("ShaderMaterial_ynu31")

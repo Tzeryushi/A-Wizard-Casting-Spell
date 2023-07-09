@@ -18,6 +18,17 @@ func _physics_process(_delta) -> void:
 	global_position += _direction * _speed * _delta
 	rotation = _direction.angle()
 
+func destroy() -> void:
+	trail.hit = true
+	Shake.shake(6.0, 0.2)
+	AudioManager.play("res://Art/SFX/swish_4.wav")
+	var blast : ParticleAnimation = blast_scene.instantiate()
+	get_parent().add_child(blast)
+	blast.rotation = rotation
+	blast.global_position = global_position
+	blast.play()
+	queue_free()
+
 func leave_body(impulse:Vector2) -> void:
 	var new_body : BaseBody = _body_scene.instantiate()
 	new_body.global_position = global_position
@@ -40,6 +51,6 @@ func _on_hitbox_body_entered(body):
 func _on_hitbox_area_entered(area):
 	if area.is_in_group("Spell"):
 		leave_body(-_direction*_speed/2)
-	if !_hit:
-		_hit = true
-		destroy()
+		if !_hit:
+			_hit = true
+			destroy()

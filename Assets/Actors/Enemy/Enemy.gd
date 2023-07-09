@@ -22,6 +22,8 @@ var player_seen : bool = false
 var player_following : bool = false
 var can_fire_spell : bool = true
 
+signal destroyed
+
 func _ready() -> void:
 	navigation_agent.path_desired_distance = 4.0
 	navigation_agent.target_desired_distance = 4.0
@@ -47,7 +49,6 @@ func _physics_process(_delta) -> void:
 		else:
 			player_following = should_follow()
 		if player_seen or player_following:
-			#print((player_ref.global_position-global_position).length())
 			if (player_ref.global_position-global_position).length() > _distance_to_keep:
 				set_movement_target(player_ref.global_position)
 			else:
@@ -89,7 +90,6 @@ func shoot() -> void:
 
 func spell_collision(spell:BaseSpell) -> void:
 	health = health - spell.get_damage()
-	print(health, spell.get_damage())
 	if health <= 0:
 		leave_body(spell.get_direction().normalized()*spell.get_speed())
 		destruct()
@@ -116,6 +116,8 @@ func should_follow() -> bool:
 	return false
 
 func destruct() -> void:
+	destroyed.emit()
+	AudioManager.play("res://Art/SFX/gnomewoo.wav")
 	queue_free()
 
 func glow() -> void:

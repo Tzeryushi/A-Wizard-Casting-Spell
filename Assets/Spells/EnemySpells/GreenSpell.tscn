@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bojbqojwsx1ie"]
+
+[ext_resource type="PackedScene" uid="uid://brec14f0yf1mg" path="res://Assets/Spells/BaseSpell.tscn" id="1_0ovdb"]
+[ext_resource type="PackedScene" uid="uid://be4qtmxomon07" path="res://Art/Particles/GreenBlast.tscn" id="2_lhmbq"]
+
+[node name="GreenSpell" instance=ExtResource("1_0ovdb")]
+blast_scene = ExtResource("2_lhmbq")
+
+[node name="Trail" parent="." index="2"]
+width = 30.0
+default_color = Color(0, 0.65098, 0.462745, 1)
+trail_length = 12

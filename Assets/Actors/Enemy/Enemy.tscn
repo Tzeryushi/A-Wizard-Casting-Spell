@@ -41,7 +41,7 @@ shader_parameter/mask = ExtResource("7_qahn7")
 
 [node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("navigation_agent") groups=["Enemy"]]
 collision_layer = 4
-collision_mask = 5
+collision_mask = 69
 script = ExtResource("1_sk3ix")
 _spell_scene = ExtResource("2_vviyn")
 _body_scene = ExtResource("3_yte7j")

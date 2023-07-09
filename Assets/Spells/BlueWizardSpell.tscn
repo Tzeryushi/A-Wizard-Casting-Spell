@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://bky18oahcln2v"]
+
+[ext_resource type="PackedScene" uid="uid://bjcxtpo073fwh" path="res://Assets/Spells/GreenWizardSpell.tscn" id="1_7uxrr"]
+[ext_resource type="PackedScene" uid="uid://oc4b5qvhs2ux" path="res://Assets/Bodies/BlueBody.tscn" id="2_647xx"]
+[ext_resource type="Texture2D" uid="uid://dorycdx4b6ey5" path="res://Assets/Actors/Enemy/BlueWizard/Sprites/BlueWizardMissile.PNG" id="2_w52rm"]
+
+[node name="BlueWizardSpell" instance=ExtResource("1_7uxrr")]
+_body_scene = ExtResource("2_647xx")
+
+[node name="Sprite2D" parent="." index="3"]
+texture = ExtResource("2_w52rm")

@@ -1,12 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjcxtpo073fwh"]
+[gd_scene load_steps=6 format=3 uid="uid://bjcxtpo073fwh"]
 
 [ext_resource type="PackedScene" uid="uid://brec14f0yf1mg" path="res://Assets/Spells/BaseSpell.tscn" id="1_e5tvw"]
 [ext_resource type="Script" path="res://Assets/Spells/GreenWizardSpell.gd" id="2_7xcjt"]
 [ext_resource type="PackedScene" uid="uid://t401ys66ffnc" path="res://Assets/Bodies/GreenBody.tscn" id="3_gf12q"]
+[ext_resource type="Texture2D" uid="uid://b2qfkxbog54tv" path="res://Assets/Actors/Enemy/GreenWizard/Sprites/GreenWizardMissile.PNG" id="4_clqhs"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yysdf"]
+radius = 17.0
+height = 90.0
 
 [node name="GreenWizardSpell" instance=ExtResource("1_e5tvw")]
 script = ExtResource("2_7xcjt")
 _body_scene = ExtResource("3_gf12q")
 
 [node name="Sprite" parent="." index="0"]
-color = Color(0, 0.588235, 0.0705882, 1)
+visible = false
+
+[node name="Hitbox" parent="." index="1"]
+collision_mask = 45
+
+[node name="HitArea" parent="Hitbox" index="0"]
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_yysdf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="3"]
+rotation = 1.57079
+scale = Vector2(0.685714, 0.685714)
+texture = ExtResource("4_clqhs")

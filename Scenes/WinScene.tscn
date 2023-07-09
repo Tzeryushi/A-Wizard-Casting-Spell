@@ -1,0 +1,163 @@
+[gd_scene load_steps=11 format=3 uid="uid://b8wfayqf7mg1d"]
+
+[ext_resource type="Script" path="res://Scenes/WinScene.gd" id="1_8bt2p"]
+[ext_resource type="Texture2D" uid="uid://cr1mxkhyvywf3" path="res://Assets/Actors/Enemy/BlueWizard/Sprites/BlueWizard0009.png" id="1_rckeu"]
+[ext_resource type="Texture2D" uid="uid://cvghdjaprh4ki" path="res://Art/Icon.png" id="2_fn26r"]
+[ext_resource type="Texture2D" uid="uid://dorycdx4b6ey5" path="res://Assets/Actors/Enemy/BlueWizard/Sprites/BlueWizardMissile.PNG" id="3_bovu8"]
+[ext_resource type="Texture2D" uid="uid://chwum3bfpvjlv" path="res://Assets/Actors/Enemy/GreenWizard/Sprites/GreenWizardBody.PNG" id="4_277j1"]
+[ext_resource type="Texture2D" uid="uid://b2qfkxbog54tv" path="res://Assets/Actors/Enemy/GreenWizard/Sprites/GreenWizardMissile.PNG" id="5_588vw"]
+[ext_resource type="Texture2D" uid="uid://bgpc7yvj3yqei" path="res://Assets/Actors/Player/Spello/Spello4.PNG" id="6_4y7xx"]
+[ext_resource type="Texture2D" uid="uid://bm34u81l2fndi" path="res://Assets/Spells/SpellArt/BlueSpell.PNG" id="7_3j4wm"]
+[ext_resource type="Texture2D" uid="uid://yy6nhojaws0q" path="res://Assets/Spells/SpellArt/GreenSpell.PNG" id="8_6ofgt"]
+[ext_resource type="Texture2D" uid="uid://crqulkb0ub0lj" path="res://Assets/Spells/SpellArt/RedSpell.PNG" id="9_lcojr"]
+
+[node name="WinScene" type="Node2D"]
+position = Vector2(0, -49)
+script = ExtResource("1_8bt2p")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -34.0
+offset_top = -30.0
+offset_right = 1960.0
+offset_bottom = 1164.0
+color = Color(0.203922, 0.396078, 0.32549, 1)
+
+[node name="BlueWizard0009" type="Sprite2D" parent="."]
+position = Vector2(1560, 665)
+rotation = -0.423551
+texture = ExtResource("1_rckeu")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(959, 300)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2D"]
+clip_contents = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -659.5
+offset_top = -88.5
+offset_right = 659.5
+offset_bottom = 88.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 150
+bbcode_enabled = true
+text = "[center][wave amp=50 freq=10 connected=0][rainbow freq=1.0 sat=0.6 val=0.9]Congratulations!"
+fit_content = true
+scroll_active = false
+
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2(960, 403)
+
+[node name="RichTextLabel8" type="RichTextLabel" parent="Node2D2"]
+clip_contents = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -529.0
+offset_top = 75.0
+offset_right = 529.0
+offset_bottom = 263.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.564706, 0.501961, 0.396078, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center]You beat all the terrible wizards! At least, the ones I had time to implement! Nice job!
+
+Thanks for playing!"
+fit_content = true
+scroll_active = false
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(304, 300)
+texture = ExtResource("2_fn26r")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(1620, 300)
+texture = ExtResource("2_fn26r")
+flip_h = true
+
+[node name="Node2D3" type="Node2D" parent="."]
+position = Vector2(960, 881)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node2D3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -182.5
+offset_top = -117.0
+offset_right = 182.5
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="TutorialButton" type="Button" parent="Node2D3/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92549, 0.603922, 0.160784, 1)
+theme_override_colors/font_outline_color = Color(0.976471, 0.972549, 0.972549, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 80
+text = "Main Menu"
+
+[node name="QuitButton" type="Button" parent="Node2D3/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92549, 0.603922, 0.160784, 1)
+theme_override_colors/font_outline_color = Color(0.976471, 0.972549, 0.972549, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 80
+text = "Exit"
+
+[node name="BlueWizardMissile" type="Sprite2D" parent="."]
+position = Vector2(1803, 871)
+rotation = 0.556576
+scale = Vector2(1.00725, 1.00543)
+texture = ExtResource("3_bovu8")
+
+[node name="BlueWizard0010" type="Sprite2D" parent="."]
+position = Vector2(1800, 551)
+rotation = 0.495975
+texture = ExtResource("1_rckeu")
+
+[node name="GreenWizardBody" type="Sprite2D" parent="."]
+position = Vector2(1752, 730)
+texture = ExtResource("4_277j1")
+
+[node name="GreenWizardMissile" type="Sprite2D" parent="."]
+position = Vector2(1605, 899)
+texture = ExtResource("5_588vw")
+
+[node name="Spello4" type="Sprite2D" parent="."]
+position = Vector2(232, 858.722)
+texture = ExtResource("6_4y7xx")
+
+[node name="BlueSpell" type="Sprite2D" parent="."]
+position = Vector2(439, 741.722)
+rotation = 1.79852
+texture = ExtResource("7_3j4wm")
+
+[node name="GreenSpell" type="Sprite2D" parent="."]
+position = Vector2(319, 699.722)
+rotation = 1.22644
+texture = ExtResource("8_6ofgt")
+
+[node name="RedSpell" type="Sprite2D" parent="."]
+position = Vector2(361, 818.722)
+rotation = 1.54454
+texture = ExtResource("9_lcojr")
+
+[connection signal="pressed" from="Node2D3/VBoxContainer/TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="Node2D3/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

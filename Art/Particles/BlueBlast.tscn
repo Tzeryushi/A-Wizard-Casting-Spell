@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://suyje522dovj"]
+
+[ext_resource type="Script" path="res://Art/Particles/SpellBlast.gd" id="1_mp4xe"]
+[ext_resource type="Material" uid="uid://cg7sa2tm8ip7u" path="res://Art/Particles/BulletSpark.tres" id="2_lxq3o"]
+[ext_resource type="Texture2D" uid="uid://cwst6u5g3mjx8" path="res://Assets/Spells/SpellArt/BlueParticle.PNG" id="3_at25v"]
+
+[node name="BlueBlast" type="Node2D"]
+script = ExtResource("1_mp4xe")
+
+[node name="Blast" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 10
+process_material = ExtResource("2_lxq3o")
+texture = ExtResource("3_at25v")
+one_shot = true
+explosiveness = 1.0

@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://df6jnfl0vrlb4"]
+
+[ext_resource type="PackedScene" uid="uid://brec14f0yf1mg" path="res://Assets/Spells/BaseSpell.tscn" id="1_v1lqr"]
+[ext_resource type="PackedScene" uid="uid://suyje522dovj" path="res://Art/Particles/BlueBlast.tscn" id="2_3kfsw"]
+[ext_resource type="Texture2D" uid="uid://bm34u81l2fndi" path="res://Assets/Spells/SpellArt/BlueSpell.PNG" id="2_ajc66"]
+
+[node name="BlueSpell" instance=ExtResource("1_v1lqr")]
+blast_scene = ExtResource("2_3kfsw")
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_ajc66")
+
+[node name="Trail" parent="." index="2"]
+default_color = Color(0.203922, 0.34902, 0.584314, 1)

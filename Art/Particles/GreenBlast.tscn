@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://be4qtmxomon07"]
+
+[ext_resource type="Script" path="res://Art/Particles/SpellBlast.gd" id="1_av4ni"]
+[ext_resource type="Material" uid="uid://cg7sa2tm8ip7u" path="res://Art/Particles/BulletSpark.tres" id="2_j64gn"]
+[ext_resource type="Texture2D" uid="uid://cju6bdb0h4q85" path="res://Assets/Spells/SpellArt/GreenParticles.PNG" id="3_36flb"]
+
+[node name="GreenBlast" type="Node2D"]
+script = ExtResource("1_av4ni")
+
+[node name="Blast" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 10
+process_material = ExtResource("2_j64gn")
+texture = ExtResource("3_36flb")
+one_shot = true
+explosiveness = 1.0

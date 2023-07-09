@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj4sqrklencj3"]
+
+[ext_resource type="Script" path="res://Scenes/SceneManager.gd" id="1_m3y3s"]
+
+[node name="SceneManager" type="Node"]
+script = ExtResource("1_m3y3s")
+scenes = {
+"Level0": "res://Scenes/Levels/Level0.tscn",
+"Level1": "res://Scenes/Levels/Level1.tscn",
+"Level10": "res://Scenes/Levels/Level10.tscn",
+"Level2": "res://Scenes/Levels/Level2.tscn",
+"Level3": "res://Scenes/Levels/Level3.tscn",
+"Level4": "res://Scenes/Levels/Level4.tscn",
+"Level5": "res://Scenes/Levels/Level5.tscn",
+"Level6": "res://Scenes/Levels/Level6.tscn",
+"Level7": "res://Scenes/Levels/Level7.tscn",
+"Level8": "res://Scenes/Levels/Level8.tscn",
+"Level9": "res://Scenes/Levels/Level9.tscn",
+"MainMenu": "res://Scenes/MainMenu.tscn",
+"TestScene": "res://Scenes/TestScene.tscn",
+"Tutorial": "res://Scenes/Levels/Tutorial.tscn",
+"WinScene": "res://Scenes/WinScene.tscn"
+}

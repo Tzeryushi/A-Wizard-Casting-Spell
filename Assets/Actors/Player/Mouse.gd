@@ -2,8 +2,8 @@ extends Node2D
 
 var valid_flip_array : Array[Enemy]
 
-func _process(delta) -> void:
-	global_position = get_viewport().get_mouse_position()
+func _process(_delta) -> void:
+	global_position = get_global_mouse_position()
 
 func _on_mouse_box_area_entered(area):
 	var parent_node = area.get_parent()
@@ -35,4 +35,4 @@ func get_flippable_enemy() -> Enemy:
 	return valid_flip_array.back()
 
 func force_update_position() -> void:
-	global_position = get_viewport().get_mouse_position()
+	global_position = get_global_mouse_position()

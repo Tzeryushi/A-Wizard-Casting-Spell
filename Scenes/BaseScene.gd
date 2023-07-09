@@ -1,6 +1,7 @@
+class_name BaseScene
 extends Node2D
 
-class_name BaseScene
+@export var scene_name : String = "MainMenu"
 
 func start_up() -> void:
 	#start_up is to be called by the main layer when a scene is first loaded.

@@ -1,6 +1,8 @@
 class_name BaseSpell
 extends Node2D
 
+@export var blast_scene : PackedScene
+
 @onready var trail := $Trail
 @onready var sprite := $Sprite
 @onready var hitbox := $Hitbox
@@ -36,12 +38,13 @@ func no_hit_destroy() -> void:
 	
 func destroy() -> void:
 	trail.hit = true
-#	var spark : ParticleAnimation = spark_scene.instantiate()
-#	get_parent().add_child(spark)
-#	spark.rotation = rotation
-#	spark.global_position = global_position
-#	spark.play()
-	print("kablooie! add destruction effects!")
+	Shake.shake(4.0, 0.2)
+	AudioManager.play("res://Art/SFX/laserd.wav")
+	var blast : ParticleAnimation = blast_scene.instantiate()
+	get_parent().add_child(blast)
+	blast.rotation = rotation
+	blast.global_position = global_position
+	blast.play()
 	queue_free()
 
 func _on_Bullet_body_entered(_body):

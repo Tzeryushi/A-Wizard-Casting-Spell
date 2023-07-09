@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://m5r8t1golwwa"]
+
+[ext_resource type="Texture2D" uid="uid://b2qfkxbog54tv" path="res://Assets/Actors/Enemy/GreenWizard/Sprites/GreenWizardMissile.PNG" id="1_56vew"]
+
+[node name="DeadGreenWizard" type="TextureRect"]
+offset_right = 70.0
+offset_bottom = 184.0
+texture = ExtResource("1_56vew")

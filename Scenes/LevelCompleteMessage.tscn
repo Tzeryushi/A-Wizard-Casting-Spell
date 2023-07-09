@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c0qkvtm7nk5kx"]
+
+[node name="LevelCompleteMessage" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+clip_contents = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -534.0
+offset_top = -238.0
+offset_right = 534.0
+offset_bottom = 238.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.121569, 0.0862745, 0.00392157, 1)
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/normal_font_size = 180
+bbcode_enabled = true
+text = "[rainbow freq=0.6 sat=0.6 val=0.9][center][wave amp=50.0 freq=5.0 connected=0]Level Complete!"
+fit_content = true
+scroll_following = true

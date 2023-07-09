@@ -1,0 +1,69 @@
+[gd_scene load_steps=12 format=3 uid="uid://duqfc8ur47bnm"]
+
+[ext_resource type="PackedScene" uid="uid://do862rnkiybck" path="res://Assets/Actors/Enemy/Enemy.tscn" id="1_qtaph"]
+[ext_resource type="Texture2D" uid="uid://fwghxrjvfbad" path="res://Assets/Actors/Enemy/GreenWizard/Sprites/GreenWizard0003.png" id="2_245qw"]
+[ext_resource type="Script" path="res://Assets/Actors/Enemy/GreenWizard/GreenWizard.gd" id="2_iysvb"]
+[ext_resource type="Shader" path="res://Art/Shaders/EnemyGlow.gdshader" id="2_o1fqn"]
+[ext_resource type="Texture2D" uid="uid://ca8gb76nlg2hw" path="res://Assets/Actors/Enemy/GreenWizard/Sprites/GreenWizard0004.png" id="3_50b3c"]
+[ext_resource type="PackedScene" uid="uid://bojbqojwsx1ie" path="res://Assets/Spells/EnemySpells/GreenSpell.tscn" id="3_its43"]
+[ext_resource type="Texture2D" uid="uid://b7jn0k8jxpfef" path="res://Art/corona.png" id="3_yo6fg"]
+[ext_resource type="Texture2D" uid="uid://b2o1ju61smjvo" path="res://Assets/Actors/Enemy/GreenWizard/Sprites/GreenWizard0001.png" id="4_fcxrl"]
+[ext_resource type="Texture2D" uid="uid://37hqkjx7kts3" path="res://Assets/Actors/Enemy/GreenWizard/Sprites/GreenWizard0002.png" id="5_sj00o"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vu6bn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_245qw")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_50b3c")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_fcxrl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_sj00o")
+}],
+"loop": false,
+"name": &"windup",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_35cfp"]
+resource_local_to_scene = true
+shader = ExtResource("2_o1fqn")
+shader_parameter/cutoff_one = 2.0
+shader_parameter/cutoff_two = 0.0
+shader_parameter/smooth_size = 0.338
+shader_parameter/invert_mask = true
+shader_parameter/masking_color = Color(1, 1, 1, 1)
+shader_parameter/mask = ExtResource("3_yo6fg")
+
+[node name="GreenWizard" instance=ExtResource("1_qtaph")]
+script = ExtResource("2_iysvb")
+_spell_scene = ExtResource("3_its43")
+max_movement_speed = 250.0
+
+[node name="Animations" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_vu6bn")
+animation = &"hurt"
+autoplay = "idle"
+
+[node name="GlowSprite" parent="." index="11"]
+material = SubResource("ShaderMaterial_35cfp")

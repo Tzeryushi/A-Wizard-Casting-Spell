@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=3 uid="uid://dmyn7qvgjvqhg"]
+
+[ext_resource type="Texture2D" uid="uid://g6mw54yrtfu6" path="res://Art/GUI/Spells.PNG" id="1_1gw62"]
+[ext_resource type="Script" path="res://Assets/HUD/SpellHolder.gd" id="1_v2pjl"]
+[ext_resource type="Script" path="res://Assets/HUD/HUD.gd" id="1_xyp78"]
+[ext_resource type="FontFile" uid="uid://b80jfixxknyn3" path="res://Art/Fonts/SS Pretzel Bold.otf" id="2_m0tpc"]
+[ext_resource type="Resource" uid="uid://bkeyu2gl4l2r2" path="res://Assets/HUD/DeadWizardStorage/WizardImageRef.tres" id="3_e4q3i"]
+[ext_resource type="PackedScene" uid="uid://bdnm0yed5p1hk" path="res://Assets/HUD/OtherElements/Heart.tscn" id="4_utwvg"]
+[ext_resource type="Script" path="res://Assets/HUD/HeartHolder.gd" id="6_fflw6"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_xyp78")
+
+[node name="Full HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+
+[node name="SpellHolder" type="Control" parent="Full HUD"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -87.0
+offset_right = 382.0
+grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("1_v2pjl")
+wizard_refs = ExtResource("3_e4q3i")
+
+[node name="Storage" type="TextureRect" parent="Full HUD/SpellHolder"]
+layout_mode = 2
+offset_left = 35.0
+offset_top = -47.0
+offset_right = 417.0
+offset_bottom = 65.0
+mouse_filter = 2
+texture = ExtResource("1_1gw62")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Full HUD/SpellHolder/Storage"]
+layout_mode = 0
+offset_left = -9.0
+offset_top = 19.0
+offset_right = 130.0
+offset_bottom = 97.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_m0tpc")
+theme_override_font_sizes/normal_font_size = 31
+bbcode_enabled = true
+text = "[center][wave]My
+Spells"
+scroll_active = false
+
+[node name="DeadWizardHolding" type="HBoxContainer" parent="Full HUD/SpellHolder/Storage"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = -30.0
+offset_right = 376.0
+offset_bottom = 156.0
+mouse_filter = 2
+
+[node name="HeartHolder" type="Control" parent="Full HUD"]
+anchors_preset = 0
+offset_left = 25.0
+offset_top = 31.0
+offset_right = 518.0
+offset_bottom = 153.0
+mouse_filter = 2
+script = ExtResource("6_fflw6")
+heart_scene = ExtResource("4_utwvg")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Full HUD/HeartHolder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 20

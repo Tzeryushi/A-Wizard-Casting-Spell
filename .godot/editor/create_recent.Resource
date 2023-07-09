@@ -1,3 +1,5 @@
-SpellResource
 BodyModel
+FontVariation
+WizardHUDRef
+SpellResource
 Resource

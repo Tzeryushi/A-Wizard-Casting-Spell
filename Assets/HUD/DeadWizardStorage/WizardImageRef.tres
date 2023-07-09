@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WizardHUDRef" load_steps=4 format=3 uid="uid://bkeyu2gl4l2r2"]
+
+[ext_resource type="Script" path="res://Assets/HUD/DeadWizardStorage/WizardHUDRef.gd" id="1_6lent"]
+[ext_resource type="PackedScene" uid="uid://b41hd01awqssl" path="res://Assets/HUD/DeadWizardStorage/DeadBlueWizard.tscn" id="1_kvpjy"]
+[ext_resource type="PackedScene" uid="uid://m5r8t1golwwa" path="res://Assets/HUD/DeadWizardStorage/DeadGreenWizard.tscn" id="1_yasum"]
+
+[resource]
+script = ExtResource("1_6lent")
+green_wizard = ExtResource("1_yasum")
+blue_wizard = ExtResource("1_kvpjy")

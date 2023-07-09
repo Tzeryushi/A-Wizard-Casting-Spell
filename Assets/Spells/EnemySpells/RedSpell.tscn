@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://xca31tb724id"]
+
+[ext_resource type="PackedScene" uid="uid://brec14f0yf1mg" path="res://Assets/Spells/BaseSpell.tscn" id="1_j2yft"]
+[ext_resource type="Texture2D" uid="uid://crqulkb0ub0lj" path="res://Assets/Spells/SpellArt/RedSpell.PNG" id="2_av0gw"]
+[ext_resource type="PackedScene" uid="uid://cll3qdcohxquh" path="res://Art/Particles/RedBlast.tscn" id="2_e5qmw"]
+
+[node name="RedSpell" instance=ExtResource("1_j2yft")]
+blast_scene = ExtResource("2_e5qmw")
+
+[node name="Sprite" parent="." index="0"]
+scale = Vector2(1.10638, 1.10638)
+texture = ExtResource("2_av0gw")
+
+[node name="Trail" parent="." index="2"]
+default_color = Color(0.658824, 0.12549, 0.101961, 1)

@@ -4,20 +4,28 @@ extends Actor
 @export var _spell_list : SpellResource
 @export var flip_time = 0.25
 @export var _spell_restriction_time : float = 0.3
+@export var _max_spells : int = 3
 
 @onready var mouse := $Mouse
 @onready var physics_collider := $PhysicsCollider
 @onready var restriction_timer := $SpellRestrictionTimer
 @onready var spell_spawn_location := $SpellSpawnLocation
+@onready var camera := $Camera
 
 var spell_stack : Array[BodyModel]
 
 var flip_timer : float = 0.0
 var can_fire_spell : bool = true
 
+signal body_picked_up(type:Globals.WIZARDTYPE)
+signal body_casted
+signal player_died
+signal max_spells
+
 func _ready() -> void:
 	state_manager.init_state(self)
 	restriction_timer.wait_time = _spell_restriction_time
+	Shake.set_camera(camera)
 
 func _unhandled_input(_event) -> void:
 	state_manager.input(_event)
@@ -47,7 +55,6 @@ func move(_direction, _delta:float) -> void:
 
 func shoot() -> void:
 	#handling shoot here - not parcatcht of states?
-	print("Pew-pew! add particle effects!")
 	if !spell_stack.is_empty() and can_fire_spell:
 		can_fire_spell = false
 		var spell_info : BodyModel = spell_stack.pop_back()
@@ -57,20 +64,30 @@ func shoot() -> void:
 		new_spell.set_direction(look_rotation.normalized())
 		get_parent().add_child(new_spell)
 		restriction_timer.start()
+		body_casted.emit()
+		TextPopper.pop_text("[center][rainbow]Wizardio!", Vector2(0,0), self, 1.5)
+		animations.play("shooting")
+		await animations.animation_finished
+		animations.play("idle")
 	return
 
 func spell_collision(spell:BaseSpell) -> void:
 	#should trigger world state changes
 	#for now, call a global?
-	print("trigger restart! you should be dead.")
-	return
+	Shake.shake(6.0, 0.2)
+	var new_health = health - spell.get_damage()
+	set_health(new_health)
+	if health <= 0:
+		player_died.emit()
+	else:
+		velocity += spell.get_direction().normalized()*200
 
 func sprite_rotation() -> void:
 	var current_angle = get_mouse_direction().angle()
 	animations.rotation = current_angle
 	
 func get_mouse_direction() -> Vector2:
-	var mouse_pos = get_viewport().get_mouse_position()
+	var mouse_pos = get_global_mouse_position()
 	var shot_direction_vector = (mouse_pos - center.global_position)
 	shot_direction_vector = shot_direction_vector/shot_direction_vector.length()
 	return shot_direction_vector.normalized()
@@ -78,6 +95,9 @@ func get_mouse_direction() -> Vector2:
 func flip() -> void:
 	flip_timer = flip_time
 	var enemy_ref : Enemy = mouse.get_flippable_enemy()
+	scale_in_and_out(flip_time)
+	enemy_ref.scale_in_and_out(flip_time)
+	AudioManager.play("res://Art/SFX/spell2.wav")
 	await get_tree().create_timer(flip_time/2).timeout
 	physics_collider.disabled = true
 	var current_position : Vector2 = center.global_position
@@ -87,16 +107,21 @@ func flip() -> void:
 	mouse.force_update_position()
 	physics_collider.disabled = false
 
+func can_pickup_body() -> bool:
+	if spell_stack.size() >= _max_spells:
+		return false
+	return true
+
 func pickup_body(body:BaseBody) -> void:
+	AudioManager.play("res://Art/SFX/spell1.wav")
 	spell_stack.append(body.get_body())
-	print("Wizard body added! Update UI!")
+	body_picked_up.emit(spell_stack.back().wizard_type)
 
 func can_flip() -> bool:
 	#placeholder for check when player cannot flip
 	if mouse.can_flip():
 		return true
 	return false
-
 
 func _on_spell_restriction_timer_timeout():
 	can_fire_spell = true

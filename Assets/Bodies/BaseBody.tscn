@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ulsdvyhxi71d"]
+[gd_scene load_steps=7 format=3 uid="uid://ulsdvyhxi71d"]
 
 [ext_resource type="Script" path="res://Assets/Bodies/BaseBody.gd" id="1_pfmfe"]
 [ext_resource type="Resource" uid="uid://bvvvq4huvdh5s" path="res://Assets/Bodies/BodyResources/GenericBody.tres" id="2_g2gc4"]
+[ext_resource type="Texture2D" uid="uid://chwum3bfpvjlv" path="res://Assets/Actors/Enemy/GreenWizard/Sprites/GreenWizardBody.PNG" id="3_hsvrb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8apvd"]
 radius = 42.0119
@@ -19,10 +20,8 @@ script = ExtResource("1_pfmfe")
 body_info = ExtResource("2_g2gc4")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-
-[node name="PlaceholderImage" type="Polygon2D" parent="."]
-scale = Vector2(1, 1)
-polygon = PackedVector2Array(15, -44, 0, -18, -36, -43, -46, -19, -15, -1, -47, 40, -17, 55, 2, 16, 38, 35, 54, -4, 21, -4, 46, -31)
+scale = Vector2(0.73743, 1.23077)
+texture = ExtResource("3_hsvrb")
 
 [node name="PickupHitbox" type="Area2D" parent="."]
 collision_layer = 32

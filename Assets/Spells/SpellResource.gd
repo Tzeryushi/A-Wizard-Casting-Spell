@@ -16,11 +16,11 @@ func get_spell(type:Globals.SPELLTYPE) -> PackedScene:
 		Globals.SPELLTYPE.GREENBODY:
 			return green_body_spell
 		Globals.SPELLTYPE.BLUE:
-			return green_spell
+			return blue_spell
 		Globals.SPELLTYPE.BLUEBODY:
-			return green_spell
+			return blue_body_spell
 		Globals.SPELLTYPE.RED:
-			return green_spell
+			return red_spell
 		Globals.SPELLTYPE.REDBODY:
-			return green_spell
+			return red_body_spell
 	return base_spell

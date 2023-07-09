@@ -14,7 +14,6 @@ var stored_velocity : Vector2
 
 func on_enter() -> void:
 	super()
-	print("flip")
 	stored_velocity = actor.velocity
 	actor.velocity = Vector2.ZERO
 	actor.flip()

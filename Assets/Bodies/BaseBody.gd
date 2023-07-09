@@ -15,5 +15,6 @@ func destruct() -> void:
 
 func _on_pickup_hitbox_body_entered(_body):
 	if _body is Player and _body.is_in_group("Player"):
-		_body.pickup_body(self)
-		destruct()
+		if _body.can_pickup_body():
+			_body.pickup_body(self)
+			destruct()

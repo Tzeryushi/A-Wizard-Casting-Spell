@@ -1,15 +1,19 @@
-[gd_scene load_steps=16 format=3 uid="uid://cb3fcw70u4e1o"]
+[gd_scene load_steps=23 format=3 uid="uid://cb3fcw70u4e1o"]
 
 [ext_resource type="Script" path="res://Assets/Actors/Player/Player.gd" id="1_yuspw"]
 [ext_resource type="Resource" uid="uid://bge7uiekmtoky" path="res://Assets/Spells/SpellList.tres" id="2_f8kle"]
-[ext_resource type="Texture2D" uid="uid://d6v02ecgp5er" path="res://Art/tempblock.png" id="2_hl5qr"]
-[ext_resource type="Texture2D" uid="uid://dupocwwahagv6" path="res://Art/tempblock_exit.png" id="3_jvcg3"]
+[ext_resource type="Texture2D" uid="uid://cvsgnhgt0wp4m" path="res://Assets/Actors/Player/Spello/Spello.PNG" id="3_jrpvt"]
 [ext_resource type="Script" path="res://Assets/Actors/Player/Player States/PlayerMoveState.gd" id="4_cvw7v"]
 [ext_resource type="Script" path="res://Assets/Actors/StateManager.gd" id="4_ipnlw"]
+[ext_resource type="Texture2D" uid="uid://d05kqaumf2ehi" path="res://Assets/Actors/Player/Spello/Spello2.PNG" id="4_xbu21"]
+[ext_resource type="Texture2D" uid="uid://ej7iorxxqmwi" path="res://Assets/Actors/Player/Spello/Spello3.PNG" id="5_lar7l"]
 [ext_resource type="Script" path="res://Assets/Actors/Player/Player States/PlayerIdleState.gd" id="5_laydl"]
+[ext_resource type="Texture2D" uid="uid://bgpc7yvj3yqei" path="res://Assets/Actors/Player/Spello/Spello4.PNG" id="6_f5sob"]
 [ext_resource type="Script" path="res://Assets/Actors/Player/Player States/PlayerFlipState.gd" id="7_4paf0"]
+[ext_resource type="Texture2D" uid="uid://7oc0emnnrmik" path="res://Assets/Actors/Player/Spello/SpelloSurprise.PNG" id="7_el3ng"]
 [ext_resource type="Script" path="res://Assets/Actors/Player/Mouse.gd" id="8_duj1e"]
 [ext_resource type="Texture2D" uid="uid://egl8o8peiml1" path="res://Art/circle-01.png" id="8_ok0ca"]
+[ext_resource type="Texture2D" uid="uid://b7imuki3v7it" path="res://Assets/Actors/Player/Spello/Spark1.PNG" id="14_lesmq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1xjfw"]
 animations = [{
@@ -25,16 +29,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_hl5qr")
+"texture": ExtResource("3_jrpvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xbu21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lar7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f5sob")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 8.0
 }, {
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_el3ng")
+}],
+"loop": false,
 "name": &"shooting",
-"speed": 5.0
+"speed": 1.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oy5j2"]
@@ -67,23 +83,44 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Curve" id="Curve_ommc8"]
+_data = [Vector2(0, 0.97153), 0.0, 0.0, 0, 0, Vector2(0.502024, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_vdqrk"]
+curve = SubResource("Curve_ommc8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tpopx"]
+emission_shape = 1
+emission_sphere_radius = 44.63
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 4.0
+angular_velocity_min = -91.27
+angular_velocity_max = 81.13
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = -1.41
+linear_accel_max = 8.45
+scale_curve = SubResource("CurveTexture_vdqrk")
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 2
 collision_layer = 2
-collision_mask = 5
+collision_mask = 69
 script = ExtResource("1_yuspw")
 _spell_list = ExtResource("2_f8kle")
 animation_node = NodePath("Animations")
 state_manager_node = NodePath("StateManager")
+health = 3
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.289063, 0.289062)
 sprite_frames = SubResource("SpriteFrames_1xjfw")
-animation = &"idle"
-
-[node name="Sprite2D" type="Sprite2D" parent="Animations"]
-position = Vector2(129, 0)
-texture = ExtResource("3_jvcg3")
+animation = &"shooting"
+autoplay = "idle"
 
 [node name="PhysicsCollider" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_oy5j2")
@@ -136,9 +173,18 @@ sprite_frames = SubResource("SpriteFrames_vcaqb")
 animation = &"idle"
 
 [node name="SpellSpawnLocation" type="Node2D" parent="."]
-position = Vector2(59, 0)
+position = Vector2(14, 0)
 
 [node name="SpellRestrictionTimer" type="Timer" parent="."]
+
+[node name="SparkleTrail" type="GPUParticles2D" parent="."]
+z_index = -1
+amount = 12
+process_material = SubResource("ParticleProcessMaterial_tpopx")
+texture = ExtResource("14_lesmq")
+visibility_rect = Rect2(-1000, -1000, 2000, 2000)
+
+[node name="Camera" type="Camera2D" parent="."]
 
 [connection signal="area_entered" from="Mouse/MouseBox" to="Mouse" method="_on_mouse_box_area_entered"]
 [connection signal="area_exited" from="Mouse/MouseBox" to="Mouse" method="_on_mouse_box_area_exited"]

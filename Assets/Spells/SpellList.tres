@@ -1,15 +1,19 @@
-[gd_resource type="Resource" script_class="SpellResource" load_steps=4 format=3 uid="uid://bge7uiekmtoky"]
+[gd_resource type="Resource" script_class="SpellResource" load_steps=8 format=3 uid="uid://bge7uiekmtoky"]
 
 [ext_resource type="PackedScene" uid="uid://brec14f0yf1mg" path="res://Assets/Spells/BaseSpell.tscn" id="1_l5ywj"]
 [ext_resource type="Script" path="res://Assets/Spells/SpellResource.gd" id="1_wppl2"]
+[ext_resource type="PackedScene" uid="uid://bky18oahcln2v" path="res://Assets/Spells/BlueWizardSpell.tscn" id="2_ka76c"]
+[ext_resource type="PackedScene" uid="uid://df6jnfl0vrlb4" path="res://Assets/Spells/EnemySpells/BlueSpell.tscn" id="2_sjgqs"]
 [ext_resource type="PackedScene" uid="uid://bjcxtpo073fwh" path="res://Assets/Spells/GreenWizardSpell.tscn" id="2_w1h2x"]
+[ext_resource type="PackedScene" uid="uid://bojbqojwsx1ie" path="res://Assets/Spells/EnemySpells/GreenSpell.tscn" id="4_00i2w"]
+[ext_resource type="PackedScene" uid="uid://xca31tb724id" path="res://Assets/Spells/EnemySpells/RedSpell.tscn" id="5_tt74x"]
 
 [resource]
 script = ExtResource("1_wppl2")
 base_spell = ExtResource("1_l5ywj")
-green_spell = ExtResource("1_l5ywj")
+green_spell = ExtResource("4_00i2w")
 green_body_spell = ExtResource("2_w1h2x")
-blue_spell = ExtResource("1_l5ywj")
-blue_body_spell = ExtResource("1_l5ywj")
-red_spell = ExtResource("1_l5ywj")
-red_body_spell = ExtResource("1_l5ywj")
+blue_spell = ExtResource("2_sjgqs")
+blue_body_spell = ExtResource("2_ka76c")
+red_spell = ExtResource("5_tt74x")
+red_body_spell = ExtResource("2_ka76c")

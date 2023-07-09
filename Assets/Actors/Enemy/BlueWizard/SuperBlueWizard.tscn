@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjqunmdtb0s1l"]
+
+[ext_resource type="PackedScene" uid="uid://c5c43qfqmlofk" path="res://Assets/Actors/Enemy/BlueWizard/BlueWizard.tscn" id="1_1av3b"]
+[ext_resource type="Shader" path="res://Art/Shaders/EnemyGlow.gdshader" id="2_agl0h"]
+[ext_resource type="Texture2D" uid="uid://b7jn0k8jxpfef" path="res://Art/corona.png" id="3_xcu3r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4obqx"]
+resource_local_to_scene = true
+shader = ExtResource("2_agl0h")
+shader_parameter/cutoff_one = 2.0
+shader_parameter/cutoff_two = 0.0
+shader_parameter/smooth_size = 0.338
+shader_parameter/invert_mask = true
+shader_parameter/masking_color = Color(1, 1, 1, 1)
+shader_parameter/mask = ExtResource("3_xcu3r")
+
+[node name="SuperBlueWizard" instance=ExtResource("1_1av3b")]
+_spell_restriction_time = 1.5
+_spell_velocity = 200.0
+_spell_acceleration = 25.0
+_distance_to_keep = 500.0
+health = 5
+acceleration = 15.0
+decceleration = 5.0
+max_movement_speed = 350.0
+
+[node name="Animations" parent="." index="0"]
+modulate = Color(0.466667, 0.466667, 0.466667, 1)
+
+[node name="SightLine" parent="." index="5"]
+target_position = Vector2(700, 0)
+
+[node name="FollowLine" parent="." index="6"]
+target_position = Vector2(1200, 0)
+
+[node name="GlowSprite" parent="." index="11"]
+material = SubResource("ShaderMaterial_4obqx")
