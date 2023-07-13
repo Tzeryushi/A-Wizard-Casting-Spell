@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqetkhtp87qhl"
-path="res://.godot/imported/Heart.PNG-52eec56e365c59e66f1c430ef77edef2.ctex"
+uid="uid://hf10tlu67csw"
+path="res://.godot/imported/GreenBlub.PNG-b606003fd0d40513fc19ab3ef0241854.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/wizardingspellart/Heart.PNG"
-dest_files=["res://.godot/imported/Heart.PNG-52eec56e365c59e66f1c430ef77edef2.ctex"]
+source_file="res://Art/wizardingspellart/GreenBlub.PNG"
+dest_files=["res://.godot/imported/GreenBlub.PNG-b606003fd0d40513fc19ab3ef0241854.ctex"]
 
 [params]
 

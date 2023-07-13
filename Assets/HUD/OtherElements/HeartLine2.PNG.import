@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmte2oqohu4p6"
-path="res://.godot/imported/BlueWizard0002.png-adef9a615b8ea2e5e85ad59dcc880456.ctex"
+uid="uid://d0tn2becgeyci"
+path="res://.godot/imported/HeartLine2.PNG-5ad2c90f4fb10b8a0d500e19eebb7bfc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/wizardingspellart/BlueWizard0002.png"
-dest_files=["res://.godot/imported/BlueWizard0002.png-adef9a615b8ea2e5e85ad59dcc880456.ctex"]
+source_file="res://Assets/HUD/OtherElements/HeartLine2.PNG"
+dest_files=["res://.godot/imported/HeartLine2.PNG-5ad2c90f4fb10b8a0d500e19eebb7bfc.ctex"]
 
 [params]
 

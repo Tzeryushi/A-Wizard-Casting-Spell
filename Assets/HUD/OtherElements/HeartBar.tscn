@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0s2sukkibcgn"]
+
+[ext_resource type="Texture2D" uid="uid://dppnsxlv5e85u" path="res://Assets/HUD/OtherElements/HeartLine.tres" id="1_im5q7"]
+
+[node name="HeartBar" type="TextureRect"]
+offset_right = 366.0
+offset_bottom = 29.0
+texture = ExtResource("1_im5q7")

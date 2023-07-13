@@ -1,12 +1,24 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmyn7qvgjvqhg"]
+[gd_scene load_steps=12 format=3 uid="uid://dmyn7qvgjvqhg"]
 
-[ext_resource type="Texture2D" uid="uid://g6mw54yrtfu6" path="res://Art/GUI/Spells.PNG" id="1_1gw62"]
 [ext_resource type="Script" path="res://Assets/HUD/SpellHolder.gd" id="1_v2pjl"]
 [ext_resource type="Script" path="res://Assets/HUD/HUD.gd" id="1_xyp78"]
 [ext_resource type="FontFile" uid="uid://b80jfixxknyn3" path="res://Art/Fonts/SS Pretzel Bold.otf" id="2_m0tpc"]
 [ext_resource type="Resource" uid="uid://bkeyu2gl4l2r2" path="res://Assets/HUD/DeadWizardStorage/WizardImageRef.tres" id="3_e4q3i"]
+[ext_resource type="Texture2D" uid="uid://cxgyuq0pr02fk" path="res://Assets/HUD/DeadWizardStorage/SpellBox1.PNG" id="4_ie1aj"]
 [ext_resource type="PackedScene" uid="uid://bdnm0yed5p1hk" path="res://Assets/HUD/OtherElements/Heart.tscn" id="4_utwvg"]
+[ext_resource type="Texture2D" uid="uid://d0yqbt2rvlkko" path="res://Assets/HUD/DeadWizardStorage/SpellBox2.PNG" id="5_lqqfk"]
+[ext_resource type="Texture2D" uid="uid://r5c7augmw26i" path="res://Assets/HUD/DeadWizardStorage/SpellBox3.PNG" id="6_abul1"]
 [ext_resource type="Script" path="res://Assets/HUD/HeartHolder.gd" id="6_fflw6"]
+[ext_resource type="PackedScene" uid="uid://c0s2sukkibcgn" path="res://Assets/HUD/OtherElements/HeartBar.tscn" id="10_mvyw5"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_bl042"]
+frames = 3
+frame_0/texture = ExtResource("4_ie1aj")
+frame_0/duration = 0.2
+frame_1/texture = ExtResource("5_lqqfk")
+frame_1/duration = 0.2
+frame_2/texture = ExtResource("6_abul1")
+frame_2/duration = 0.2
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_xyp78")
@@ -37,12 +49,13 @@ wizard_refs = ExtResource("3_e4q3i")
 layout_mode = 2
 offset_left = 35.0
 offset_top = -47.0
-offset_right = 417.0
+offset_right = 418.0
 offset_bottom = 65.0
 mouse_filter = 2
-texture = ExtResource("1_1gw62")
+texture = SubResource("AnimatedTexture_bl042")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Full HUD/SpellHolder/Storage"]
+visible = false
 layout_mode = 0
 offset_left = -9.0
 offset_top = 19.0
@@ -58,27 +71,35 @@ scroll_active = false
 
 [node name="DeadWizardHolding" type="HBoxContainer" parent="Full HUD/SpellHolder/Storage"]
 layout_mode = 0
-offset_left = 102.0
+offset_left = 120.0
 offset_top = -30.0
-offset_right = 376.0
+offset_right = 395.0
 offset_bottom = 156.0
 mouse_filter = 2
 
 [node name="HeartHolder" type="Control" parent="Full HUD"]
 anchors_preset = 0
-offset_left = 25.0
-offset_top = 31.0
-offset_right = 518.0
-offset_bottom = 153.0
+offset_left = 45.0
+offset_top = 28.0
+offset_right = 538.0
+offset_bottom = 150.0
 mouse_filter = 2
 script = ExtResource("6_fflw6")
 heart_scene = ExtResource("4_utwvg")
+
+[node name="HeartBar" parent="Full HUD/HeartHolder" instance=ExtResource("10_mvyw5")]
+layout_mode = 0
+offset_left = -25.0
+offset_top = 31.0
+offset_right = 345.0
+offset_bottom = 60.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Full HUD/HeartHolder"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -36.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2

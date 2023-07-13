@@ -115,6 +115,7 @@ collision_mask = 69
 script = ExtResource("1_yuspw")
 _spell_list = ExtResource("2_f8kle")
 _enemy_arrow_scene = ExtResource("3_j7uh3")
+_max_spells = 3
 _ouchie_index = Array[String](["Oof!", "Ouchie!", "Ugh!", "Oofie!", "No fair!", "Guh!", "Dagnabbit!", "Phoo!", "Shucks!", "Jebus!", "Woah!", "Ack!", "That's no good!", "Skill issue!", "Arrrgh!", "Oofers!", "Oh no!"])
 animation_node = NodePath("Animations")
 state_manager_node = NodePath("StateManager")

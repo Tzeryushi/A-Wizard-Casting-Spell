@@ -1,3 +1,4 @@
+res://Assets/HUD/OtherElements
 res://Scenes
 res://Assets/Actors/Player
 res://Assets/HUD
@@ -19,4 +20,3 @@ res://Assets/Spells/EnemySpells
 res://Scenes/Tilemaps
 res://Art/Fonts
 res://Assets/HUD/DeadWizardStorage
-res://Assets/Actors/Enemy/GreenWizard

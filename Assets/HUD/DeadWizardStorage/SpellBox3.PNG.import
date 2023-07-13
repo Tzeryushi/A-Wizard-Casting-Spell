@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsdimkp5wotsv"
-path="res://.godot/imported/BlueWizard0001.png-19d0e507a2ec907ec675d3591282d052.ctex"
+uid="uid://r5c7augmw26i"
+path="res://.godot/imported/SpellBox3.PNG-d50361fd644a3ba0593d3b5928a61100.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/wizardingspellart/BlueWizard0001.png"
-dest_files=["res://.godot/imported/BlueWizard0001.png-19d0e507a2ec907ec675d3591282d052.ctex"]
+source_file="res://Assets/HUD/DeadWizardStorage/SpellBox3.PNG"
+dest_files=["res://.godot/imported/SpellBox3.PNG-d50361fd644a3ba0593d3b5928a61100.ctex"]
 
 [params]
 
