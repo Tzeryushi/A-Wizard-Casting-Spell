@@ -1,8 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://cb3fcw70u4e1o"]
+[gd_scene load_steps=30 format=3 uid="uid://cb3fcw70u4e1o"]
 
 [ext_resource type="Script" path="res://Assets/Actors/Player/Player.gd" id="1_yuspw"]
 [ext_resource type="Resource" uid="uid://bge7uiekmtoky" path="res://Assets/Spells/SpellList.tres" id="2_f8kle"]
 [ext_resource type="Texture2D" uid="uid://c2b0l71nwsr54" path="res://Assets/Actors/Player/Spello/SpelloSad.PNG" id="3_iudvf"]
+[ext_resource type="PackedScene" uid="uid://t0tvm0bd6vn3" path="res://Assets/Actors/Player/EnemyArrow.tscn" id="3_j7uh3"]
 [ext_resource type="Texture2D" uid="uid://cvsgnhgt0wp4m" path="res://Assets/Actors/Player/Spello/Spello.PNG" id="3_jrpvt"]
 [ext_resource type="Script" path="res://Assets/Actors/Player/Player States/PlayerMoveState.gd" id="4_cvw7v"]
 [ext_resource type="Script" path="res://Assets/Actors/StateManager.gd" id="4_ipnlw"]
@@ -113,6 +114,7 @@ collision_layer = 2
 collision_mask = 69
 script = ExtResource("1_yuspw")
 _spell_list = ExtResource("2_f8kle")
+_enemy_arrow_scene = ExtResource("3_j7uh3")
 _ouchie_index = Array[String](["Oof!", "Ouchie!", "Ugh!", "Oofie!", "No fair!", "Guh!", "Dagnabbit!", "Phoo!", "Shucks!", "Jebus!", "Woah!", "Ack!", "That's no good!", "Skill issue!", "Arrrgh!", "Oofers!", "Oh no!"])
 animation_node = NodePath("Animations")
 state_manager_node = NodePath("StateManager")
@@ -196,6 +198,8 @@ local_coords = true
 [node name="Camera" type="Camera2D" parent="."]
 
 [node name="PointerHitbox" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PointerHitbox"]
 position = Vector2(0, -480)

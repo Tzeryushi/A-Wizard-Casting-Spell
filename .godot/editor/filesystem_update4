@@ -35,3 +35,5 @@ res://Assets/Tools/ParticleCache.gd
 res://Art/Particles/SpellBlast.tscn
 res://Assets/Actors/Player/EnemyArrow.tscn
 res://Assets/Actors/Player/EnemyArrow.gd
+res://Scenes/TestScene.tscn
+res://Scenes/Playground.tscn

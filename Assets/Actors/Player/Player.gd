@@ -49,6 +49,7 @@ func _process_frame_setup() -> void:
 			var new_arrow = _enemy_arrow_scene.instantiate()
 			new_arrow.set_up_arrow(enemy)
 			arrows.append(new_arrow)
+			add_child(new_arrow)
 	
 func _unhandled_input(_event) -> void:
 	state_manager.input(_event)

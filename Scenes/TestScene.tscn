@@ -1,16 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqftv7aon2ak3"]
+[gd_scene load_steps=6 format=3 uid="uid://dqftv7aon2ak3"]
 
 [ext_resource type="TileSet" uid="uid://drht87h6vy28k" path="res://Scenes/Tilemaps/PathMap.tres" id="1_ce55i"]
 [ext_resource type="PackedScene" uid="uid://cb3fcw70u4e1o" path="res://Assets/Actors/Player/Player.tscn" id="2_fbh7b"]
 [ext_resource type="Script" path="res://Scenes/TileData.gd" id="3_e8kde"]
-[ext_resource type="PackedScene" uid="uid://do862rnkiybck" path="res://Assets/Actors/Enemy/Enemy.tscn" id="3_iq20f"]
 [ext_resource type="PackedScene" uid="uid://duqfc8ur47bnm" path="res://Assets/Actors/Enemy/GreenWizard/GreenWizard.tscn" id="6_cayom"]
 [ext_resource type="PackedScene" uid="uid://dmyn7qvgjvqhg" path="res://Assets/HUD/hud.tscn" id="7_rxkmq"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="." groups=["Environment"]]
-visible = false
 z_index = -2
 tile_set = ExtResource("1_ce55i")
 format = 2
@@ -20,17 +18,7 @@ script = ExtResource("3_e8kde")
 [node name="Player" parent="." instance=ExtResource("2_fbh7b")]
 position = Vector2(1099, 434)
 
-[node name="Enemy" parent="." instance=ExtResource("3_iq20f")]
-position = Vector2(199, 542)
-max_movement_speed = 250.0
-
-[node name="Enemy2" parent="." instance=ExtResource("3_iq20f")]
-position = Vector2(1637, 210)
-
-[node name="Enemy3" parent="." instance=ExtResource("3_iq20f")]
-position = Vector2(1594, 827)
-
 [node name="GreenWizard" parent="." instance=ExtResource("6_cayom")]
-position = Vector2(630, 802)
+position = Vector2(790, -88)
 
 [node name="HUD" parent="." instance=ExtResource("7_rxkmq")]
