@@ -10,7 +10,7 @@ extends PlayerState
 func input(_event:InputEvent) -> BaseState:
 	#check if possible to flip first
 	
-	if Input.is_action_just_pressed("flip") and actor.can_flip():
+	if Input.is_action_just_released("flip") and actor.can_flip():
 		return flip_state
 	return null
 

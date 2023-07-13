@@ -87,6 +87,7 @@ reset_level={
 2d_physics/layer_4="Projectile"
 2d_physics/layer_5="Flip Layer"
 2d_physics/layer_6="Bodies Layer"
+2d_physics/layer_8="EnemyArrow Layer"
 
 [physics]
 

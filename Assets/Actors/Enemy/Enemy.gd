@@ -27,7 +27,8 @@ signal destroyed
 func _ready() -> void:
 	navigation_agent.path_desired_distance = 4.0
 	navigation_agent.target_desired_distance = 4.0
-	
+	var generator = RandomNumberGenerator.new()
+	animations.rotation = generator.randf_range(-PI, PI)
 	call_deferred("actor_setup")
 
 func actor_setup():
@@ -90,6 +91,7 @@ func shoot() -> void:
 
 func spell_collision(spell:BaseSpell) -> void:
 	health = health - spell.get_damage()
+	#TextPopper.root_pop_text("[center][color=#A8201A]-"+str(spell.get_damage()), Vector2(0,0), self, 1.0, 1.0, 50, 10)
 	if health <= 0:
 		leave_body(spell.get_direction().normalized()*spell.get_speed())
 		destruct()

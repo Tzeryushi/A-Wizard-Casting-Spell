@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://t0tvm0bd6vn3"]
+
+[ext_resource type="Script" path="res://Assets/Actors/Player/EnemyArrow.gd" id="1_csap0"]
+[ext_resource type="Texture2D" uid="uid://b5h5i044qx62x" path="res://Assets/Actors/Player/EnemyArrow.PNG" id="2_h7olu"]
+
+[node name="EnemyArrow" type="Node2D"]
+script = ExtResource("1_csap0")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+texture = ExtResource("2_h7olu")
+
+[node name="RayCast" type="RayCast2D" parent="."]
+target_position = Vector2(20, 0)
+collision_mask = 128

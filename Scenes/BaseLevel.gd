@@ -32,7 +32,7 @@ func enemy_setup() -> void:
 	if tree.has_group("Enemy"):
 		for enemy in tree.get_nodes_in_group("Enemy"):
 			enemy.destroyed.connect(_on_enemy_death)
-			enemy_count += 1
+			#enemy_count += 1
 
 func _on_player_death() -> void:
 	#reset the level
@@ -42,8 +42,10 @@ func _on_player_death() -> void:
 
 func _on_enemy_death() -> void:
 	#check if clear!
-	enemy_count -= 1
-	if enemy_count <= 0:
+#	enemy_count -= 1
+#	if enemy_count <= 0:
+	#Be aware that if there's an enemy that spawns more enemies, we might need to course correct by deferring to the next loop
+	if get_tree().get_nodes_in_group("Enemy").size() == 1:
 		#level clear, fanfare and such
 		level_finish_popup()
 		return

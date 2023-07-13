@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjc6kff3h5v84"]
+
+[ext_resource type="Script" path="res://Assets/Tools/ParticleCache.gd" id="1_qelwy"]
+
+[node name="ParticleCache" type="CanvasLayer"]
+script = ExtResource("1_qelwy")

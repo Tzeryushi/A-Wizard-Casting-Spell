@@ -53,6 +53,7 @@ func _physics_process(_delta) -> void:
 
 func spell_collision(spell:BaseSpell) -> void:
 	animations.play("hurt")
+	TextPopper.root_pop_text("[center][color=#A8201A]-"+str(spell.get_damage()), global_position, self, 1.0, 1.0, 50, 10)
 	health = health - spell.get_damage()
 	if health <= 0:
 		leave_body(spell.get_direction().normalized()*spell.get_speed())

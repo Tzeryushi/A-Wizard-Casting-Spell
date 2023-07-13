@@ -1,3 +1,7 @@
+res://Assets/Actors/Player
+res://Assets/HUD
+res://Assets/Tools
+res://Art/Particles
 res://Art
 B:/Projects/GMTKOUPUT
 res://Assets
@@ -14,9 +18,5 @@ res://Scenes/Pause
 res://Assets/Spells/EnemySpells
 res://Scenes/Tilemaps
 res://Art/Fonts
-res://Art/Particles
 res://Assets/HUD/DeadWizardStorage
 res://Assets/Actors/Enemy/GreenWizard
-res://Art/Shaders
-res://Assets/Actors/Player
-res://

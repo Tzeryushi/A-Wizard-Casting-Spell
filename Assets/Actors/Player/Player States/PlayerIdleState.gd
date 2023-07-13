@@ -8,7 +8,7 @@ extends PlayerState
 @onready var flip_state : BaseState = get_node(flip_node)
 
 func input(_event:InputEvent) -> BaseState:
-	if Input.is_action_just_pressed("flip") and actor.can_flip():
+	if Input.is_action_just_released("flip") and actor.can_flip():
 		return flip_state
 	return null
 

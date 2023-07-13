@@ -28,9 +28,11 @@ layer_0/tile_data = PackedInt32Array(589818, 0, 1, 655354, 0, 1, 589819, 65536, 
 position = Vector2(35, 283)
 
 [node name="GreenWizard" parent="." instance=ExtResource("4_g2ooo")]
+z_index = 0
 position = Vector2(557, 47)
 
 [node name="GreenWizard2" parent="." instance=ExtResource("4_g2ooo")]
+z_index = 0
 position = Vector2(580, 546)
 
 [node name="HUD" parent="." instance=ExtResource("5_r85n6")]

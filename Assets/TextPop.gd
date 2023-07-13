@@ -15,5 +15,12 @@ func _process(delta) -> void:
 	velocity += Vector2(0, grav_accel) * delta
 	pop_text.position += velocity * delta
 
-func set_text(text) -> void:
+func set_text(text:String, font_size:int=30, outline_size:int=8) -> void:
 	pop_text.set_text(text)
+	pop_text.set_indexed("theme_override_font_sizes/normal_font_size", font_size)
+	pop_text.set_indexed("theme_override_constants/outline_size", outline_size)
+
+func set_pop_time(time:float) -> void:
+	#golden value=600-1300(1)^2=-700
+	#so, x=-1300/t^2
+	grav_accel = 1300/pow(time,2)

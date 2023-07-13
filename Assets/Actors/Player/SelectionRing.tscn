@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5qsjki4p0oa2"]
+
+[ext_resource type="Texture2D" uid="uid://crxeudcu2fsmy" path="res://Assets/Actors/Player/Spello/SpelloSelection.PNG" id="1_0rfs7"]
+[ext_resource type="Script" path="res://Assets/Actors/Player/SelectionRing.gd" id="2_qec58"]
+
+[node name="SelectionRing" type="Sprite2D"]
+z_index = 1
+texture = ExtResource("1_0rfs7")
+script = ExtResource("2_qec58")

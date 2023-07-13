@@ -6,15 +6,21 @@
 script = ExtResource("1_kgmu1")
 
 [node name="PopText" type="RichTextLabel" parent="."]
+clip_contents = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -159.5
-offset_top = -47.5
-offset_right = 159.5
-offset_bottom = 47.5
+offset_left = -472.0
+offset_top = -47.0
+offset_right = 472.0
+offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.972549, 0.972549, 0.972549, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
+fit_content = true
+scroll_active = false
