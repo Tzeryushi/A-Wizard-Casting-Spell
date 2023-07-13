@@ -19,9 +19,9 @@ script = ExtResource("3_e8kde")
 position = Vector2(1099, 434)
 
 [node name="GreenWizard" parent="." instance=ExtResource("6_cayom")]
-position = Vector2(110, 677)
+position = Vector2(1544, 300)
 
 [node name="HUD" parent="." instance=ExtResource("7_rxkmq")]
 
 [node name="GreenWizard2" parent="." instance=ExtResource("6_cayom")]
-position = Vector2(1849, 438)
+position = Vector2(1612, 395)

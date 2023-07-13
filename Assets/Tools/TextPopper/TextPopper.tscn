@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1r5a87461uu3"]
+
+[ext_resource type="Script" path="res://Assets/Tools/TextPopper/TextPopper.gd" id="1_ws08h"]
+[ext_resource type="PackedScene" uid="uid://b0cdvcqt8u3yy" path="res://Assets/Tools/TextPopper/TextPop.tscn" id="2_mv2fr"]
+
+[node name="TextPopper" type="Node2D"]
+script = ExtResource("1_ws08h")
+pop_block = ExtResource("2_mv2fr")

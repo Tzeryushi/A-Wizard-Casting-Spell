@@ -1,3 +1,4 @@
+GPUParticles2D
 TextureRect
 CollisionShape2D
 Area2D
@@ -14,7 +15,6 @@ AudioStreamPlayer
 AudioStreamPlayer2D
 Node
 VBoxContainer
-GPUParticles2D
 TileMap
 Camera2D
 CenterContainer

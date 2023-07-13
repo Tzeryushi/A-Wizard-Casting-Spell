@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cb3fcw70u4e1o"]
+[gd_scene load_steps=31 format=3 uid="uid://cb3fcw70u4e1o"]
 
 [ext_resource type="Script" path="res://Assets/Actors/Player/Player.gd" id="1_yuspw"]
 [ext_resource type="Resource" uid="uid://bge7uiekmtoky" path="res://Assets/Spells/SpellList.tres" id="2_f8kle"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://ciqdnl3fmpft4" path="res://Assets/Actors/Player/Spello/SpelloSpore.PNG" id="16_6pi52"]
 [ext_resource type="Material" uid="uid://bhhs27c3wxye3" path="res://Art/Particles/PlayerSparkle.tres" id="16_glrw5"]
 [ext_resource type="Material" uid="uid://bd7haj6qahdlo" path="res://Assets/Actors/Player/PlayerSpores.tres" id="18_13feu"]
+[ext_resource type="Material" uid="uid://7gdjg41bxr8c" path="res://Art/Particles/SporeTrail.tres" id="21_qrw3o"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1xjfw"]
 animations = [{
@@ -69,7 +70,7 @@ radius = 28.2843
 radius = 33.2415
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wm0y4"]
-radius = 43.1045
+radius = 9.05539
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vcaqb"]
 animations = [{
@@ -187,14 +188,24 @@ z_index = -1
 amount = 12
 process_material = ExtResource("16_glrw5")
 texture = ExtResource("14_lesmq")
+fixed_fps = 60
 visibility_rect = Rect2(-1000, -1000, 2000, 2000)
 
 [node name="SporeParticles" type="GPUParticles2D" parent="."]
 z_index = -1
 process_material = ExtResource("18_13feu")
 texture = ExtResource("16_6pi52")
+fixed_fps = 60
 visibility_rect = Rect2(-1000, -1000, 2000, 2000)
 local_coords = true
+
+[node name="SporeTrail" type="GPUParticles2D" parent="."]
+z_index = -1
+process_material = ExtResource("21_qrw3o")
+texture = ExtResource("16_6pi52")
+lifetime = 0.7
+fixed_fps = 60
+visibility_rect = Rect2(-1000, -1000, 2000, 2000)
 
 [node name="Camera" type="Camera2D" parent="."]
 

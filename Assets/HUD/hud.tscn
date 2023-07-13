@@ -1,15 +1,40 @@
-[gd_scene load_steps=12 format=3 uid="uid://dmyn7qvgjvqhg"]
+[gd_scene load_steps=16 format=3 uid="uid://dmyn7qvgjvqhg"]
 
 [ext_resource type="Script" path="res://Assets/HUD/SpellHolder.gd" id="1_v2pjl"]
 [ext_resource type="Script" path="res://Assets/HUD/HUD.gd" id="1_xyp78"]
 [ext_resource type="FontFile" uid="uid://b80jfixxknyn3" path="res://Art/Fonts/SS Pretzel Bold.otf" id="2_m0tpc"]
 [ext_resource type="Resource" uid="uid://bkeyu2gl4l2r2" path="res://Assets/HUD/DeadWizardStorage/WizardImageRef.tres" id="3_e4q3i"]
 [ext_resource type="Texture2D" uid="uid://cxgyuq0pr02fk" path="res://Assets/HUD/DeadWizardStorage/SpellBox1.PNG" id="4_ie1aj"]
+[ext_resource type="Texture2D" uid="uid://ciqdnl3fmpft4" path="res://Assets/Actors/Player/Spello/SpelloSpore.PNG" id="4_qp7gn"]
 [ext_resource type="PackedScene" uid="uid://bdnm0yed5p1hk" path="res://Assets/HUD/OtherElements/Heart.tscn" id="4_utwvg"]
 [ext_resource type="Texture2D" uid="uid://d0yqbt2rvlkko" path="res://Assets/HUD/DeadWizardStorage/SpellBox2.PNG" id="5_lqqfk"]
 [ext_resource type="Texture2D" uid="uid://r5c7augmw26i" path="res://Assets/HUD/DeadWizardStorage/SpellBox3.PNG" id="6_abul1"]
 [ext_resource type="Script" path="res://Assets/HUD/HeartHolder.gd" id="6_fflw6"]
 [ext_resource type="PackedScene" uid="uid://c0s2sukkibcgn" path="res://Assets/HUD/OtherElements/HeartBar.tscn" id="10_mvyw5"]
+
+[sub_resource type="Curve" id="Curve_ommc8"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.502024, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_vdqrk"]
+curve = SubResource("Curve_ommc8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ab0fx"]
+emission_shape = 3
+emission_box_extents = Vector3(195, 50, 1)
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 4.0
+angular_velocity_min = -91.27
+angular_velocity_max = 81.13
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = -1.41
+linear_accel_max = 8.45
+scale_curve = SubResource("CurveTexture_vdqrk")
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_bl042"]
 frames = 3
@@ -44,6 +69,13 @@ grow_vertical = 0
 mouse_filter = 2
 script = ExtResource("1_v2pjl")
 wizard_refs = ExtResource("3_e4q3i")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Full HUD/SpellHolder"]
+position = Vector2(224, 8)
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_ab0fx")
+texture = ExtResource("4_qp7gn")
+visibility_rect = Rect2(-2000, -2000, 4000, 4000)
 
 [node name="Storage" type="TextureRect" parent="Full HUD/SpellHolder"]
 layout_mode = 2

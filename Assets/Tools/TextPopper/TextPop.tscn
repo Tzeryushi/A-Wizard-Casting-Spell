@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://b0cdvcqt8u3yy"]
 
-[ext_resource type="Script" path="res://Assets/TextPop.gd" id="1_kgmu1"]
+[ext_resource type="Script" path="res://Assets/Tools/TextPopper/TextPop.gd" id="1_ouee7"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_kgmu1")
+script = ExtResource("1_ouee7")
 
 [node name="PopText" type="RichTextLabel" parent="."]
 clip_contents = false

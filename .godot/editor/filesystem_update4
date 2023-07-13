@@ -24,3 +24,15 @@ res://Scenes/Playground.tscn
 res://Assets/HUD/DeadWizardStorage/DeadGreenWizard.tscn
 res://Assets/HUD/DeadWizardStorage/DeadBlueWizard.tscn
 res://Assets/HUD/OtherElements/HeartBar.tscn
+res://Assets/Tools/TextPopper/TextPop.tscn
+res://Assets/Tools/TextPopper/TextPopper.tscn
+res://Art/Particles/SporeTrail.tres
+res://Assets/Spells/BaseSpell.tscn
+res://Assets/Actors/Player/Player.gd
+res://Assets/Spells/EnemySpells/BlueSpell.tscn
+res://Assets/Spells/EnemySpells/GreenSpell.tscn
+res://Assets/Spells/EnemySpells/RedSpell.tscn
+res://Art/Particles/RedBlast.tscn
+res://Art/Particles/GreenBlast.tscn
+res://Art/Particles/BlueBlast.tscn
+res://Assets/Actors/Player/Mouse.gd

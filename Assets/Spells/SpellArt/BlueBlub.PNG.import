@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjj033bff1s8e"
-path="res://.godot/imported/RedBlub.PNG-02c872b0e3104abce836e3032f48ce40.ctex"
+uid="uid://karqynra7m80"
+path="res://.godot/imported/BlueBlub.PNG-8a10daf88587a96d0fd12f1d7501d424.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/wizardingspellart/RedBlub.PNG"
-dest_files=["res://.godot/imported/RedBlub.PNG-02c872b0e3104abce836e3032f48ce40.ctex"]
+source_file="res://Assets/Spells/SpellArt/BlueBlub.PNG"
+dest_files=["res://.godot/imported/BlueBlub.PNG-8a10daf88587a96d0fd12f1d7501d424.ctex"]
 
 [params]
 

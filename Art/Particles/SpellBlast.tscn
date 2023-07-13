@@ -14,3 +14,4 @@ process_material = ExtResource("2_ij3sx")
 texture = ExtResource("3_yt8qh")
 one_shot = true
 explosiveness = 1.0
+fixed_fps = 60

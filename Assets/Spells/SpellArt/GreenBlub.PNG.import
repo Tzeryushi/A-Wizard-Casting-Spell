@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hf10tlu67csw"
-path="res://.godot/imported/GreenBlub.PNG-b606003fd0d40513fc19ab3ef0241854.ctex"
+path="res://.godot/imported/GreenBlub.PNG-2925daabf5a2353a390519a879e0cf74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/wizardingspellart/GreenBlub.PNG"
-dest_files=["res://.godot/imported/GreenBlub.PNG-b606003fd0d40513fc19ab3ef0241854.ctex"]
+source_file="res://Assets/Spells/SpellArt/GreenBlub.PNG"
+dest_files=["res://.godot/imported/GreenBlub.PNG-2925daabf5a2353a390519a879e0cf74.ctex"]
 
 [params]
 

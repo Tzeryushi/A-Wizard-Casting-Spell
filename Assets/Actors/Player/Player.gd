@@ -44,10 +44,10 @@ func _process_frame_setup() -> void:
 	mouse.unglow_enemies()
 	
 	#add arrows
-	for enemy in get_tree().get_nodes_in_group("Enemy"):
-		if is_instance_valid(enemy):
+	for scene_enemy in get_tree().get_nodes_in_group("Enemy"):
+		if is_instance_valid(scene_enemy):
 			var new_arrow = _enemy_arrow_scene.instantiate()
-			new_arrow.set_up_arrow(enemy)
+			new_arrow.set_up_arrow(scene_enemy)
 			arrows.append(new_arrow)
 			add_child(new_arrow)
 	

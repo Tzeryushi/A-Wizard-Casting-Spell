@@ -23,7 +23,7 @@ SceneManager="*res://Scenes/SceneManager.tscn"
 Shake="*res://Assets/Shake.gd"
 AudioManager="*res://Assets/AudioManager.gd"
 SoundtrackManager="*res://Assets/SoundtrackManager.tscn"
-TextPopper="*res://Assets/TextPopper.tscn"
+TextPopper="*res://Assets/Tools/TextPopper/TextPopper.tscn"
 
 [display]
 

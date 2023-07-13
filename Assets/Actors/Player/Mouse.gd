@@ -31,9 +31,9 @@ func _on_mouse_box_area_exited(area):
 	if parent_node is Enemy and parent_node.is_in_group("Enemy"):
 		if parent_node == valid_flip_array.back():
 			remove_selector()
+			if valid_flip_array.size() != 1:
+				set_selector(valid_flip_array.back())
 		valid_flip_array.erase(parent_node)
-		if !valid_flip_array.is_empty():
-			set_selector(valid_flip_array.back())
 
 func can_flip() -> bool:
 	if !valid_flip_array.is_empty():

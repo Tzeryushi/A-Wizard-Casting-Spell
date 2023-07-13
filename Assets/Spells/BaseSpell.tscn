@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://brec14f0yf1mg"]
+[gd_scene load_steps=8 format=3 uid="uid://brec14f0yf1mg"]
 
 [ext_resource type="Script" path="res://Assets/Spells/BaseSpell.gd" id="1_dt5t7"]
 [ext_resource type="Texture2D" uid="uid://yy6nhojaws0q" path="res://Assets/Spells/SpellArt/GreenSpell.PNG" id="2_7n3w5"]
 [ext_resource type="PackedScene" uid="uid://b0kiolttymo7q" path="res://Art/Particles/SpellBlast.tscn" id="2_gdk0b"]
 [ext_resource type="Script" path="res://Assets/Spells/Trail.gd" id="2_ppqx6"]
+[ext_resource type="Material" uid="uid://7gdjg41bxr8c" path="res://Art/Particles/SporeTrail.tres" id="5_013j2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uo8hf"]
 radius = 24.0208
@@ -33,6 +34,13 @@ width_curve = SubResource("Curve_xd0uq")
 default_color = Color(1, 1, 1, 0.737255)
 script = ExtResource("2_ppqx6")
 trail_length = 30
+
+[node name="ParticleTrail" type="GPUParticles2D" parent="."]
+visible = false
+z_index = -1
+process_material = ExtResource("5_013j2")
+lifetime = 0.6
+fixed_fps = 60
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
