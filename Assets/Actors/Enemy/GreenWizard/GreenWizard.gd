@@ -17,7 +17,7 @@ func shoot() -> void:
 		new_spell.set_direction(look_rotation.normalized())
 		get_parent().add_child(new_spell)
 		can_fire_spell = false
-		restriction_timer.start()
+		start_spell_timers()
 		animations.play("attack")
 		await animations.animation_finished
 		if animations.animation == "attack":
@@ -29,11 +29,11 @@ func _physics_process(_delta) -> void:
 	if player_ref:
 		line_of_sight.look_at(player_ref.global_position)
 		line_of_follow.look_at(player_ref.global_position)
-		player_seen = is_player_seen()
+		check_player_seen()
 		if !player_following:
 			player_following = player_seen
 		else:
-			player_following = should_follow()
+			check_should_follow()
 		if player_seen or player_following:
 			#print((player_ref.global_position-global_position).length())
 			if (player_ref.global_position-global_position).length() > _distance_to_keep:

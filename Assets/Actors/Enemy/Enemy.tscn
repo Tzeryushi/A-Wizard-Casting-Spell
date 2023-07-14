@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://do862rnkiybck"]
+[gd_scene load_steps=16 format=3 uid="uid://do862rnkiybck"]
 
 [ext_resource type="Script" path="res://Assets/Actors/Enemy/Enemy.gd" id="1_sk3ix"]
 [ext_resource type="Texture2D" uid="uid://dewtq636216g7" path="res://Art/tempblock_fallthrough.png" id="2_75ns1"]
@@ -8,6 +8,8 @@
 [ext_resource type="Shader" path="res://Art/Shaders/EnemyGlow.gdshader" id="6_pchv7"]
 [ext_resource type="Texture2D" uid="uid://bco7v1gf2puv5" path="res://Art/tempwall.png" id="7_lyw1e"]
 [ext_resource type="Texture2D" uid="uid://b7jn0k8jxpfef" path="res://Art/corona.png" id="7_qahn7"]
+[ext_resource type="Script" path="res://Assets/Actors/Enemy/SpellTimerDisplay.gd" id="9_agc05"]
+[ext_resource type="Texture2D" uid="uid://b83vtmj5ntff7" path="res://Art/GUI/CleanTimer.png" id="10_1n2kh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e83ly"]
 animations = [{
@@ -82,11 +84,14 @@ script = ExtResource("3_7uipb")
 
 [node name="SightLine" type="RayCast2D" parent="."]
 target_position = Vector2(600, 0)
-collision_mask = 3
+collision_mask = 259
+collide_with_areas = true
 
 [node name="FollowLine" type="RayCast2D" parent="."]
+visible = false
 target_position = Vector2(900, 0)
-collision_mask = 2
+collision_mask = 258
+collide_with_areas = true
 
 [node name="Center" type="Node2D" parent="."]
 
@@ -106,4 +111,22 @@ material = SubResource("ShaderMaterial_t06y1")
 scale = Vector2(2.46875, 2.46875)
 texture = ExtResource("7_lyw1e")
 
+[node name="SpellTimerDisplay" type="Node2D" parent="."]
+script = ExtResource("9_agc05")
+
+[node name="Timer" type="Timer" parent="SpellTimerDisplay"]
+one_shot = true
+
+[node name="ProgressWheel" type="TextureProgressBar" parent="SpellTimerDisplay"]
+offset_left = 30.0
+offset_top = -51.0
+offset_right = 100.0
+offset_bottom = 19.0
+scale = Vector2(0.3, 0.3)
+max_value = 1000.0
+rounded = true
+fill_mode = 4
+texture_progress = ExtResource("10_1n2kh")
+
 [connection signal="timeout" from="SpellRestrictionTimer" to="." method="_on_spell_restriction_timer_timeout"]
+[connection signal="timeout" from="SpellTimerDisplay/Timer" to="SpellTimerDisplay" method="_on_timer_timeout"]

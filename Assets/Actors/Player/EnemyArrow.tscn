@@ -10,6 +10,7 @@ script = ExtResource("1_csap0")
 texture = ExtResource("2_h7olu")
 
 [node name="RayCast" type="RayCast2D" parent="."]
+visible = false
 target_position = Vector2(8000, 0)
 collision_mask = 128
 collide_with_areas = true

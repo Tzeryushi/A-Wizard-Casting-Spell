@@ -16,6 +16,7 @@ extends Actor
 @onready var restriction_timer := $SpellRestrictionTimer
 @onready var spell_spawn_location := $SpellSpawnLocation
 @onready var glow_sprite := $GlowSprite
+@onready var spell_timer_display := $SpellTimerDisplay
 
 var player_ref : Player = null
 var player_seen : bool = false
@@ -44,11 +45,13 @@ func _physics_process(_delta) -> void:
 	if player_ref:
 		line_of_sight.look_at(player_ref.global_position)
 		line_of_follow.look_at(player_ref.global_position)
-		player_seen = is_player_seen()
+		
+		#check if 
+		check_player_seen()
 		if !player_following:
 			player_following = player_seen
 		else:
-			player_following = should_follow()
+			check_should_follow()
 		if player_seen or player_following:
 			if (player_ref.global_position-global_position).length() > _distance_to_keep:
 				set_movement_target(player_ref.global_position)
@@ -86,7 +89,7 @@ func shoot() -> void:
 		new_spell.set_direction(look_rotation.normalized())
 		get_parent().add_child(new_spell)
 		can_fire_spell = false
-		restriction_timer.start()
+		start_spell_timers()
 	return
 
 func spell_collision(spell:BaseSpell) -> void:
@@ -105,17 +108,25 @@ func leave_body(impulse:Vector2) -> void:
 	new_body.apply_impulse(impulse)
 	get_parent().call_deferred("add_child", new_body)
 
-func is_player_seen() -> bool:
+func check_player_seen() -> void:
+	var was_seen = player_seen
 	var collider = line_of_sight.get_collider()
-	if collider and collider.is_in_group("Player"):
-		return true
-	return false
+	if collider and (collider.is_in_group("Player") or collider.is_in_group("PlayerSight")):
+		player_seen = true
+	else:
+		player_seen = false
+	if !was_seen and player_seen:
+		TextPopper.jolt_text("[center][color=red]!!", self, 50.0, Vector2.ZERO, 1.0, 1.0, 40, 8)
 
-func should_follow() -> bool:
+func check_should_follow() -> void:
+	var was_following = player_following
 	var collider = line_of_follow.get_collider()
-	if collider and collider.is_in_group("Player"):
-		return true
-	return false
+	if collider and (collider.is_in_group("Player") or collider.is_in_group("PlayerSight")):
+		player_following = true
+	else:
+		player_following = false
+	if was_following and !player_following:
+		TextPopper.jolt_text("[center][color=purple]??", self, 50.0)
 
 func destruct() -> void:
 	destroyed.emit()
@@ -134,6 +145,10 @@ func unglow() -> void:
 func is_flippable() -> bool:
 	
 	return true
+
+func start_spell_timers() -> void:
+	restriction_timer.start()
+	spell_timer_display.start_spell_timer(restriction_timer.wait_time)
 
 func _on_spell_restriction_timer_timeout():
 	can_fire_spell = true

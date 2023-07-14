@@ -195,6 +195,9 @@ func can_pickup_body() -> bool:
 		return false
 	return true
 
+func pickup_fail() -> void:
+	TextPopper.jolt_text("[center][color=gray]\"Spells\" Full!", self, 50.0, )
+
 func pickup_body(body:BaseBody) -> void:
 	AudioManager.play("res://Art/SFX/spell1.wav")
 	spell_stack.append(body.get_body())

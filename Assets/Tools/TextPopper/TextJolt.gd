@@ -18,8 +18,8 @@ func jolt(text:String, distance:float=50.0, time:float=1.0, font_size:int=30, ou
 	if !is_instance_valid(self):
 		return
 	jolt_tween = get_tree().create_tween()
-	jolt_tween.tween_property(self, "position", new_pos, time/2).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
-	await jolt_tween.tween_property(jolt_text, "modulate:a", 0.0, time/2).set_ease(Tween.EASE_OUT).finished
+	jolt_tween.tween_property(self, "position", new_pos, 0.5).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+	await jolt_tween.tween_property(jolt_text, "modulate:a", 0.0, min(time-0.5, 0.1)).set_ease(Tween.EASE_OUT).finished
 	finished.emit()
 	destroy()
 

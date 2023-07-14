@@ -18,3 +18,5 @@ func _on_pickup_hitbox_body_entered(_body):
 		if _body.can_pickup_body():
 			_body.pickup_body(self)
 			destruct()
+		else:
+			_body.pickup_fail()

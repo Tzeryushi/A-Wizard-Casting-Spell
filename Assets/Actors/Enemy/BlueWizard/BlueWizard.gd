@@ -5,11 +5,11 @@ func _physics_process(_delta) -> void:
 	if player_ref:
 		line_of_sight.look_at(player_ref.global_position)
 		line_of_follow.look_at(player_ref.global_position)
-		player_seen = is_player_seen()
+		check_player_seen()
 		if !player_following:
 			player_following = player_seen
 		else:
-			player_following = should_follow()
+			check_should_follow()
 		if player_seen or player_following:
 			if (player_ref.global_position-global_position).length() > _distance_to_keep:
 				set_movement_target(player_ref.global_position)

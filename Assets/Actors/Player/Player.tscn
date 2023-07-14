@@ -69,7 +69,7 @@ animations = [{
 radius = 28.2843
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0bjwr"]
-radius = 33.2415
+radius = 30.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wm0y4"]
 radius = 9.05539
@@ -134,11 +134,11 @@ autoplay = "idle"
 [node name="PhysicsCollider" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_oy5j2")
 
-[node name="Hurtbox" type="Area2D" parent="."]
-collision_layer = 0
+[node name="SightField" type="Area2D" parent="." groups=["PlayerSight"]]
+collision_layer = 256
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SightField" groups=["PlayerSight"]]
 shape = SubResource("CircleShape2D_0bjwr")
 
 [node name="StateManager" type="Node" parent="."]

@@ -65,5 +65,8 @@ sprite_frames = SubResource("SpriteFrames_vu6bn")
 animation = &"hurt"
 autoplay = "idle"
 
+[node name="FollowLine" parent="." index="6"]
+target_position = Vector2(650, 0)
+
 [node name="GlowSprite" parent="." index="11"]
 material = SubResource("ShaderMaterial_35cfp")
