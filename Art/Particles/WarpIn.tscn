@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwcmlatcm7bdq"]
+
+[ext_resource type="Script" path="res://Art/Particles/WarpIn.gd" id="1_2een8"]
+[ext_resource type="Texture2D" uid="uid://bf3g1qfd0frka" path="res://Assets/Actors/Player/Spello/WarpParticle.PNG" id="1_a1qll"]
+[ext_resource type="Material" uid="uid://c5clsrur8qngl" path="res://Art/Particles/WarpIn.tres" id="2_8616x"]
+
+[node name="WarpIn" type="Node2D"]
+script = ExtResource("1_2een8")
+
+[node name="Warp" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 10
+process_material = ExtResource("2_8616x")
+texture = ExtResource("1_a1qll")
+one_shot = true
+speed_scale = 10.0
+explosiveness = 0.94
+fixed_fps = 120
+visibility_rect = Rect2(-2000, -2000, 4000, 4000)

@@ -1,0 +1,30 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=5 format=3 uid="uid://4o25x1obt8do"]
+
+[sub_resource type="Curve" id="Curve_36kvk"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0, 200), 0.0, 0.0, 0, 0, Vector2(1, 9.25266), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_pcgn2"]
+curve = SubResource("Curve_36kvk")
+
+[sub_resource type="Curve" id="Curve_syons"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.052506, 1), 0.0, 0.0, 0, 0, Vector2(0.699284, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_nhgym"]
+curve = SubResource("Curve_syons")
+
+[resource]
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 228.08
+initial_velocity_max = 302.63
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+radial_accel_min = -2.0
+radial_accel_max = -2.0
+radial_accel_curve = SubResource("CurveTexture_pcgn2")
+scale_curve = SubResource("CurveTexture_nhgym")

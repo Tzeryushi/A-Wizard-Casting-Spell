@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bf3g1qfd0frka"
-path="res://.godot/imported/WarpParticle.PNG-7624527447297608a336260c40baf20a.ctex"
+path="res://.godot/imported/WarpParticle.PNG-785c10d9874c01ebc62e3b00a73f2323.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/wizardingspellart/WarpParticle.PNG"
-dest_files=["res://.godot/imported/WarpParticle.PNG-7624527447297608a336260c40baf20a.ctex"]
+source_file="res://Assets/Actors/Player/Spello/WarpParticle.PNG"
+dest_files=["res://.godot/imported/WarpParticle.PNG-785c10d9874c01ebc62e3b00a73f2323.ctex"]
 
 [params]
 

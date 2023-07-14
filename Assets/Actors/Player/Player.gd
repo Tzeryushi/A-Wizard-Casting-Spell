@@ -3,6 +3,8 @@ extends Actor
 
 @export var _spell_list : SpellResource
 @export var _enemy_arrow_scene : PackedScene
+@export var _warp_particle_scene: PackedScene
+@export var _warp_out_particle_scene: PackedScene
 @export var flip_time = 0.2
 @export var _spell_restriction_time : float = 0.3
 @export var _max_spells : int = 4
@@ -97,6 +99,8 @@ func shoot() -> void:
 		animations.play("shooting")
 		await animations.animation_finished
 		animations.play("idle")
+	elif spell_stack.is_empty():
+		TextPopper.jolt_text("[center][color=gray]No \"Spells\"", self, 50.0, )
 	return
 
 func player_death() -> void:
@@ -163,6 +167,11 @@ func flip() -> void:
 	scale_in_and_out(flip_time)	#smooth shrink
 	enemy_ref.scale_in_and_out(flip_time)
 	
+	var warp_particle : ParticleAnimation = _warp_particle_scene.instantiate()
+	get_tree().current_scene.add_child(warp_particle)
+	warp_particle.global_position = global_position
+	warp_particle.play()
+	
 	AudioManager.play("res://Art/SFX/spell2.wav")
 	
 	await get_tree().create_timer(flip_time/2).timeout
@@ -171,6 +180,11 @@ func flip() -> void:
 	global_position = current_enemy_position
 	enemy_ref.global_position = current_position
 	mouse.force_update_position()
+	
+	var warp_out_particle : ParticleAnimation = _warp_out_particle_scene.instantiate()
+	get_tree().current_scene.add_child(warp_out_particle)
+	warp_out_particle.global_position = global_position
+	warp_out_particle.play()
 	
 	await get_tree().create_timer(flip_time/4).timeout
 	is_invincible = false

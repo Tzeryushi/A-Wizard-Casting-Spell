@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cb3fcw70u4e1o"]
+[gd_scene load_steps=33 format=3 uid="uid://cb3fcw70u4e1o"]
 
 [ext_resource type="Script" path="res://Assets/Actors/Player/Player.gd" id="1_yuspw"]
 [ext_resource type="Resource" uid="uid://bge7uiekmtoky" path="res://Assets/Spells/SpellList.tres" id="2_f8kle"]
@@ -6,8 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://t0tvm0bd6vn3" path="res://Assets/Actors/Player/EnemyArrow.tscn" id="3_j7uh3"]
 [ext_resource type="Texture2D" uid="uid://cvsgnhgt0wp4m" path="res://Assets/Actors/Player/Spello/Spello.PNG" id="3_jrpvt"]
 [ext_resource type="Script" path="res://Assets/Actors/Player/Player States/PlayerMoveState.gd" id="4_cvw7v"]
+[ext_resource type="PackedScene" uid="uid://bwcmlatcm7bdq" path="res://Art/Particles/WarpIn.tscn" id="4_fj8b0"]
 [ext_resource type="Script" path="res://Assets/Actors/StateManager.gd" id="4_ipnlw"]
 [ext_resource type="Texture2D" uid="uid://d05kqaumf2ehi" path="res://Assets/Actors/Player/Spello/Spello2.PNG" id="4_xbu21"]
+[ext_resource type="PackedScene" uid="uid://pxy508pkm5hi" path="res://Art/Particles/WarpOut.tscn" id="5_a5cxi"]
 [ext_resource type="Texture2D" uid="uid://ej7iorxxqmwi" path="res://Assets/Actors/Player/Spello/Spello3.PNG" id="5_lar7l"]
 [ext_resource type="Script" path="res://Assets/Actors/Player/Player States/PlayerIdleState.gd" id="5_laydl"]
 [ext_resource type="Texture2D" uid="uid://bgpc7yvj3yqei" path="res://Assets/Actors/Player/Spello/Spello4.PNG" id="6_f5sob"]
@@ -116,6 +118,8 @@ collision_mask = 69
 script = ExtResource("1_yuspw")
 _spell_list = ExtResource("2_f8kle")
 _enemy_arrow_scene = ExtResource("3_j7uh3")
+_warp_particle_scene = ExtResource("4_fj8b0")
+_warp_out_particle_scene = ExtResource("5_a5cxi")
 _max_spells = 3
 _ouchie_index = Array[String](["Oof!", "Ouchie!", "Ugh!", "Oofie!", "No fair!", "Guh!", "Dagnabbit!", "Phoo!", "Shucks!", "Jebus!", "Woah!", "Ack!", "That's no good!", "Skill issue!", "Arrrgh!", "Oofers!", "Oh no!"])
 animation_node = NodePath("Animations")

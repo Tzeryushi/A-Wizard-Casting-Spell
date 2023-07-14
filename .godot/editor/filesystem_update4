@@ -36,3 +36,11 @@ res://Art/Particles/RedBlast.tscn
 res://Art/Particles/GreenBlast.tscn
 res://Art/Particles/BlueBlast.tscn
 res://Assets/Actors/Player/Mouse.gd
+res://Art/Particles/WarpIn.tscn
+res://Art/Particles/WarpIn.gd
+res://Art/Particles/WarpOut.tscn
+res://Art/Particles/WarpOut.gd
+res://Art/Particles/WarpOut.tres
+res://Assets/Tools/TextPopper/TextPopper.gd
+res://Assets/Tools/TextPopper/TextJolt.tscn
+res://Assets/Tools/TextPopper/TextJolt.gd
