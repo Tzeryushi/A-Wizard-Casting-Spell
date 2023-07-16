@@ -34,6 +34,7 @@ signal player_died
 signal max_spells
 
 func _ready() -> void:
+	Input.set_use_accumulated_input(false)
 	if Engine.time_scale != 1.0:
 		Engine.time_scale = 1.0
 	state_manager.init_state(self)
@@ -55,18 +56,19 @@ func _process_frame_setup() -> void:
 	
 func _unhandled_input(_event) -> void:
 	state_manager.input(_event)
-	if Input.is_action_just_pressed("shoot"):
-		shoot()
-	if Input.is_action_just_pressed("flip"):
-		flip_slow_time()
-	elif Input.is_action_just_released("flip") and is_slowing_time == true:
-		flip_unslow_time()
+	
 
 func _process(_delta):
 	state_manager.process(_delta)
 	flip_timer = max(flip_timer-_delta, 0.0)
 	#handle sprite rotations here?
 	sprite_rotation()
+	if Input.is_action_just_pressed("shoot"):
+		shoot()
+	if Input.is_action_just_pressed("flip"):
+		flip_slow_time()
+	elif Input.is_action_just_released("flip") and is_slowing_time == true:
+		flip_unslow_time()
 
 func _physics_process(_delta):
 	state_manager.physics_process(_delta)
@@ -101,6 +103,8 @@ func shoot() -> void:
 		animations.play("idle")
 	elif spell_stack.is_empty():
 		TextPopper.jolt_text("[center][color=gray]No \"Spells\"", self, 50.0, )
+	elif !can_fire_spell:
+		TextPopper.jolt_text("[center][color=gray]Fire limited by timer?", self, 50.0)
 	return
 
 func player_death() -> void:
@@ -196,7 +200,7 @@ func can_pickup_body() -> bool:
 	return true
 
 func pickup_fail() -> void:
-	TextPopper.jolt_text("[center][color=gray]\"Spells\" Full!", self, 50.0, )
+	TextPopper.jolt_text("[center][color=gray]\"Spells\" Full!", self, 50.0)
 
 func pickup_body(body:BaseBody) -> void:
 	AudioManager.play("res://Art/SFX/spell1.wav")

@@ -34,3 +34,22 @@ res://Assets/Actors/Player/EnemyArrow.tscn
 res://Assets/Actors/Player/Player.gd
 res://Assets/Bodies/BaseBody.tscn
 res://Assets/Bodies/BaseBody.gd
+res://Assets/SoundtrackManager.tscn
+res://Assets/SoundtrackManager.gd
+res://Assets/Bodies/GreenBody.tscn
+res://Scenes/Levels/Level6.tscn
+res://Assets/Actors/Enemy/BlueWizard/SuperBlueWizard.tscn
+res://Assets/Actors/Player/Player States/PlayerState.gd
+res://Assets/Actors/Enemy/RedWizard/RedWizard.tscn
+res://Assets/Bodies/BodyResources/RedBody.tres
+res://Assets/HUD/DeadWizardStorage/DeadRedWizard.tscn
+res://Assets/HUD/DeadWizardStorage/WizardImageRef.tres
+res://Assets/Spells/RedWizardSpell.tscn
+res://Assets/Bodies/BlueBody.tscn
+res://Assets/Bodies/RedBody.tscn
+res://Assets/Spells/GreenWizardSpell.tscn
+res://Assets/Spells/BlueWizardSpell.tscn
+res://Assets/Spells/SpellList.tres
+res://Assets/Spells/EnemySpells/RedSpell.tscn
+res://Assets/Spells/EnemySpells/RedSpell.gd
+res://Assets/Spells/EnemySpells/BlueSpell.tscn

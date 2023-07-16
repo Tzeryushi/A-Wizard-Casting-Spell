@@ -1,10 +1,10 @@
+TextureRect
 TextureProgressBar
 ProgressBar
 Timer
 Node2D
 RichTextLabel
 GPUParticles2D
-TextureRect
 CollisionShape2D
 Area2D
 RayCast2D
@@ -30,4 +30,3 @@ NavigationAgent2D
 RigidBody2D
 AnimatedSprite2D
 Line2D
-PlayerFlipState

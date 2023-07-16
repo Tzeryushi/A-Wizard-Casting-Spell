@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://xca31tb724id"]
+[gd_scene load_steps=6 format=3 uid="uid://xca31tb724id"]
 
 [ext_resource type="PackedScene" uid="uid://brec14f0yf1mg" path="res://Assets/Spells/BaseSpell.tscn" id="1_j2yft"]
 [ext_resource type="Texture2D" uid="uid://crqulkb0ub0lj" path="res://Assets/Spells/SpellArt/RedSpell.PNG" id="2_av0gw"]
 [ext_resource type="PackedScene" uid="uid://cll3qdcohxquh" path="res://Art/Particles/RedBlast.tscn" id="2_e5qmw"]
+[ext_resource type="Script" path="res://Assets/Spells/EnemySpells/RedSpell.gd" id="2_vshkb"]
 [ext_resource type="Texture2D" uid="uid://cjj033bff1s8e" path="res://Assets/Spells/SpellArt/RedBlub.PNG" id="4_nf4jg"]
 
 [node name="RedSpell" instance=ExtResource("1_j2yft")]
+script = ExtResource("2_vshkb")
+spell_split_time = 0.7
+no_hit_detection_time = 0.1
 blast_scene = ExtResource("2_e5qmw")
 
 [node name="Sprite" parent="." index="0"]

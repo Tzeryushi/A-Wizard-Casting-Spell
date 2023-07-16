@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnjeyvtlh3xf3"]
+
+[ext_resource type="Texture2D" uid="uid://cs28wluuk31ee" path="res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizardMissile.PNG" id="1_8aty1"]
+
+[node name="DeadRedWizard" type="TextureRect"]
+texture = ExtResource("1_8aty1")

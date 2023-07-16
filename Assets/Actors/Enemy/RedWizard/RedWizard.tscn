@@ -1,0 +1,102 @@
+[gd_scene load_steps=16 format=3 uid="uid://cabldqhgo5kpc"]
+
+[ext_resource type="PackedScene" uid="uid://c5c43qfqmlofk" path="res://Assets/Actors/Enemy/BlueWizard/BlueWizard.tscn" id="1_ra6eq"]
+[ext_resource type="Texture2D" uid="uid://bikbhdc84ehxx" path="res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0003.png" id="2_jew55"]
+[ext_resource type="PackedScene" uid="uid://xca31tb724id" path="res://Assets/Spells/EnemySpells/RedSpell.tscn" id="2_l8up2"]
+[ext_resource type="PackedScene" uid="uid://bhyiok7y6l5tx" path="res://Assets/Bodies/RedBody.tscn" id="3_rxluk"]
+[ext_resource type="Texture2D" uid="uid://dfn3gxg5a1f6w" path="res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0004.png" id="3_ua1t8"]
+[ext_resource type="Texture2D" uid="uid://crwol6wqvgtba" path="res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0001.png" id="4_gysnh"]
+[ext_resource type="Texture2D" uid="uid://dgi6cdnmvp5ph" path="res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0007.png" id="5_m6v45"]
+[ext_resource type="Texture2D" uid="uid://bynotcux05xsu" path="res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0006.png" id="6_a1yt3"]
+[ext_resource type="Texture2D" uid="uid://be00jqen1o2cu" path="res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0008.png" id="7_cgf3q"]
+[ext_resource type="Texture2D" uid="uid://byjgy7dopy3kk" path="res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0009.png" id="8_lwsb1"]
+[ext_resource type="Texture2D" uid="uid://b4ays5wlvxygi" path="res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0002.png" id="9_wg7qe"]
+[ext_resource type="Shader" path="res://Art/Shaders/EnemyGlow.gdshader" id="10_csbw2"]
+[ext_resource type="Texture2D" uid="uid://b7jn0k8jxpfef" path="res://Art/corona.png" id="11_keoes"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ssxwi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jew55")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ua1t8")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_gysnh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_m6v45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_a1yt3")
+}],
+"loop": true,
+"name": &"moving",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_cgf3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lwsb1")
+}],
+"loop": true,
+"name": &"moving_windup",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_wg7qe")
+}],
+"loop": true,
+"name": &"windup",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cqiwk"]
+resource_local_to_scene = true
+shader = ExtResource("10_csbw2")
+shader_parameter/cutoff_one = 2.0
+shader_parameter/cutoff_two = 0.0
+shader_parameter/smooth_size = 0.338
+shader_parameter/invert_mask = true
+shader_parameter/masking_color = Color(1, 1, 1, 1)
+shader_parameter/mask = ExtResource("11_keoes")
+
+[node name="RedWizard" instance=ExtResource("1_ra6eq")]
+_spell_scene = ExtResource("2_l8up2")
+_body_scene = ExtResource("3_rxluk")
+_spell_restriction_time = 2.0
+_spell_velocity = 250.0
+_distance_to_keep = 300.0
+acceleration = 10.0
+decceleration = 8.0
+max_movement_speed = 350.0
+
+[node name="Animations" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_ssxwi")
+animation = &"windup"
+
+[node name="FollowLine" parent="." index="6"]
+target_position = Vector2(1200, 0)
+
+[node name="GlowSprite" parent="." index="11"]
+material = SubResource("ShaderMaterial_cqiwk")

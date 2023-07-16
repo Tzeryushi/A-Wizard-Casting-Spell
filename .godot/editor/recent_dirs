@@ -1,3 +1,7 @@
+res://Assets/Spells
+res://Assets/Bodies
+res://Assets/Bodies/BodyResources
+res://Assets/Actors/Enemy/RedWizard
 res://Art/Particles
 res://Assets/HUD/OtherElements
 res://Scenes
@@ -12,11 +16,7 @@ res://Scenes/Levels
 B:/Projects
 res://Assets/Actors/Player/Spello
 B:/Projects/GMTK2023
-res://Assets/Spells
-res://Assets/Bodies/BodyResources
-res://Assets/Bodies
 res://Scenes/Pause
 res://Assets/Spells/EnemySpells
 res://Scenes/Tilemaps
 res://Art/Fonts
-res://Assets/HUD/DeadWizardStorage

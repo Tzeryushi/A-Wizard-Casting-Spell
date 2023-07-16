@@ -34,5 +34,4 @@ func get_move_direction() -> Vector2:
 #		elif move_last.y == 1:
 #			value_y = 1
 #	move_last.y = value_y
-	
-	return Vector2(value_x, value_y)
+	return Vector2(value_x, value_y).normalized()

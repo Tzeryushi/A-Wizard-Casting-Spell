@@ -5,6 +5,7 @@ extends Node
 enum THEME { YULG }
 
 func _ready() -> void:
+	AudioServer.set_bus_volume_db(0, -10.0)
 	play(THEME.YULG)
 
 #dictionary to store all soundtracks with enum key

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcylhrwgro05c"
-path="res://.godot/imported/RedWizard0005.png-4ecb4209d687866a38b368eaa609ae0f.ctex"
+uid="uid://crwol6wqvgtba"
+path="res://.godot/imported/RedWizard0001.png-6e2b4b5b6e2a12a67c175f2168547334.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Actors/Enemy/RedWizard/RedWizard0005.png"
-dest_files=["res://.godot/imported/RedWizard0005.png-4ecb4209d687866a38b368eaa609ae0f.ctex"]
+source_file="res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0001.png"
+dest_files=["res://.godot/imported/RedWizard0001.png-6e2b4b5b6e2a12a67c175f2168547334.ctex"]
 
 [params]
 

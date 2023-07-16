@@ -120,6 +120,7 @@ _spell_list = ExtResource("2_f8kle")
 _enemy_arrow_scene = ExtResource("3_j7uh3")
 _warp_particle_scene = ExtResource("4_fj8b0")
 _warp_out_particle_scene = ExtResource("5_a5cxi")
+_spell_restriction_time = 0.15
 _max_spells = 3
 _ouchie_index = Array[String](["Oof!", "Ouchie!", "Ugh!", "Oofie!", "No fair!", "Guh!", "Dagnabbit!", "Phoo!", "Shucks!", "Jebus!", "Woah!", "Ack!", "That's no good!", "Skill issue!", "Arrrgh!", "Oofers!", "Oh no!"])
 animation_node = NodePath("Animations")

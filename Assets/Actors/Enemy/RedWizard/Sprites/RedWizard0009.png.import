@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs28wluuk31ee"
-path="res://.godot/imported/RedWizardMissile.PNG-886d6c101f13e54f8d0230621035e0bb.ctex"
+uid="uid://byjgy7dopy3kk"
+path="res://.godot/imported/RedWizard0009.png-870091db93cbcd0ff61826a4dfb86947.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Actors/Enemy/RedWizard/RedWizardMissile.PNG"
-dest_files=["res://.godot/imported/RedWizardMissile.PNG-886d6c101f13e54f8d0230621035e0bb.ctex"]
+source_file="res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0009.png"
+dest_files=["res://.godot/imported/RedWizard0009.png-870091db93cbcd0ff61826a4dfb86947.ctex"]
 
 [params]
 

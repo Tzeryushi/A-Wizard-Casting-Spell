@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dqftv7aon2ak3"]
+[gd_scene load_steps=9 format=3 uid="uid://dqftv7aon2ak3"]
 
 [ext_resource type="TileSet" uid="uid://drht87h6vy28k" path="res://Scenes/Tilemaps/PathMap.tres" id="1_ce55i"]
 [ext_resource type="PackedScene" uid="uid://cb3fcw70u4e1o" path="res://Assets/Actors/Player/Player.tscn" id="2_fbh7b"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://t401ys66ffnc" path="res://Assets/Bodies/GreenBody.tscn" id="6_g0ebw"]
 [ext_resource type="PackedScene" uid="uid://oc4b5qvhs2ux" path="res://Assets/Bodies/BlueBody.tscn" id="7_2hdqh"]
 [ext_resource type="PackedScene" uid="uid://dmyn7qvgjvqhg" path="res://Assets/HUD/hud.tscn" id="7_rxkmq"]
+[ext_resource type="PackedScene" uid="uid://cabldqhgo5kpc" path="res://Assets/Actors/Enemy/RedWizard/RedWizard.tscn" id="8_kxxtp"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -21,12 +22,9 @@ script = ExtResource("3_e8kde")
 position = Vector2(1099, 434)
 
 [node name="GreenWizard" parent="." instance=ExtResource("6_cayom")]
-position = Vector2(1544, 300)
+position = Vector2(1870, 350)
 
 [node name="HUD" parent="." instance=ExtResource("7_rxkmq")]
-
-[node name="GreenWizard2" parent="." instance=ExtResource("6_cayom")]
-position = Vector2(1612, 395)
 
 [node name="GreenBody" parent="." instance=ExtResource("6_g0ebw")]
 position = Vector2(532, 714)
@@ -39,3 +37,6 @@ position = Vector2(332, 756)
 
 [node name="BlueBody2" parent="." instance=ExtResource("7_2hdqh")]
 position = Vector2(344, 630)
+
+[node name="RedWizard" parent="." instance=ExtResource("8_kxxtp")]
+position = Vector2(1400, 386)
