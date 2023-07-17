@@ -14,7 +14,7 @@ func no_hit_destroy() -> void:
 	queue_free()
 
 func _physics_process(_delta) -> void:
-	_speed = move_toward(_speed, 0, _acceleration)
+	_speed = move_toward(_speed, 0, _acceleration*Engine.time_scale)
 	global_position += _direction * _speed * _delta
 	rotation = _direction.angle()
 

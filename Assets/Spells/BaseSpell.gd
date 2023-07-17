@@ -21,7 +21,7 @@ func _process(_delta) -> void:
 		no_hit_destroy()
 
 func _physics_process(_delta) -> void:
-	_speed = _speed + _acceleration
+	_speed = _speed + _acceleration * Engine.time_scale
 	global_position += _direction * _speed * _delta
 	rotation = _direction.angle()
 

@@ -9,12 +9,16 @@
 [node name="RedSpell" instance=ExtResource("1_j2yft")]
 script = ExtResource("2_vshkb")
 spell_split_time = 0.7
-no_hit_detection_time = 0.1
+no_hit_detection_time = 0.05
+split_amount = 2
+max_split_angle = 1.047
 blast_scene = ExtResource("2_e5qmw")
 
 [node name="Sprite" parent="." index="0"]
 scale = Vector2(1.10638, 1.10638)
 texture = ExtResource("2_av0gw")
+
+[node name="Hitbox" parent="." index="1" groups=["RedSplitSpell"]]
 
 [node name="Trail" parent="." index="2"]
 default_color = Color(0.658824, 0.12549, 0.101961, 1)

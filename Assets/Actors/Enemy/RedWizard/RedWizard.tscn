@@ -85,11 +85,12 @@ shader_parameter/mask = ExtResource("11_keoes")
 _spell_scene = ExtResource("2_l8up2")
 _body_scene = ExtResource("3_rxluk")
 _spell_restriction_time = 2.0
-_spell_velocity = 250.0
+_spell_velocity = 220.0
+_spell_acceleration = 10.0
 _distance_to_keep = 300.0
 acceleration = 10.0
 decceleration = 8.0
-max_movement_speed = 350.0
+max_movement_speed = 330.0
 
 [node name="Animations" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_ssxwi")

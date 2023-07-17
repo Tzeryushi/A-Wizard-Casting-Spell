@@ -22,6 +22,7 @@ var player_ref : Player = null
 var player_seen : bool = false
 var player_following : bool = false
 var can_fire_spell : bool = true
+var has_been_killed : bool = false
 
 signal destroyed
 
@@ -96,7 +97,11 @@ func spell_collision(spell:BaseSpell) -> void:
 	health = health - spell.get_damage()
 	#TextPopper.root_pop_text("[center][color=#A8201A]-"+str(spell.get_damage()), Vector2(0,0), self, 1.0, 1.0, 50, 10)
 	if health <= 0:
-		leave_body(spell.get_direction().normalized()*spell.get_speed())
+		if !has_been_killed:
+			has_been_killed = true
+			leave_body(spell.get_direction().normalized()*spell.get_speed())
+		else:
+			TextPopper.root_jolt_text("[center][rainbow]OVERKILL!!", 50.0, global_position)
 		destruct()
 	else:
 		velocity += spell.get_direction().normalized()*200

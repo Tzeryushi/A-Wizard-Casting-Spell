@@ -56,8 +56,12 @@ func spell_collision(spell:BaseSpell) -> void:
 	TextPopper.root_pop_text("[center][color=#A8201A]-"+str(spell.get_damage()), global_position, self, 1.0, 1.0, 50, 10)
 	health = health - spell.get_damage()
 	if health <= 0:
-		leave_body(spell.get_direction().normalized()*spell.get_speed())
-		destruct()
+		if !has_been_killed:
+			has_been_killed = true
+			leave_body(spell.get_direction().normalized()*spell.get_speed())
+			destruct()
+		else:
+			TextPopper.root_jolt_text("[center][rainbow]OVERKILL!!", 50.0, global_position, 1.0, 2.0, 45, 10)
 	else:
 		velocity += spell.get_direction().normalized()*200
 	await animations.animation_finished

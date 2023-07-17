@@ -53,3 +53,11 @@ res://Assets/Spells/SpellList.tres
 res://Assets/Spells/EnemySpells/RedSpell.tscn
 res://Assets/Spells/EnemySpells/RedSpell.gd
 res://Assets/Spells/EnemySpells/BlueSpell.tscn
+res://Assets/HUD/HeartHolder.gd
+res://Assets/Spells/EnemySpells/GreenSpell.tscn
+res://Assets/Spells/BaseSpell.tscn
+res://Assets/Spells/BaseSpell.gd
+res://Art/Particles/BlueBlast.tscn
+res://Art/Particles/RedBlast.tscn
+res://Art/Particles/GreenBlast.tscn
+res://Assets/Spells/GreenWizardSpell.gd

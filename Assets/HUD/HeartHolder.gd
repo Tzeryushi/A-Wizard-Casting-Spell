@@ -21,4 +21,13 @@ func set_hearts(count:int) -> void:
 		return
 	for i in count:
 		add_heart()
-		
+	pulse_bar()
+
+func pulse_bar() -> void:
+	scale = Vector2.ONE
+	if !is_instance_valid(self):
+		return
+	for heart in heart_container.get_children():
+		var tween : Tween = get_tree().create_tween()
+		tween.tween_property(heart, "scale", Vector2(1.4,1.4), 0.1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
+		tween.tween_property(heart, "scale", Vector2.ONE, 0.1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
