@@ -48,11 +48,17 @@ func actor_setup():
 	restriction_timer.wait_time = _spell_restriction_time
 
 func _process(_delta) -> void:
-	if can_fire_spell and !(current_animation == ANIMATION_TYPE.WINDUP or current_animation == ANIMATION_TYPE.WINDUP_MOVE):
-		if velocity.length() > _move_animation_threshold:
-			play_animation_windup_move()
-		else:
+	if can_fire_spell:
+		if !(current_animation == ANIMATION_TYPE.WINDUP or current_animation == ANIMATION_TYPE.WINDUP_MOVE):
+			if velocity.length() > _move_animation_threshold:
+				play_animation_windup_move()
+			else:
+				play_animation_windup()
+		elif current_animation == ANIMATION_TYPE.WINDUP_MOVE and velocity.length() < _move_animation_threshold:
 			play_animation_windup()
+		elif current_animation == ANIMATION_TYPE.WINDUP and velocity.length() > _move_animation_threshold:
+			play_animation_windup_move()
+	
 
 func _physics_process(_delta) -> void:
 	#state_manager.physics_process(_delta)
@@ -143,7 +149,7 @@ func check_player_seen() -> void:
 		player_seen = true
 	else:
 		player_seen = false
-	if !was_seen and player_seen:
+	if !was_seen and player_seen and !player_following:
 		TextPopper.jolt_text("[center][color=red]!!", self, 50.0, Vector2.ZERO, 1.0, 1.0, 40, 8)
 
 func check_should_follow() -> void:
@@ -210,7 +216,6 @@ func play_animation_windup_move() -> void:
 	animations.play("windup")
 	return
 func animation_finished() -> void:
-	print("YOOP")
 	if current_animation == ANIMATION_TYPE.ATTACK or current_animation == ANIMATION_TYPE.HURT:
 		if velocity.length() > _move_animation_threshold:
 			play_animation_move()

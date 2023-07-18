@@ -23,7 +23,7 @@ script = ExtResource("3_e8kde")
 position = Vector2(646, 675)
 
 [node name="GreenWizard" parent="." instance=ExtResource("6_cayom")]
-position = Vector2(2162, 51)
+position = Vector2(1606, -172)
 
 [node name="HUD" parent="." instance=ExtResource("7_rxkmq")]
 
@@ -40,7 +40,7 @@ position = Vector2(332, 756)
 position = Vector2(344, 630)
 
 [node name="RedWizard" parent="." instance=ExtResource("8_kxxtp")]
-position = Vector2(1844, -127)
+position = Vector2(1612, 310)
 
 [node name="BlueWizard" parent="." instance=ExtResource("9_w0wsn")]
-position = Vector2(1830, 551)
+position = Vector2(2136, 219)

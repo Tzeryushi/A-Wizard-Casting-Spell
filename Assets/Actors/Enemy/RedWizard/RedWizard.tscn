@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://cabldqhgo5kpc"]
+[gd_scene load_steps=17 format=3 uid="uid://cabldqhgo5kpc"]
 
 [ext_resource type="PackedScene" uid="uid://c5c43qfqmlofk" path="res://Assets/Actors/Enemy/BlueWizard/BlueWizard.tscn" id="1_ra6eq"]
 [ext_resource type="Texture2D" uid="uid://bikbhdc84ehxx" path="res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0003.png" id="2_jew55"]
+[ext_resource type="Script" path="res://Assets/Actors/Enemy/RedWizard/RedWizard.gd" id="2_kxoon"]
 [ext_resource type="PackedScene" uid="uid://xca31tb724id" path="res://Assets/Spells/EnemySpells/RedSpell.tscn" id="2_l8up2"]
 [ext_resource type="PackedScene" uid="uid://bhyiok7y6l5tx" path="res://Assets/Bodies/RedBody.tscn" id="3_rxluk"]
 [ext_resource type="Texture2D" uid="uid://dfn3gxg5a1f6w" path="res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0004.png" id="3_ua1t8"]
@@ -82,6 +83,7 @@ shader_parameter/masking_color = Color(1, 1, 1, 1)
 shader_parameter/mask = ExtResource("11_keoes")
 
 [node name="RedWizard" instance=ExtResource("1_ra6eq")]
+script = ExtResource("2_kxoon")
 _spell_scene = ExtResource("2_l8up2")
 _body_scene = ExtResource("3_rxluk")
 _spell_restriction_time = 2.0
@@ -94,7 +96,7 @@ max_movement_speed = 330.0
 
 [node name="Animations" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_ssxwi")
-animation = &"windup"
+animation = &"moving"
 
 [node name="FollowLine" parent="." index="6"]
 target_position = Vector2(1200, 0)

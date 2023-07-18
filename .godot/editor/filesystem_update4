@@ -35,3 +35,4 @@ res://Assets/Actors/Enemy/Enemy.gd
 res://Assets/Actors/Enemy/GreenWizard/GreenWizard.gd
 res://Assets/Actors/Enemy/BlueWizard/BlueWizard.gd
 res://Scenes/TileData.gd
+res://Assets/Actors/Enemy/RedWizard/RedWizard.gd
