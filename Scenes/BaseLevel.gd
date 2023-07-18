@@ -9,6 +9,7 @@ extends Node2D
 
 var player_ref : Player
 var enemy_count : int = 0
+var level_finished : bool = false
 
 func _ready() -> void:
 	player_setup()
@@ -36,6 +37,8 @@ func enemy_setup() -> void:
 
 func _on_player_death() -> void:
 	#reset the level
+	if level_finished:
+		return
 	AudioManager.play("res://Art/SFX/error.wav")
 	SceneManager.restart_scene()
 	return
@@ -52,6 +55,7 @@ func _on_enemy_death() -> void:
 	return
 
 func level_finish_popup() -> void:
+	level_finished = true
 	var popup = finish_popup.instantiate()
 	hud_layer.add_child(popup)
 	popup.global_position = Vector2((get_viewport().content_scale_size/2).x, (get_viewport().content_scale_size*1.5).y)
