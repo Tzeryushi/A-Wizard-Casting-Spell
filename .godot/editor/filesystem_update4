@@ -31,3 +31,7 @@ res://Assets/Tools/TextPopper/TextPopper.gd
 res://Assets/Tools/TextPopper/TextPop.tscn
 res://Assets/Actors/Player/Player.gd
 res://Assets/HUD/HeartHolder.gd
+res://Assets/Actors/Enemy/Enemy.gd
+res://Assets/Actors/Enemy/GreenWizard/GreenWizard.gd
+res://Assets/Actors/Enemy/BlueWizard/BlueWizard.gd
+res://Scenes/TileData.gd

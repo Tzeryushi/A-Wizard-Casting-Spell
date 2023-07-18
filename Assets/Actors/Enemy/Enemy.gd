@@ -1,6 +1,8 @@
 class_name Enemy
 extends Actor
 
+enum ANIMATION_TYPE {IDLE, ATTACK, HURT, WINDUP, MOVE, WINDUP_MOVE}
+
 @export var _spell_scene : PackedScene
 @export var _body_scene : PackedScene
 @export var _spell_restriction_time : float = 5.0
@@ -8,6 +10,7 @@ extends Actor
 @export var _spell_lifetime : float = 10.0
 @export var _spell_acceleration : float = 5.0
 @export var _distance_to_keep : float = 400.0
+@export var _move_animation_threshold : float = 30.0
 
 @export var navigation_agent : NavigationAgent2D
 
@@ -23,14 +26,18 @@ var player_seen : bool = false
 var player_following : bool = false
 var can_fire_spell : bool = true
 var has_been_killed : bool = false
+var current_animation : ANIMATION_TYPE
 
 signal destroyed
+signal attack_animation_finished
+signal hurt_animation_finished
 
 func _ready() -> void:
 	navigation_agent.path_desired_distance = 4.0
 	navigation_agent.target_desired_distance = 4.0
 	var generator = RandomNumberGenerator.new()
 	animations.rotation = generator.randf_range(-PI, PI)
+	animations.animation_finished.connect(animation_finished)
 	call_deferred("actor_setup")
 
 func actor_setup():
@@ -39,18 +46,31 @@ func actor_setup():
 	if tree.has_group("Player"):
 		player_ref = tree.get_nodes_in_group("Player")[0]
 	restriction_timer.wait_time = _spell_restriction_time
-	
+
+func _process(_delta) -> void:
+	if can_fire_spell and !(current_animation == ANIMATION_TYPE.WINDUP or current_animation == ANIMATION_TYPE.WINDUP_MOVE):
+		if velocity.length() > _move_animation_threshold:
+			play_animation_windup_move()
+		else:
+			play_animation_windup()
 
 func _physics_process(_delta) -> void:
 	#state_manager.physics_process(_delta)
+	run_sight_follow_logic()	#this chould set the navigation target
+	shoot()
+	
+	set_movement_values()
+	move_and_slide()
+
+func run_sight_follow_logic() -> void:
 	if player_ref:
 		line_of_sight.look_at(player_ref.global_position)
 		line_of_follow.look_at(player_ref.global_position)
 		
-		#check if 
 		check_player_seen()
+		
 		if !player_following:
-			player_following = player_seen
+				player_following = player_seen
 		else:
 			check_should_follow()
 		if player_seen or player_following:
@@ -63,8 +83,8 @@ func _physics_process(_delta) -> void:
 			animations.look_at(player_ref.global_position)
 		else:
 			set_movement_target(global_position)
-	shoot()
-	
+
+func set_movement_values() -> void:
 	if !navigation_agent.is_navigation_finished():
 		var current_agent_position:Vector2 = global_position
 		var next_path_position: Vector2 = navigation_agent.get_next_path_position()
@@ -76,7 +96,6 @@ func _physics_process(_delta) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, decceleration)
 		velocity.y = move_toward(velocity.y, 0, decceleration)
-	move_and_slide()
 
 func set_movement_target(movement_target: Vector2):
 	navigation_agent.target_position = movement_target
@@ -91,20 +110,24 @@ func shoot() -> void:
 		get_parent().add_child(new_spell)
 		can_fire_spell = false
 		start_spell_timers()
+		
+		#handle animation
+		play_animation_attack()
 	return
 
 func spell_collision(spell:BaseSpell) -> void:
 	health = health - spell.get_damage()
-	#TextPopper.root_pop_text("[center][color=#A8201A]-"+str(spell.get_damage()), Vector2(0,0), self, 1.0, 1.0, 50, 10)
+	TextPopper.root_pop_text("[center][color=#A8201A]-"+str(spell.get_damage()), global_position, self, 1.0, 1.0, 50, 10)
 	if health <= 0:
 		if !has_been_killed:
 			has_been_killed = true
 			leave_body(spell.get_direction().normalized()*spell.get_speed())
 		else:
-			TextPopper.root_jolt_text("[center][rainbow]OVERKILL!!", 50.0, global_position)
+			TextPopper.root_jolt_text("[center][rainbow]OVERKILL!!", 50.0, global_position, 1.0, 2.0, 45, 10)
 		destruct()
 	else:
 		velocity += spell.get_direction().normalized()*200
+	play_animation_hurt()
 	return
 
 func leave_body(impulse:Vector2) -> void:
@@ -157,3 +180,39 @@ func start_spell_timers() -> void:
 
 func _on_spell_restriction_timer_timeout():
 	can_fire_spell = true
+
+func play_animation_idle() -> void:
+	current_animation = ANIMATION_TYPE.IDLE
+	animations.play("idle")
+	return
+func play_animation_attack() -> void:
+	current_animation = ANIMATION_TYPE.ATTACK
+	animations.play("attack")
+	await animations.animation_finished
+	attack_animation_finished.emit()
+	return
+func play_animation_hurt() -> void:
+	current_animation = ANIMATION_TYPE.HURT
+	animations.play("hurt")
+	await animations.animation_finished
+	hurt_animation_finished.emit()
+	return
+func play_animation_windup() -> void:
+	current_animation = ANIMATION_TYPE.WINDUP
+	animations.play("windup")
+	return
+func play_animation_move() -> void:
+	current_animation = ANIMATION_TYPE.MOVE
+	animations.play("idle")
+	return
+func play_animation_windup_move() -> void:
+	current_animation = ANIMATION_TYPE.WINDUP_MOVE
+	animations.play("windup")
+	return
+func animation_finished() -> void:
+	print("YOOP")
+	if current_animation == ANIMATION_TYPE.ATTACK or current_animation == ANIMATION_TYPE.HURT:
+		if velocity.length() > _move_animation_threshold:
+			play_animation_move()
+		else:
+			play_animation_idle()
