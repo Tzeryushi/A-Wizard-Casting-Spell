@@ -87,6 +87,18 @@ target_position = Vector2(600, 0)
 collision_mask = 259
 collide_with_areas = true
 
+[node name="EnvCheckLineR" type="RayCast2D" parent="SightLine"]
+position = Vector2(0, 25)
+target_position = Vector2(600, 0)
+collision_mask = 3
+collide_with_areas = true
+
+[node name="EnvCheckLineL" type="RayCast2D" parent="SightLine"]
+position = Vector2(0, -25)
+target_position = Vector2(600, 0)
+collision_mask = 3
+collide_with_areas = true
+
 [node name="FollowLine" type="RayCast2D" parent="."]
 visible = false
 target_position = Vector2(900, 0)

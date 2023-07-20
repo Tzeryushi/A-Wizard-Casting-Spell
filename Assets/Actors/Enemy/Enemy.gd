@@ -15,6 +15,8 @@ enum ANIMATION_TYPE {IDLE, ATTACK, HURT, WINDUP, MOVE, WINDUP_MOVE}
 @export var navigation_agent : NavigationAgent2D
 
 @onready var line_of_sight := $SightLine
+@onready var block_check_line_r := $SightLine/EnvCheckLineR
+@onready var block_check_line_l := $SightLine/EnvCheckLineL
 @onready var line_of_follow := $FollowLine
 @onready var restriction_timer := $SpellRestrictionTimer
 @onready var spell_spawn_location := $SpellSpawnLocation
@@ -38,6 +40,10 @@ func _ready() -> void:
 	var generator = RandomNumberGenerator.new()
 	animations.rotation = generator.randf_range(-PI, PI)
 	animations.animation_finished.connect(animation_finished)
+	
+	block_check_line_r.target_position.x = line_of_sight.target_position.x
+	block_check_line_l.target_position.x = line_of_sight.target_position.x
+	
 	call_deferred("actor_setup")
 
 func actor_setup():
@@ -108,7 +114,7 @@ func set_movement_target(movement_target: Vector2):
 
 func shoot() -> void:
 	#shoot spell
-	if player_seen and can_fire_spell:
+	if player_seen and can_fire_spell and !is_shot_obstructed():
 		var new_spell : BaseSpell = _spell_scene.instantiate()
 		var look_rotation = Vector2(cos(line_of_sight.rotation), sin(line_of_sight.rotation))
 		new_spell.spawn(center.global_position+(spell_spawn_location.position.x*look_rotation), _spell_velocity, _spell_lifetime, _spell_acceleration)
@@ -141,6 +147,14 @@ func leave_body(impulse:Vector2) -> void:
 	new_body.global_position = center.global_position
 	new_body.apply_impulse(impulse)
 	get_parent().call_deferred("add_child", new_body)
+
+func is_shot_obstructed() -> bool:
+	#checks if shot will clip wall soon after being fired
+	var collider_r = block_check_line_r.get_collider()
+	var collider_l = block_check_line_l.get_collider()
+	if (collider_r and (collider_r.is_in_group("Environment"))) or (collider_l and (collider_l.is_in_group("Environment"))):
+		return true
+	return false
 
 func check_player_seen() -> void:
 	var was_seen = player_seen
