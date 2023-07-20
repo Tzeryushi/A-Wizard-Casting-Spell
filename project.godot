@@ -24,6 +24,7 @@ Shake="*res://Assets/Shake.gd"
 AudioManager="*res://Assets/AudioManager.gd"
 SoundtrackManager="*res://Assets/SoundtrackManager.tscn"
 TextPopper="*res://Assets/Tools/TextPopper/TextPopper.tscn"
+ParticleCache="*res://Assets/Tools/ParticleCache.tscn"
 
 [display]
 

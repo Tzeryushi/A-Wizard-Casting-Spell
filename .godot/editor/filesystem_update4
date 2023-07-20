@@ -28,3 +28,6 @@ res://Assets/Spells/GreenWizardSpell.tscn
 res://Assets/Tools/TextPopper/TextPopper.tscn
 res://Assets/Tools/TextPopper/TextPop.tscn
 res://Assets/Actors/Enemy/RedWizard/RedWizard.gd
+res://Assets/Tools/ParticleCache.gd
+res://Art/Particles/PuffProcessMaterial.tres
+res://Art/Particles/ShootPuff.tres

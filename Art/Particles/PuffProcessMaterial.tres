@@ -1,4 +1,4 @@
-[gd_resource type="ParticleProcessMaterial" load_steps=6 format=3 uid="uid://q3gwxjnsbl7d"]
+[gd_resource type="ParticleProcessMaterial" load_steps=7 format=3 uid="uid://q3gwxjnsbl7d"]
 
 [sub_resource type="Curve" id="Curve_2a33f"]
 min_value = -47.11
@@ -9,7 +9,14 @@ point_count = 2
 [sub_resource type="CurveTexture" id="CurveTexture_wp5bp"]
 curve = SubResource("Curve_2a33f")
 
+[sub_resource type="Curve" id="Curve_4fpfr"]
+min_value = -500.0
+max_value = 500.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="CurveTexture" id="CurveTexture_j6tf7"]
+curve = SubResource("Curve_4fpfr")
 
 [sub_resource type="Curve" id="Curve_gtd67"]
 _data = [Vector2(0, 0), 0.0, 32.506, 0, 0, Vector2(0.140811, 1), -0.612781, -0.612781, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
