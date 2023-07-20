@@ -152,8 +152,14 @@ func is_shot_obstructed() -> bool:
 	#checks if shot will clip wall soon after being fired
 	var collider_r = block_check_line_r.get_collider()
 	var collider_l = block_check_line_l.get_collider()
-	if (collider_r and (collider_r.is_in_group("Environment"))) or (collider_l and (collider_l.is_in_group("Environment"))):
-		return true
+	if (collider_r and (collider_r.is_in_group("Environment"))):
+		var ray_length : float = (block_check_line_r.get_collision_point()-block_check_line_r.global_position).length()
+		if ray_length < (player_ref.global_position-global_position).length():
+			return true
+	if (collider_l and (collider_l.is_in_group("Environment"))):
+		var ray_length : float = (block_check_line_l.get_collision_point()-block_check_line_l.global_position).length()
+		if ray_length < (player_ref.global_position-global_position).length():
+			return true
 	return false
 
 func check_player_seen() -> void:
