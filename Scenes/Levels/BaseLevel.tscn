@@ -20,6 +20,11 @@ format = 2
 tile_set = ExtResource("2_srx0p")
 format = 2
 
+[node name="FlooringMap" type="TileMap" parent="." groups=["Environment"]]
+z_index = -4
+tile_set = ExtResource("2_srx0p")
+format = 2
+
 [node name="Player" parent="." instance=ExtResource("2_copdj")]
 
 [node name="HUD" parent="." instance=ExtResource("4_4p3ww")]

@@ -1,8 +1,8 @@
-RayCast2D
 TextureRect
-TextureProgressBar
-ProgressBar
 Timer
+TextureProgressBar
+RayCast2D
+ProgressBar
 Node2D
 RichTextLabel
 GPUParticles2D

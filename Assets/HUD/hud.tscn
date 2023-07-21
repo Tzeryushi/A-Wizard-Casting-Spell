@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dmyn7qvgjvqhg"]
+[gd_scene load_steps=18 format=3 uid="uid://dmyn7qvgjvqhg"]
 
 [ext_resource type="Script" path="res://Assets/HUD/SpellHolder.gd" id="1_v2pjl"]
 [ext_resource type="Script" path="res://Assets/HUD/HUD.gd" id="1_xyp78"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://r5c7augmw26i" path="res://Assets/HUD/DeadWizardStorage/SpellBox3.PNG" id="6_abul1"]
 [ext_resource type="Script" path="res://Assets/HUD/HeartHolder.gd" id="6_fflw6"]
 [ext_resource type="PackedScene" uid="uid://c0s2sukkibcgn" path="res://Assets/HUD/OtherElements/HeartBar.tscn" id="10_mvyw5"]
+[ext_resource type="Texture2D" uid="uid://4q720jnsv3v8" path="res://Assets/HUD/OtherElements/SlowBar.png" id="12_yafkw"]
+[ext_resource type="Script" path="res://Assets/HUD/WarpJuice.gd" id="13_bobrg"]
 
 [sub_resource type="Curve" id="Curve_ommc8"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.502024, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -136,3 +138,30 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/separation = 20
+
+[node name="WarpJuice" type="TextureProgressBar" parent="Full HUD"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -423.0
+offset_top = 197.0
+offset_right = 423.0
+offset_bottom = 226.0
+grow_horizontal = 2
+max_value = 1000.0
+value = 700.0
+texture_progress = ExtResource("12_yafkw")
+script = ExtResource("13_bobrg")
+refill_color = Color(0.470588, 0.470588, 0.470588, 1)
+
+[node name="Timer" type="Timer" parent="Full HUD/WarpJuice"]
+
+[node name="PulseRect" type="TextureRect" parent="Full HUD/WarpJuice"]
+layout_mode = 0
+offset_right = 846.0
+offset_bottom = 29.0
+pivot_offset = Vector2(423, 14)
+texture = ExtResource("12_yafkw")
+
+[connection signal="timeout" from="Full HUD/WarpJuice/Timer" to="Full HUD/WarpJuice" method="_on_timer_timeout"]

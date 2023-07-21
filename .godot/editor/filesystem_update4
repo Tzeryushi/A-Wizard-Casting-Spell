@@ -31,3 +31,8 @@ res://Assets/Actors/Enemy/RedWizard/RedWizard.gd
 res://Assets/Tools/ParticleCache.gd
 res://Art/Particles/PuffProcessMaterial.tres
 res://Art/Particles/ShootPuff.tres
+res://Scenes/Levels/BaseLevel.tscn
+res://Scenes/Levels/Level6.tscn
+res://Scenes/NewLevels/1-TwoNewFriends.tscn
+res://Scenes/Levels/Level7.tscn
+res://Assets/HUD/WarpJuice.gd
