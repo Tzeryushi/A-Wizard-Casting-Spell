@@ -140,28 +140,47 @@ mouse_filter = 2
 theme_override_constants/separation = 20
 
 [node name="WarpJuice" type="TextureProgressBar" parent="Full HUD"]
+modulate = Color(1, 1, 1, 0.772549)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -423.0
-offset_top = 197.0
+offset_top = 69.0
 offset_right = 423.0
-offset_bottom = 226.0
+offset_bottom = 98.0
 grow_horizontal = 2
+scale = Vector2(0.7, 1)
+pivot_offset = Vector2(423, 0)
 max_value = 1000.0
 value = 700.0
 texture_progress = ExtResource("12_yafkw")
 script = ExtResource("13_bobrg")
+full_color = Color(0.945098, 0.67451, 0, 1)
+empty_color = Color(0.435294, 0, 0.00392157, 1)
 refill_color = Color(0.470588, 0.470588, 0.470588, 1)
-
-[node name="Timer" type="Timer" parent="Full HUD/WarpJuice"]
+pulse_threshold = 0.3
+pulse_cooldown = 0.04
+pulse_time = 0.2
 
 [node name="PulseRect" type="TextureRect" parent="Full HUD/WarpJuice"]
+modulate = Color(0.854902, 0, 0, 1)
+z_index = -1
 layout_mode = 0
 offset_right = 846.0
 offset_bottom = 29.0
 pivot_offset = Vector2(423, 14)
 texture = ExtResource("12_yafkw")
+
+[node name="Backrect" type="TextureRect" parent="Full HUD/WarpJuice"]
+modulate = Color(1, 1, 1, 0.541176)
+z_index = -1
+layout_mode = 0
+offset_right = 846.0
+offset_bottom = 29.0
+pivot_offset = Vector2(423, 14)
+texture = ExtResource("12_yafkw")
+
+[node name="Timer" type="Timer" parent="Full HUD/WarpJuice"]
 
 [connection signal="timeout" from="Full HUD/WarpJuice/Timer" to="Full HUD/WarpJuice" method="_on_timer_timeout"]

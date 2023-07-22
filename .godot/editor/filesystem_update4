@@ -36,3 +36,5 @@ res://Scenes/Levels/Level6.tscn
 res://Scenes/NewLevels/1-TwoNewFriends.tscn
 res://Scenes/Levels/Level7.tscn
 res://Assets/HUD/WarpJuice.gd
+res://Assets/Actors/Player/Player.gd
+res://Assets/HUD/HUD.gd

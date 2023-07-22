@@ -9,6 +9,9 @@ extends Actor
 @export var _spell_restriction_time : float = 0.3
 @export var _max_spells : int = 4
 @export var _slow_time_amount : float = 1.0
+@export var _slow_gauge_max : float = 1.0
+@export var _slow_gauge_recover_multiplier : float = 1.0
+@export var _slow_gauge_removal_multiplier : float = 1.0
 @export var _ouchie_index : Array[String]
 
 @onready var mouse := $Mouse
@@ -26,12 +29,15 @@ var slow_timer : float = _slow_time_amount
 var can_fire_spell : bool = true
 var is_invincible : bool = false
 var is_slowing_time : bool = false
+var slow_gauge : float = _slow_gauge_max
+var is_slow_gauge_refilling : bool = false
 var random_generator: RandomNumberGenerator
 
 signal body_picked_up(type:Globals.WIZARDTYPE)
 signal body_casted
 signal player_died
 signal max_spells
+signal slow_gauge_changed(percentage:float, is_refilling:bool)
 
 func _ready() -> void:
 	Input.set_use_accumulated_input(false)
@@ -41,6 +47,7 @@ func _ready() -> void:
 	restriction_timer.wait_time = _spell_restriction_time
 	Shake.set_camera(camera)
 	random_generator = RandomNumberGenerator.new()
+	
 	call_deferred("_process_frame_setup")
 
 func _process_frame_setup() -> void:
@@ -61,11 +68,18 @@ func _unhandled_input(_event) -> void:
 func _process(_delta):
 	state_manager.process(_delta)
 	flip_timer = max(flip_timer-_delta, 0.0)
+	
+	#remove gauge while time is being slowed
+	if is_slowing_time:
+		update_slow_gauge(slow_gauge-_delta*_slow_gauge_removal_multiplier)	#remove delta?
+	else:
+		update_slow_gauge(slow_gauge+_delta*_slow_gauge_recover_multiplier)
+	
 	#handle sprite rotations here?
 	sprite_rotation()
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
-	if Input.is_action_just_pressed("flip"):
+	if Input.is_action_just_pressed("flip") and !is_slow_gauge_refilling:
 		flip_slow_time()
 	elif Input.is_action_just_released("flip") and is_slowing_time == true:
 		flip_unslow_time()
@@ -147,9 +161,9 @@ func flip_slow_time() -> void:
 	mouse.glow_enemies()
 	slow_tween = get_tree().create_tween()
 	slow_tween.tween_property(Engine, "time_scale", 0.1, 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
-	slow_tween.tween_property(Engine, "time_scale", 1.0, 1.8)
-	await slow_tween.finished
-	slow_tween.kill()
+#	slow_tween.tween_property(Engine, "time_scale", 1.0, 1.8)
+#	await slow_tween.finished
+#	slow_tween.kill()
 
 func flip_unslow_time() -> void:
 	if !is_slowing_time:
@@ -158,8 +172,8 @@ func flip_unslow_time() -> void:
 		slow_tween.kill()
 	is_slowing_time = false
 	mouse.unglow_enemies()
-	var tween = get_tree().create_tween()
-	tween.tween_property(Engine, "time_scale", 1.0, 0.2).set_trans(Tween.TRANS_LINEAR)
+	var tween = create_tween()
+	tween.tween_property(Engine, "time_scale", 1.0, 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 	return
 
 func flip() -> void:
@@ -206,6 +220,17 @@ func pickup_body(body:BaseBody) -> void:
 	AudioManager.play("res://Art/SFX/spell1.wav")
 	spell_stack.append(body.get_body())
 	body_picked_up.emit(spell_stack.back().wizard_type)
+
+func update_slow_gauge(new_value:float) -> void:
+	if !is_slow_gauge_refilling and new_value <= 0.0:
+		is_slow_gauge_refilling = true
+		if is_slowing_time:
+			flip_unslow_time()
+	elif is_slow_gauge_refilling and new_value >= _slow_gauge_max:
+		is_slow_gauge_refilling = false
+	new_value = clampf(new_value, 0.0, _slow_gauge_max)
+	slow_gauge = new_value
+	slow_gauge_changed.emit(slow_gauge/_slow_gauge_max, is_slow_gauge_refilling)
 
 func can_flip() -> bool:
 	#placeholder for check when player cannot flip

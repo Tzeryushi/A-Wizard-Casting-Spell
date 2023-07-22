@@ -3,6 +3,7 @@ extends CanvasLayer
 
 @onready var spell_holder := $"Full HUD/SpellHolder"
 @onready var heart_holder := $"Full HUD/HeartHolder"
+@onready var warp_juicer := $"Full HUD/WarpJuice"
 
 var player_ref : Player = null
 
@@ -18,6 +19,7 @@ func player_setup():
 		player_ref.body_picked_up.connect(_on_body_picked_up)
 		player_ref.body_casted.connect(_on_body_casted)
 		player_ref.health_changed.connect(_on_health_changed)
+		player_ref.slow_gauge_changed.connect(_on_slow_gauge_updated)
 		reset_HUD()
 	else:
 		print("Player not connected? Loaded late or not in scene!")
@@ -35,3 +37,6 @@ func _on_body_casted() -> void:
 
 func _on_health_changed(value:int) -> void:
 	heart_holder.set_hearts(value)
+
+func _on_slow_gauge_updated(percent:float, is_refilling:bool) -> void:
+	warp_juicer.set_level(percent, is_refilling)
