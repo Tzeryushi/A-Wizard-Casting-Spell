@@ -193,10 +193,11 @@ func flip() -> void:
 	AudioManager.play("res://Art/SFX/spell2.wav")
 	
 	await get_tree().create_timer(flip_time/2).timeout
-	var current_position : Vector2 = center.global_position
-	var current_enemy_position : Vector2 = enemy_ref.center.global_position
-	global_position = current_enemy_position
-	enemy_ref.global_position = current_position
+	if is_instance_valid(enemy_ref):
+		var current_position : Vector2 = center.global_position
+		var current_enemy_position : Vector2 = enemy_ref.center.global_position
+		global_position = current_enemy_position
+		enemy_ref.global_position = current_position
 	mouse.force_update_position()
 	
 	var warp_out_particle : ParticleAnimation = _warp_out_particle_scene.instantiate()
