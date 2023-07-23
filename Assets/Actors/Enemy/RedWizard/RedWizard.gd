@@ -30,9 +30,7 @@ func run_sight_follow_logic() -> void:
 							set_movement_target(player_ref.global_position)
 					else:
 						space_found = true
-						set_movement_target(player_ref.global_position+base_vector)
-						if (global_position == player_ref.global_position + base_vector) and is_shot_obstructed():
-							set_movement_target(player_ref.global_position+(base_vector.rotated(rotate_amount*1.2)))
+						set_movement_target(player_ref.global_position+base_vector.rotated(rotate_amount*1.2))
 			elif (player_ref.global_position-global_position).length() > _distance_to_keep:
 				set_movement_target(player_ref.global_position)
 			else:

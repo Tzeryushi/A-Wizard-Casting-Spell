@@ -38,3 +38,9 @@ res://Scenes/Levels/Level7.tscn
 res://Assets/HUD/WarpJuice.gd
 res://Assets/Actors/Player/Player.gd
 res://Assets/HUD/HUD.gd
+res://Scenes/NewLevels/2-GreenMeeting.tscn
+res://Scenes/NewLevels/3-VerdantConcourse.tscn
+res://Scenes/NewLevels/3-ClaustrophobicConcourse.tscn
+res://Scenes/NewLevels/MaddeningSpiral.tscn
+res://Scenes/NewLevels/5-TwoBlueFriends.tscn
+res://Scenes/NewLevels/4-MaddeningSpiral.tscn

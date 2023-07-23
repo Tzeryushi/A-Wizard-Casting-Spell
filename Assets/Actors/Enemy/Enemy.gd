@@ -10,6 +10,7 @@ enum ANIMATION_TYPE {IDLE, ATTACK, HURT, WINDUP, MOVE, WINDUP_MOVE}
 @export var _spell_lifetime : float = 10.0
 @export var _spell_acceleration : float = 5.0
 @export var _distance_to_keep : float = 400.0
+@export var _flippable : bool = true
 @export var _move_animation_threshold : float = 30.0
 
 @export var navigation_agent : NavigationAgent2D
@@ -198,7 +199,7 @@ func unglow() -> void:
 
 func is_flippable() -> bool:
 	
-	return true
+	return _flippable
 
 func start_spell_timers() -> void:
 	restriction_timer.start()
