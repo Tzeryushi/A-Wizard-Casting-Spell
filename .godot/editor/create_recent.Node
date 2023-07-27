@@ -1,3 +1,4 @@
+ColorRect
 TextureRect
 Timer
 TextureProgressBar
@@ -10,7 +11,6 @@ CollisionShape2D
 Area2D
 Sprite2D
 CanvasLayer
-ColorRect
 Button
 Polygon2D
 Control

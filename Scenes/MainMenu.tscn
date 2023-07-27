@@ -26,6 +26,21 @@ anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 
+[node name="ColorRect2" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -313.0
+offset_top = -627.0
+offset_right = 313.0
+offset_bottom = 627.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.203922, 0.34902, 0.584314, 1)
+
 [node name="CenterContainer" type="CenterContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = 7
@@ -60,6 +75,14 @@ theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 80
 text = "Tutorial"
 
+[node name="ClassicButton" type="Button" parent="Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92549, 0.603922, 0.160784, 1)
+theme_override_colors/font_outline_color = Color(0.976471, 0.972549, 0.972549, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 80
+text = " Classic Levels "
+
 [node name="QuitButton" type="Button" parent="Control/CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.92549, 0.603922, 0.160784, 1)
@@ -69,7 +92,8 @@ theme_override_font_sizes/font_size = 80
 text = "Exit"
 
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2(960, 364)
+position = Vector2(960, 342)
+rotation = -0.0981929
 script = ExtResource("2_mnm41")
 size_change = 0.1
 time = 2.0
@@ -82,9 +106,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -659.5
-offset_top = -189.5
+offset_top = -234.0
 offset_right = 659.5
-offset_bottom = 189.5
+offset_bottom = 145.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -101,29 +125,43 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel8" type="RichTextLabel" parent="."]
 clip_contents = false
-offset_left = 1321.0
-offset_top = 704.0
-offset_right = 1774.0
-offset_bottom = 859.0
+offset_left = 1355.0
+offset_top = 793.0
+offset_right = 1808.0
+offset_bottom = 948.0
 theme_override_colors/default_color = Color(0.564706, 0.501961, 0.396078, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
-text = "[center]Code, Art, Music: Tzeryushi
-
+text = "[center]
 SS Pretzel Font by Sara Linsley
 \"Space Shooter\" sfx by dravenx"
+fit_content = true
+scroll_active = false
+
+[node name="RichTextLabel9" type="RichTextLabel" parent="."]
+clip_contents = false
+offset_left = 1355.0
+offset_top = 666.0
+offset_right = 1808.0
+offset_bottom = 821.0
+theme_override_colors/default_color = Color(0.92549, 0.603922, 0.160784, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center]Code, Art, Music: Tzeryushi"
 fit_content = true
 scroll_active = false
 
 [node name="Volume" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 219.0
-offset_top = 92.0
-offset_right = 259.0
-offset_bottom = 132.0
+offset_left = 1565.0
+offset_top = 1005.0
+offset_right = 1605.0
+offset_bottom = 1045.0
 script = ExtResource("3_yec7w")
 
 [node name="HSlider" type="HSlider" parent="Volume"]
@@ -163,5 +201,6 @@ scroll_active = false
 
 [connection signal="pressed" from="Control/CenterContainer/VBoxContainer/StartButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Control/CenterContainer/VBoxContainer/TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/VBoxContainer/ClassicButton" to="." method="_on_classic_button_pressed"]
 [connection signal="pressed" from="Control/CenterContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="value_changed" from="Volume/HSlider" to="Volume" method="_on_h_slider_value_changed"]

@@ -238,6 +238,7 @@ position = Vector2(900, 0)
 shape = SubResource("SegmentShape2D_3u5lq")
 
 [node name="SlowVignette" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("24_yv3d4")
 
 [connection signal="area_entered" from="Mouse/MouseBox" to="Mouse" method="_on_mouse_box_area_entered"]
