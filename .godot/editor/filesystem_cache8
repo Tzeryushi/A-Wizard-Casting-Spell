@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1690146891
+::res://::1690413074
 export_presets.cfg::TextFile::-1::1689316171::0::1::::<><>::
 icon.svg::CompressedTexture2D::7430478160470693698::1688748760::1688748766::1::::<><>::
 Main.gd::GDScript::-1::1688849190::0::1::::<>Node<>::
@@ -57,8 +57,8 @@ laserd.wav::AudioStreamWAV::4375322394751578486::1688865717::1688865762::1::::<>
 spell1.wav::AudioStreamWAV::8074310397203317893::1688865753::1688865787::1::::<><>::
 spell2.wav::AudioStreamWAV::4817158185338103052::1688865728::1688865787::1::::<><>::
 swish_4.wav::AudioStreamWAV::7854095555941297353::1688865876::1688865893::1::::<><>::
-::res://Art/Shaders/::1690147701
-EnemyGlow.gdshader::Shader::-1::1690147803::0::1::::<><>::
+::res://Art/Shaders/::1690354210
+EnemyGlow.gdshader::Shader::-1::1690354210::0::1::::<><>::
 ::res://Art/wizardingspellart/::1689371309
 GreenWizard0001.png::CompressedTexture2D::2122214321585337446::1688833761::1688833956::1::::<><>::
 GreenWizard0002.png::CompressedTexture2D::1871125799182285937::1688833761::1688833956::1::::<><>::
@@ -79,13 +79,13 @@ SoundtrackManager.tscn::PackedScene::3228985800996053154::1689471354::0::1::::<>
 Actor.gd::GDScript::-1::1688864150::0::1::::Actor<>CharacterBody2D<>::
 BaseState.gd::GDScript::-1::1688752101::0::1::::BaseState<>Node<>::
 StateManager.gd::GDScript::-1::1688753932::0::1::::<>Node<>::
-::res://Assets/Actors/Enemy/::1690147700
+::res://Assets/Actors/Enemy/::1690149315
 Enemy.gd::GDScript::-1::1690145668::0::1::::Enemy<>Actor<>::
-Enemy.tscn::PackedScene::8211961684552321042::1690147700::0::1::::<><>::res://Assets/Actors/Enemy/Enemy.gd<>uid://dewtq636216g7::::res://Art/tempblock_fallthrough.png<>uid://brec14f0yf1mg::::res://Assets/Spells/BaseSpell.tscn<>res://Assets/Actors/StateManager.gd<>uid://t401ys66ffnc::::res://Assets/Bodies/GreenBody.tscn<>res://Art/Shaders/EnemyGlow.gdshader<>uid://bco7v1gf2puv5::::res://Art/tempwall.png<>uid://b7jn0k8jxpfef::::res://Art/corona.png<>res://Assets/Actors/Enemy/SpellTimerDisplay.gd<>uid://b83vtmj5ntff7::::res://Art/GUI/CleanTimer.png
+Enemy.tscn::PackedScene::8211961684552321042::1690149315::0::1::::<><>::res://Assets/Actors/Enemy/Enemy.gd<>uid://dewtq636216g7::::res://Art/tempblock_fallthrough.png<>uid://brec14f0yf1mg::::res://Assets/Spells/BaseSpell.tscn<>res://Assets/Actors/StateManager.gd<>uid://t401ys66ffnc::::res://Assets/Bodies/GreenBody.tscn<>res://Art/Shaders/EnemyGlow.gdshader<>uid://bco7v1gf2puv5::::res://Art/tempwall.png<>uid://b7jn0k8jxpfef::::res://Art/corona.png<>res://Assets/Actors/Enemy/SpellTimerDisplay.gd<>uid://b83vtmj5ntff7::::res://Art/GUI/CleanTimer.png
 SpellTimerDisplay.gd::GDScript::-1::1689317977::0::1::::<>Node2D<>::
-::res://Assets/Actors/Enemy/BlueWizard/::1690146510
-BlueWizard.gd::GDScript::-1::1689832331::0::1::::<>Enemy<>::
-BlueWizard.tscn::PackedScene::6884447075895933636::1690146510::0::1::::<><>::uid://duqfc8ur47bnm::::res://Assets/Actors/Enemy/GreenWizard/GreenWizard.tscn<>res://Assets/Actors/Enemy/BlueWizard/BlueWizard.gd<>res://Art/Shaders/EnemyGlow.gdshader<>uid://df6jnfl0vrlb4::::res://Assets/Spells/EnemySpells/BlueSpell.tscn<>uid://oc4b5qvhs2ux::::res://Assets/Bodies/BlueBody.tscn<>uid://b7jn0k8jxpfef::::res://Art/corona.png<>uid://ctnb1hhno7awn::::res://Assets/Actors/Enemy/BlueWizard/Sprites/BlueWizard0003.png<>uid://b2vvjcbkmhxiq::::res://Assets/Actors/Enemy/BlueWizard/Sprites/BlueWizard0004.png<>uid://5wuer3kvdo2::::res://Assets/Actors/Enemy/BlueWizard/Sprites/BlueWizard0001.png<>uid://ct8v2j8m1p042::::res://Assets/Actors/Enemy/BlueWizard/Sprites/BlueWizard0002.png
+::res://Assets/Actors/Enemy/BlueWizard/::1690149316
+BlueWizard.gd::GDScript::-1::1690149277::0::1::::<>Enemy<>::
+BlueWizard.tscn::PackedScene::6884447075895933636::1690149316::0::1::::<><>::uid://duqfc8ur47bnm::::res://Assets/Actors/Enemy/GreenWizard/GreenWizard.tscn<>res://Assets/Actors/Enemy/BlueWizard/BlueWizard.gd<>res://Art/Shaders/EnemyGlow.gdshader<>uid://df6jnfl0vrlb4::::res://Assets/Spells/EnemySpells/BlueSpell.tscn<>uid://oc4b5qvhs2ux::::res://Assets/Bodies/BlueBody.tscn<>uid://b7jn0k8jxpfef::::res://Art/corona.png<>uid://ctnb1hhno7awn::::res://Assets/Actors/Enemy/BlueWizard/Sprites/BlueWizard0003.png<>uid://b2vvjcbkmhxiq::::res://Assets/Actors/Enemy/BlueWizard/Sprites/BlueWizard0004.png<>uid://5wuer3kvdo2::::res://Assets/Actors/Enemy/BlueWizard/Sprites/BlueWizard0001.png<>uid://ct8v2j8m1p042::::res://Assets/Actors/Enemy/BlueWizard/Sprites/BlueWizard0002.png
 SuperBlueWizard.tscn::PackedScene::3052388511456670527::1689586077::0::1::::<><>::uid://c5c43qfqmlofk
 ::res://Assets/Actors/Enemy/BlueWizard/Sprites/::1688871731
 BlueWizard0001.png::CompressedTexture2D::63303059982213643::1688871629::1688871731::1::::<><>::
@@ -95,9 +95,9 @@ BlueWizard0004.png::CompressedTexture2D::4326162630810667508::1688871669::168887
 BlueWizard0009.png::CompressedTexture2D::6020495745177931502::1688870336::1688870388::1::::<><>::
 BlueWizardMissile.PNG::CompressedTexture2D::8178461257665717190::1688870799::1688870859::1::::<><>::
 ::res://Assets/Actors/Enemy/Enemy States/::1688757455
-::res://Assets/Actors/Enemy/GreenWizard/::1690147701
+::res://Assets/Actors/Enemy/GreenWizard/::1690149315
 GreenWizard.gd::GDScript::-1::1689721546::0::1::::GreenWizard<>Enemy<>::
-GreenWizard.tscn::PackedScene::8596377889435607738::1690147701::0::1::::<><>::uid://do862rnkiybck::::res://Assets/Actors/Enemy/Enemy.tscn<>uid://fwghxrjvfbad::::res://Assets/Actors/Enemy/GreenWizard/Sprites/GreenWizard0003.png<>res://Assets/Actors/Enemy/GreenWizard/GreenWizard.gd<>res://Art/Shaders/EnemyGlow.gdshader<>uid://ca8gb76nlg2hw::::res://Assets/Actors/Enemy/GreenWizard/Sprites/GreenWizard0004.png<>uid://bojbqojwsx1ie::::res://Assets/Spells/EnemySpells/GreenSpell.tscn<>uid://b7jn0k8jxpfef::::res://Art/corona.png<>uid://b2o1ju61smjvo::::res://Assets/Actors/Enemy/GreenWizard/Sprites/GreenWizard0001.png<>uid://37hqkjx7kts3::::res://Assets/Actors/Enemy/GreenWizard/Sprites/GreenWizard0002.png
+GreenWizard.tscn::PackedScene::8596377889435607738::1690149315::0::1::::<><>::uid://do862rnkiybck::::res://Assets/Actors/Enemy/Enemy.tscn<>uid://fwghxrjvfbad::::res://Assets/Actors/Enemy/GreenWizard/Sprites/GreenWizard0003.png<>res://Assets/Actors/Enemy/GreenWizard/GreenWizard.gd<>res://Art/Shaders/EnemyGlow.gdshader<>uid://ca8gb76nlg2hw::::res://Assets/Actors/Enemy/GreenWizard/Sprites/GreenWizard0004.png<>uid://bojbqojwsx1ie::::res://Assets/Spells/EnemySpells/GreenSpell.tscn<>uid://b7jn0k8jxpfef::::res://Art/corona.png<>uid://b2o1ju61smjvo::::res://Assets/Actors/Enemy/GreenWizard/Sprites/GreenWizard0001.png<>uid://37hqkjx7kts3::::res://Assets/Actors/Enemy/GreenWizard/Sprites/GreenWizard0002.png
 ::res://Assets/Actors/Enemy/GreenWizard/Sprites/::1688845595
 GreenWizard0001.png::CompressedTexture2D::4312016563995682044::1688845465::1688845511::1::::<><>::
 GreenWizard0002.png::CompressedTexture2D::2031801841871597500::1688845474::1688845511::1::::<><>::
@@ -105,9 +105,9 @@ GreenWizard0003.png::CompressedTexture2D::396738566029317983::1688845580::168884
 GreenWizard0004.png::CompressedTexture2D::4841333650262447408::1688845586::1688845595::1::::<><>::
 GreenWizardBody.PNG::CompressedTexture2D::5310816825270598695::1688832294::1688834066::1::::<><>::
 GreenWizardMissile.PNG::CompressedTexture2D::4314872159114998111::1688832284::1688834066::1::::<><>::
-::res://Assets/Actors/Enemy/RedWizard/::1690146510
-RedWizard.gd::GDScript::-1::1689832648::0::1::::<>Enemy<>::
-RedWizard.tscn::PackedScene::4775579840922153336::1690146510::0::1::::<><>::uid://c5c43qfqmlofk::::res://Assets/Actors/Enemy/BlueWizard/BlueWizard.tscn<>uid://bikbhdc84ehxx::::res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0003.png<>res://Assets/Actors/Enemy/RedWizard/RedWizard.gd<>uid://xca31tb724id::::res://Assets/Spells/EnemySpells/RedSpell.tscn<>uid://bhyiok7y6l5tx::::res://Assets/Bodies/RedBody.tscn<>uid://dfn3gxg5a1f6w::::res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0004.png<>uid://crwol6wqvgtba::::res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0001.png<>uid://dgi6cdnmvp5ph::::res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0007.png<>uid://bynotcux05xsu::::res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0006.png<>uid://be00jqen1o2cu::::res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0008.png<>uid://byjgy7dopy3kk::::res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0009.png<>uid://b4ays5wlvxygi::::res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0002.png<>res://Art/Shaders/EnemyGlow.gdshader<>uid://b7jn0k8jxpfef::::res://Art/corona.png
+::res://Assets/Actors/Enemy/RedWizard/::1690149316
+RedWizard.gd::GDScript::-1::1690149305::0::1::::<>Enemy<>::
+RedWizard.tscn::PackedScene::4775579840922153336::1690149316::0::1::::<><>::uid://c5c43qfqmlofk::::res://Assets/Actors/Enemy/BlueWizard/BlueWizard.tscn<>uid://bikbhdc84ehxx::::res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0003.png<>res://Assets/Actors/Enemy/RedWizard/RedWizard.gd<>uid://xca31tb724id::::res://Assets/Spells/EnemySpells/RedSpell.tscn<>uid://bhyiok7y6l5tx::::res://Assets/Bodies/RedBody.tscn<>uid://dfn3gxg5a1f6w::::res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0004.png<>uid://crwol6wqvgtba::::res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0001.png<>uid://dgi6cdnmvp5ph::::res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0007.png<>uid://bynotcux05xsu::::res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0006.png<>uid://be00jqen1o2cu::::res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0008.png<>uid://byjgy7dopy3kk::::res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0009.png<>uid://b4ays5wlvxygi::::res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0002.png<>res://Art/Shaders/EnemyGlow.gdshader<>uid://b7jn0k8jxpfef::::res://Art/corona.png
 ::res://Assets/Actors/Enemy/RedWizard/Sprites/::1689408535
 RedWizard0001.png::CompressedTexture2D::6012339364418591342::1689371298::1689408535::1::::<><>::
 RedWizard0002.png::CompressedTexture2D::4423388111527709596::1689371298::1689408535::1::::<><>::
@@ -119,16 +119,17 @@ RedWizard0007.png::CompressedTexture2D::7598796111529966597::1689371298::1689408
 RedWizard0008.png::CompressedTexture2D::2720320346239837428::1689371298::1689408535::1::::<><>::
 RedWizard0009.png::CompressedTexture2D::4089941177841467390::1689371298::1689408535::1::::<><>::
 RedWizardMissile.PNG::CompressedTexture2D::6094022310033742452::1689233286::1689407430::1::::<><>::
-::res://Assets/Actors/Player/::1690147700
+::res://Assets/Actors/Player/::1690422800
 EnemyArrow.gd::GDScript::-1::1689212924::0::1::::EnemyArrow<>Node2D<>::
 EnemyArrow.PNG::CompressedTexture2D::4508373792469755201::1689144889::1689207531::1::::<><>::
 EnemyArrow.tscn::PackedScene::1386389266459675058::1689319236::0::1::::<><>::res://Assets/Actors/Player/EnemyArrow.gd<>uid://b5h5i044qx62x
 Mouse.gd::GDScript::-1::1689282813::0::1::::<>Node2D<>::
 Player.gd::GDScript::-1::1690056506::0::1::::Player<>Actor<>::
-Player.tscn::PackedScene::4901141150800752474::1690147700::0::1::::<><>::res://Assets/Actors/Player/Player.gd<>uid://bge7uiekmtoky::::res://Assets/Spells/SpellList.tres<>uid://c2b0l71nwsr54::::res://Assets/Actors/Player/Spello/SpelloSad.PNG<>uid://t0tvm0bd6vn3::::res://Assets/Actors/Player/EnemyArrow.tscn<>uid://cvsgnhgt0wp4m::::res://Assets/Actors/Player/Spello/Spello.PNG<>res://Assets/Actors/Player/Player States/PlayerMoveState.gd<>uid://bwcmlatcm7bdq::::res://Art/Particles/WarpIn.tscn<>res://Assets/Actors/StateManager.gd<>uid://d05kqaumf2ehi::::res://Assets/Actors/Player/Spello/Spello2.PNG<>uid://pxy508pkm5hi::::res://Art/Particles/WarpOut.tscn<>uid://ej7iorxxqmwi::::res://Assets/Actors/Player/Spello/Spello3.PNG<>res://Assets/Actors/Player/Player States/PlayerIdleState.gd<>uid://bgpc7yvj3yqei::::res://Assets/Actors/Player/Spello/Spello4.PNG<>res://Assets/Actors/Player/Player States/PlayerFlipState.gd<>uid://7oc0emnnrmik::::res://Assets/Actors/Player/Spello/SpelloSurprise.PNG<>res://Assets/Actors/Player/Mouse.gd<>uid://egl8o8peiml1::::res://Art/circle-01.png<>uid://b7imuki3v7it::::res://Assets/Actors/Player/Spello/Spark1.PNG<>uid://c5qsjki4p0oa2::::res://Assets/Actors/Player/SelectionRing.tscn<>uid://ciqdnl3fmpft4::::res://Assets/Actors/Player/Spello/SpelloSpore.PNG<>uid://bhhs27c3wxye3::::res://Art/Particles/PlayerSparkle.tres<>uid://bd7haj6qahdlo::::res://Assets/Actors/Player/PlayerSpores.tres<>uid://7gdjg41bxr8c::::res://Art/Particles/SporeTrail.tres
+Player.tscn::PackedScene::4901141150800752474::1690149315::0::1::::<><>::res://Assets/Actors/Player/Player.gd<>uid://bge7uiekmtoky::::res://Assets/Spells/SpellList.tres<>uid://c2b0l71nwsr54::::res://Assets/Actors/Player/Spello/SpelloSad.PNG<>uid://t0tvm0bd6vn3::::res://Assets/Actors/Player/EnemyArrow.tscn<>uid://cvsgnhgt0wp4m::::res://Assets/Actors/Player/Spello/Spello.PNG<>res://Assets/Actors/Player/Player States/PlayerMoveState.gd<>uid://bwcmlatcm7bdq::::res://Art/Particles/WarpIn.tscn<>res://Assets/Actors/StateManager.gd<>uid://d05kqaumf2ehi::::res://Assets/Actors/Player/Spello/Spello2.PNG<>uid://pxy508pkm5hi::::res://Art/Particles/WarpOut.tscn<>uid://ej7iorxxqmwi::::res://Assets/Actors/Player/Spello/Spello3.PNG<>res://Assets/Actors/Player/Player States/PlayerIdleState.gd<>uid://bgpc7yvj3yqei::::res://Assets/Actors/Player/Spello/Spello4.PNG<>res://Assets/Actors/Player/Player States/PlayerFlipState.gd<>uid://7oc0emnnrmik::::res://Assets/Actors/Player/Spello/SpelloSurprise.PNG<>res://Assets/Actors/Player/Mouse.gd<>uid://egl8o8peiml1::::res://Art/circle-01.png<>uid://b7imuki3v7it::::res://Assets/Actors/Player/Spello/Spark1.PNG<>uid://c5qsjki4p0oa2::::res://Assets/Actors/Player/SelectionRing.tscn<>uid://ciqdnl3fmpft4::::res://Assets/Actors/Player/Spello/SpelloSpore.PNG<>uid://bhhs27c3wxye3::::res://Art/Particles/PlayerSparkle.tres<>uid://bd7haj6qahdlo::::res://Assets/Actors/Player/PlayerSpores.tres<>uid://7gdjg41bxr8c::::res://Art/Particles/SporeTrail.tres
 PlayerSpores.tres::ParticleProcessMaterial::2663472843012810248::1689827256::0::1::::<><>::
 SelectionRing.gd::GDScript::-1::1689145582::0::1::::SelectionRing<>Sprite2D<>::
 SelectionRing.tscn::PackedScene::6912646237537678379::1689712371::0::1::::<><>::uid://crxeudcu2fsmy
+SlowVignette.png::CompressedTexture2D::1313684083474278003::1690422800::1690422801::1::::<><>::
 ::res://Assets/Actors/Player/Player States/::1689367600
 PlayerFlipState.gd::GDScript::-1::1688865086::0::1::::PlayerFlipState<>PlayerState<>::
 PlayerIdleState.gd::GDScript::-1::1689047890::0::1::::PlayerIdleState<>PlayerState<>::
@@ -158,10 +159,10 @@ BlueBody.tres::Resource/Resource::2702777644900823524::1688871113::0::1::::<><>:
 GenericBody.tres::Resource/Resource::3905043497405294162::1688779334::0::1::::<><>::res://Assets/Bodies/BodyModel.gd
 GreenBody.tres::Resource/Resource::2498441319538482772::1688781862::0::1::::<><>::res://Assets/Bodies/BodyModel.gd
 RedBody.tres::Resource/Resource::4610420640713238630::1689407669::0::1::::<><>::res://Assets/Bodies/BodyModel.gd
-::res://Assets/HUD/::1690147700
+::res://Assets/HUD/::1690149315
 HeartHolder.gd::GDScript::-1::1689713664::0::1::::<>Control<>::
 HUD.gd::GDScript::-1::1689974827::0::1::::HUD<>CanvasLayer<>::
-hud.tscn::PackedScene::8051920580244025836::1690147700::0::1::::<><>::res://Assets/HUD/SpellHolder.gd<>res://Assets/HUD/HUD.gd<>uid://b80jfixxknyn3::::res://Art/Fonts/SS Pretzel Bold.otf<>uid://bkeyu2gl4l2r2::::res://Assets/HUD/DeadWizardStorage/WizardImageRef.tres<>uid://cxgyuq0pr02fk::::res://Assets/HUD/DeadWizardStorage/SpellBox1.PNG<>uid://ciqdnl3fmpft4::::res://Assets/Actors/Player/Spello/SpelloSpore.PNG<>uid://bdnm0yed5p1hk::::res://Assets/HUD/OtherElements/Heart.tscn<>uid://d0yqbt2rvlkko::::res://Assets/HUD/DeadWizardStorage/SpellBox2.PNG<>uid://r5c7augmw26i::::res://Assets/HUD/DeadWizardStorage/SpellBox3.PNG<>res://Assets/HUD/HeartHolder.gd<>uid://c0s2sukkibcgn::::res://Assets/HUD/OtherElements/HeartBar.tscn<>uid://4q720jnsv3v8::::res://Assets/HUD/OtherElements/SlowBar.png<>res://Assets/HUD/WarpJuice.gd
+hud.tscn::PackedScene::8051920580244025836::1690149315::0::1::::<><>::res://Assets/HUD/SpellHolder.gd<>res://Assets/HUD/HUD.gd<>uid://b80jfixxknyn3::::res://Art/Fonts/SS Pretzel Bold.otf<>uid://bkeyu2gl4l2r2::::res://Assets/HUD/DeadWizardStorage/WizardImageRef.tres<>uid://cxgyuq0pr02fk::::res://Assets/HUD/DeadWizardStorage/SpellBox1.PNG<>uid://ciqdnl3fmpft4::::res://Assets/Actors/Player/Spello/SpelloSpore.PNG<>uid://bdnm0yed5p1hk::::res://Assets/HUD/OtherElements/Heart.tscn<>uid://d0yqbt2rvlkko::::res://Assets/HUD/DeadWizardStorage/SpellBox2.PNG<>uid://r5c7augmw26i::::res://Assets/HUD/DeadWizardStorage/SpellBox3.PNG<>res://Assets/HUD/HeartHolder.gd<>uid://c0s2sukkibcgn::::res://Assets/HUD/OtherElements/HeartBar.tscn<>uid://4q720jnsv3v8::::res://Assets/HUD/OtherElements/SlowBar.png<>res://Assets/HUD/WarpJuice.gd
 SpellHolder.gd::GDScript::-1::1688841754::0::1::::<>Control<>::
 WarpJuice.gd::GDScript::-1::1690007568::0::1::::<>TextureProgressBar<>::
 ::res://Assets/HUD/DeadWizardStorage/::1689407889
@@ -221,24 +222,24 @@ TextPop.gd::GDScript::-1::1689145648::0::1::::<>Node2D<>::
 TextPop.tscn::PackedScene::4145490313474094792::1689917968::0::1::::<><>::res://Assets/Tools/TextPopper/TextPop.gd
 TextPopper.gd::GDScript::-1::1689712360::0::1::::<>Node2D<>::
 TextPopper.tscn::PackedScene::4248248333948348660::1689917968::0::1::::<><>::res://Assets/Tools/TextPopper/TextPopper.gd<>uid://b0cdvcqt8u3yy::::res://Assets/Tools/TextPopper/TextPop.tscn<>uid://cxemb3jrsjgxh::::res://Assets/Tools/TextPopper/TextJolt.tscn
-::res://Scenes/::1690147701
+::res://Scenes/::1690149315
 BaseLevel.gd::GDScript::-1::1689706338::0::1::::BaseLevel<>Node2D<>::
 BaseScene.gd::GDScript::-1::1688852682::0::1::::BaseScene<>Node2D<>::
 LevelCompleteMessage.gd::GDScript::-1::1688863389::0::1::::<>RefCounted<>::
 LevelCompleteMessage.tscn::PackedScene::6561238191954675331::1688865086::0::1::::<><>::
 MainMenu.gd::GDScript::-1::1688877541::0::1::::MainMenu<>BaseScene<>::
-MainMenu.tscn::PackedScene::2670553842326013103::1690147700::0::1::::<><>::res://Scenes/MainMenu.gd<>res://Scenes/Sway.gd<>uid://bndgrq4qnbswm::::res://Art/OnlineAssets/WizardCastingCover.png<>res://Scenes/Volume.gd
+MainMenu.tscn::PackedScene::2670553842326013103::1690149315::0::1::::<><>::res://Scenes/MainMenu.gd<>res://Scenes/Sway.gd<>uid://bndgrq4qnbswm::::res://Art/OnlineAssets/WizardCastingCover.png<>res://Scenes/Volume.gd
 Playground.tscn::PackedScene::275754337975043249::1689280863::0::1::::<><>::
 SceneManager.gd::GDScript::-1::1688856713::0::1::::<>Node<>::
 SceneManager.tscn::PackedScene::3079109618726045918::1689471353::0::1::::<><>::res://Scenes/SceneManager.gd
 Sway.gd::GDScript::-1::1688866460::0::1::::<>Node2D<>::
-TestScene.tscn::PackedScene::8293798243994420312::1690147701::0::1::::<><>::uid://drht87h6vy28k::::res://Scenes/Tilemaps/PathMap.tres<>uid://cb3fcw70u4e1o::::res://Assets/Actors/Player/Player.tscn<>res://Scenes/TileData.gd<>uid://duqfc8ur47bnm::::res://Assets/Actors/Enemy/GreenWizard/GreenWizard.tscn<>uid://t401ys66ffnc::::res://Assets/Bodies/GreenBody.tscn<>uid://oc4b5qvhs2ux::::res://Assets/Bodies/BlueBody.tscn<>uid://dmyn7qvgjvqhg::::res://Assets/HUD/hud.tscn<>uid://cabldqhgo5kpc::::res://Assets/Actors/Enemy/RedWizard/RedWizard.tscn<>uid://c5c43qfqmlofk::::res://Assets/Actors/Enemy/BlueWizard/BlueWizard.tscn
+TestScene.tscn::PackedScene::8293798243994420312::1690149315::0::1::::<><>::uid://drht87h6vy28k::::res://Scenes/Tilemaps/PathMap.tres<>uid://cb3fcw70u4e1o::::res://Assets/Actors/Player/Player.tscn<>res://Scenes/TileData.gd<>uid://duqfc8ur47bnm::::res://Assets/Actors/Enemy/GreenWizard/GreenWizard.tscn<>uid://t401ys66ffnc::::res://Assets/Bodies/GreenBody.tscn<>uid://oc4b5qvhs2ux::::res://Assets/Bodies/BlueBody.tscn<>uid://dmyn7qvgjvqhg::::res://Assets/HUD/hud.tscn<>uid://cabldqhgo5kpc::::res://Assets/Actors/Enemy/RedWizard/RedWizard.tscn<>uid://c5c43qfqmlofk::::res://Assets/Actors/Enemy/BlueWizard/BlueWizard.tscn
 TileData.gd::GDScript::-1::1689721066::0::1::::<>TileMap<>::
 Volume.gd::GDScript::-1::1688878206::0::1::::<>Control<>::
 WinScene.gd::GDScript::-1::1688890263::0::1::::<>Node2D<>::
 WinScene.tscn::PackedScene::4748373704849010575::1689061136::0::1::::<><>::res://Scenes/WinScene.gd<>uid://cr1mxkhyvywf3
-::res://Scenes/Levels/::1690147701
-BaseLevel.tscn::PackedScene::2403333123015898974::1690147701::0::1::::<><>::res://Scenes/BaseLevel.gd<>uid://cb3fcw70u4e1o::::res://Assets/Actors/Player/Player.tscn<>uid://drht87h6vy28k::::res://Scenes/Tilemaps/PathMap.tres<>uid://c0qkvtm7nk5kx::::res://Scenes/LevelCompleteMessage.tscn<>uid://dmyn7qvgjvqhg::::res://Assets/HUD/hud.tscn<>res://Scenes/Pause/PauseMenu.gd
+::res://Scenes/Levels/::1690149316
+BaseLevel.tscn::PackedScene::2403333123015898974::1690149316::0::1::::<><>::res://Scenes/BaseLevel.gd<>uid://cb3fcw70u4e1o::::res://Assets/Actors/Player/Player.tscn<>uid://drht87h6vy28k::::res://Scenes/Tilemaps/PathMap.tres<>uid://c0qkvtm7nk5kx::::res://Scenes/LevelCompleteMessage.tscn<>uid://dmyn7qvgjvqhg::::res://Assets/HUD/hud.tscn<>res://Scenes/Pause/PauseMenu.gd
 Level0.tscn::PackedScene::7596994864169747366::1689921668::0::1::::<><>::res://Scenes/BaseLevel.gd<>uid://c0qkvtm7nk5kx::::res://Scenes/LevelCompleteMessage.tscn<>uid://drht87h6vy28k::::res://Scenes/Tilemaps/PathMap.tres<>uid://cb3fcw70u4e1o::::res://Assets/Actors/Player/Player.tscn<>uid://duqfc8ur47bnm::::res://Assets/Actors/Enemy/GreenWizard/GreenWizard.tscn<>uid://dmyn7qvgjvqhg::::res://Assets/HUD/hud.tscn<>res://Scenes/Pause/PauseMenu.gd
 Level1.tscn::PackedScene::129678980683427273::1689061136::0::1::::<><>::uid://baigssqt7fxsw
 Level2.tscn::PackedScene::3291549553472808691::1688892539::0::1::::<><>::uid://baigssqt7fxsw
@@ -254,12 +255,12 @@ LevelManager.gd::GDScript::-1::1688856064::0::1::::<>BaseScene<>::
 LevelManager.tscn::PackedScene::3227130746077632759::1688856074::0::1::::<><>::res://Scenes/Levels/LevelManager.gd
 Tutorial.gd::GDScript::-1::1688877303::0::1::::<>BaseLevel<>::
 Tutorial.tscn::PackedScene::4057014133998207792::1689061135::0::1::::<><>::uid://baigssqt7fxsw
-::res://Scenes/NewLevels/::1690147701
-1-TwoNewFriends.tscn::PackedScene::9165161898293537178::1690147701::0::1::::<><>::uid://baigssqt7fxsw::::res://Scenes/Levels/BaseLevel.tscn<>uid://duqfc8ur47bnm::::res://Assets/Actors/Enemy/GreenWizard/GreenWizard.tscn
-2-GreenMeeting.tscn::PackedScene::7501320483589059310::1690147701::0::1::::<><>::uid://baigssqt7fxsw::::res://Scenes/Levels/BaseLevel.tscn<>uid://duqfc8ur47bnm::::res://Assets/Actors/Enemy/GreenWizard/GreenWizard.tscn
-3-ClaustrophobicConcourse.tscn::PackedScene::8011100614885491479::1690147701::0::1::::<><>::uid://baigssqt7fxsw::::res://Scenes/Levels/BaseLevel.tscn<>uid://duqfc8ur47bnm::::res://Assets/Actors/Enemy/GreenWizard/GreenWizard.tscn
-MaddeningSpiral.tscn::PackedScene::6554562370967364650::1690147701::0::1::::<><>::uid://baigssqt7fxsw::::res://Scenes/Levels/BaseLevel.tscn<>uid://duqfc8ur47bnm::::res://Assets/Actors/Enemy/GreenWizard/GreenWizard.tscn
-5-TwoBlueFriends.tscn::PackedScene::6433540229150371903::1690147802::0::1::::<><>::uid://baigssqt7fxsw::::res://Scenes/Levels/BaseLevel.tscn
+::res://Scenes/NewLevels/::1690149316
+1-TwoNewFriends.tscn::PackedScene::9165161898293537178::1690149316::0::1::::<><>::uid://baigssqt7fxsw::::res://Scenes/Levels/BaseLevel.tscn<>uid://duqfc8ur47bnm::::res://Assets/Actors/Enemy/GreenWizard/GreenWizard.tscn
+2-GreenMeeting.tscn::PackedScene::7501320483589059310::1690149316::0::1::::<><>::uid://baigssqt7fxsw::::res://Scenes/Levels/BaseLevel.tscn<>uid://duqfc8ur47bnm::::res://Assets/Actors/Enemy/GreenWizard/GreenWizard.tscn
+3-ClaustrophobicConcourse.tscn::PackedScene::8011100614885491479::1690149316::0::1::::<><>::uid://baigssqt7fxsw::::res://Scenes/Levels/BaseLevel.tscn<>uid://duqfc8ur47bnm::::res://Assets/Actors/Enemy/GreenWizard/GreenWizard.tscn
+4-MaddeningSpiral.tscn::PackedScene::6554562370967364650::1690149316::0::1::::<><>::uid://baigssqt7fxsw::::res://Scenes/Levels/BaseLevel.tscn<>uid://duqfc8ur47bnm::::res://Assets/Actors/Enemy/GreenWizard/GreenWizard.tscn
+5-TwoBlueFriends.tscn::PackedScene::6433540229150371903::1690149316::0::1::::<><>::uid://baigssqt7fxsw::::res://Scenes/Levels/BaseLevel.tscn<>uid://c5c43qfqmlofk::::res://Assets/Actors/Enemy/BlueWizard/BlueWizard.tscn<>uid://duqfc8ur47bnm::::res://Assets/Actors/Enemy/GreenWizard/GreenWizard.tscn
 ::res://Scenes/Pause/::1688861567
 PauseMenu.gd::GDScript::-1::1688861567::0::1::::<>Control<>::
 ::res://Scenes/Tilemaps/::1690146509

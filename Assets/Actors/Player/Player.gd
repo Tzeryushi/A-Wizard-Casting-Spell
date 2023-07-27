@@ -18,6 +18,7 @@ extends Actor
 @onready var physics_collider := $PhysicsCollider
 @onready var restriction_timer := $SpellRestrictionTimer
 @onready var spell_spawn_location := $SpellSpawnLocation
+@onready var slow_vignette := $SlowVignette
 @onready var camera := $Camera
 
 var spell_stack : Array[BodyModel]
@@ -46,6 +47,7 @@ func _ready() -> void:
 	state_manager.init_state(self)
 	restriction_timer.wait_time = _spell_restriction_time
 	Shake.set_camera(camera)
+	slow_vignette.modulate.a = 0.0
 	random_generator = RandomNumberGenerator.new()
 	
 	call_deferred("_process_frame_setup")
@@ -161,6 +163,7 @@ func flip_slow_time() -> void:
 	mouse.glow_enemies()
 	slow_tween = get_tree().create_tween()
 	slow_tween.tween_property(Engine, "time_scale", 0.1, 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
+	slow_tween.parallel().tween_property(slow_vignette, "modulate:a", 1.0, 0.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
 #	slow_tween.tween_property(Engine, "time_scale", 1.0, 1.8)
 #	await slow_tween.finished
 #	slow_tween.kill()
@@ -174,6 +177,7 @@ func flip_unslow_time() -> void:
 	mouse.unglow_enemies()
 	var tween = create_tween()
 	tween.tween_property(Engine, "time_scale", 1.0, 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+	tween.parallel().tween_property(slow_vignette, "modulate:a", 0.0, 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 	return
 
 func flip() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cb3fcw70u4e1o"]
+[gd_scene load_steps=34 format=3 uid="uid://cb3fcw70u4e1o"]
 
 [ext_resource type="Script" path="res://Assets/Actors/Player/Player.gd" id="1_yuspw"]
 [ext_resource type="Resource" uid="uid://bge7uiekmtoky" path="res://Assets/Spells/SpellList.tres" id="2_f8kle"]
@@ -23,6 +23,7 @@
 [ext_resource type="Material" uid="uid://bhhs27c3wxye3" path="res://Art/Particles/PlayerSparkle.tres" id="16_glrw5"]
 [ext_resource type="Material" uid="uid://bd7haj6qahdlo" path="res://Assets/Actors/Player/PlayerSpores.tres" id="18_13feu"]
 [ext_resource type="Material" uid="uid://7gdjg41bxr8c" path="res://Art/Particles/SporeTrail.tres" id="21_qrw3o"]
+[ext_resource type="Texture2D" uid="uid://symgj1hq37qt" path="res://Assets/Actors/Player/SlowVignette.png" id="24_yv3d4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1xjfw"]
 animations = [{
@@ -235,6 +236,9 @@ shape = SubResource("SegmentShape2D_wo6yo")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="PointerHitbox"]
 position = Vector2(900, 0)
 shape = SubResource("SegmentShape2D_3u5lq")
+
+[node name="SlowVignette" type="Sprite2D" parent="."]
+texture = ExtResource("24_yv3d4")
 
 [connection signal="area_entered" from="Mouse/MouseBox" to="Mouse" method="_on_mouse_box_area_entered"]
 [connection signal="area_exited" from="Mouse/MouseBox" to="Mouse" method="_on_mouse_box_area_exited"]
