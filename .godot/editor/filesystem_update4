@@ -23,3 +23,9 @@ res://Scenes/NewLevels/5-TwoBlueFriends.tscn
 res://Scenes/NewLevels/6-BlueBox.tscn
 res://Scenes/NewLevels/7-LittleAlcoves.tscn
 res://Scenes/NewLevels/8-Glass.tscn
+res://Scenes/NewLevels/9-CagedAnimals.tscn
+res://Scenes/NewLevels/10-TheLongHaul.tscn
+res://Scenes/NewLevels/11-RedMenace.tscn
+res://Assets/Spells/EnemySpells/RedSpell.tscn
+res://Assets/Actors/Enemy/RedWizard/RedWizard.tscn
+res://Scenes/Levels/Tutorial.tscn

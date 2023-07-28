@@ -90,6 +90,7 @@ _spell_restriction_time = 2.0
 _spell_velocity = 220.0
 _spell_acceleration = 10.0
 _distance_to_keep = 300.0
+health = 4
 acceleration = 10.0
 decceleration = 8.0
 max_movement_speed = 330.0

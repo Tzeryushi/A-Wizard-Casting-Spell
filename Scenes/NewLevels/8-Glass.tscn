@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://duqfc8ur47bnm" path="res://Assets/Actors/Enemy/GreenWizard/GreenWizard.tscn" id="2_lgmjb"]
 
 [node name="BaseLevel" instance=ExtResource("1_0g4dw")]
+next_level = "NewLevel9"
 
 [node name="NavigationMap" parent="." index="0"]
 visible = false

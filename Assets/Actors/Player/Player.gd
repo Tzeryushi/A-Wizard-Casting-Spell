@@ -47,7 +47,7 @@ func _ready() -> void:
 	state_manager.init_state(self)
 	restriction_timer.wait_time = _spell_restriction_time
 	Shake.set_camera(camera)
-	slow_vignette.visible == true
+	slow_vignette.visible = true
 	slow_vignette.modulate.a = 0.0
 	random_generator = RandomNumberGenerator.new()
 	
