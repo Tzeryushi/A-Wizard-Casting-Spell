@@ -27,6 +27,45 @@ position = Vector2(1560, 665)
 rotation = -0.423551
 texture = ExtResource("1_rckeu")
 
+[node name="BlueWizardMissile" type="Sprite2D" parent="."]
+position = Vector2(1803, 871)
+rotation = 0.556576
+scale = Vector2(1.00725, 1.00543)
+texture = ExtResource("3_bovu8")
+
+[node name="BlueWizard0010" type="Sprite2D" parent="."]
+position = Vector2(1800, 551)
+rotation = 0.495975
+texture = ExtResource("1_rckeu")
+
+[node name="GreenWizardBody" type="Sprite2D" parent="."]
+position = Vector2(1752, 730)
+texture = ExtResource("4_277j1")
+
+[node name="GreenWizardMissile" type="Sprite2D" parent="."]
+position = Vector2(1605, 899)
+texture = ExtResource("5_588vw")
+
+[node name="Spello4" type="Sprite2D" parent="."]
+position = Vector2(232, 858.722)
+texture = ExtResource("6_4y7xx")
+
+[node name="BlueSpell" type="Sprite2D" parent="."]
+position = Vector2(439, 741.722)
+rotation = 1.79852
+texture = ExtResource("7_3j4wm")
+
+[node name="GreenSpell" type="Sprite2D" parent="."]
+position = Vector2(319, 699.722)
+rotation = 1.22644
+texture = ExtResource("8_6ofgt")
+
+[node name="RedSpell" type="Sprite2D" parent="."]
+position = Vector2(361, 818.722)
+rotation = 1.54454
+scale = Vector2(1, 1)
+texture = ExtResource("9_lcojr")
+
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(959, 300)
 
@@ -73,7 +112,7 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
-text = "[center]You beat all the terrible wizards! At least, the ones I had time to implement! Nice job!
+text = "[center]You beat the classic levels! Nice work!
 
 Thanks for playing!"
 fit_content = true
@@ -120,44 +159,6 @@ theme_override_colors/font_outline_color = Color(0.976471, 0.972549, 0.972549, 1
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 80
 text = "Exit"
-
-[node name="BlueWizardMissile" type="Sprite2D" parent="."]
-position = Vector2(1803, 871)
-rotation = 0.556576
-scale = Vector2(1.00725, 1.00543)
-texture = ExtResource("3_bovu8")
-
-[node name="BlueWizard0010" type="Sprite2D" parent="."]
-position = Vector2(1800, 551)
-rotation = 0.495975
-texture = ExtResource("1_rckeu")
-
-[node name="GreenWizardBody" type="Sprite2D" parent="."]
-position = Vector2(1752, 730)
-texture = ExtResource("4_277j1")
-
-[node name="GreenWizardMissile" type="Sprite2D" parent="."]
-position = Vector2(1605, 899)
-texture = ExtResource("5_588vw")
-
-[node name="Spello4" type="Sprite2D" parent="."]
-position = Vector2(232, 858.722)
-texture = ExtResource("6_4y7xx")
-
-[node name="BlueSpell" type="Sprite2D" parent="."]
-position = Vector2(439, 741.722)
-rotation = 1.79852
-texture = ExtResource("7_3j4wm")
-
-[node name="GreenSpell" type="Sprite2D" parent="."]
-position = Vector2(319, 699.722)
-rotation = 1.22644
-texture = ExtResource("8_6ofgt")
-
-[node name="RedSpell" type="Sprite2D" parent="."]
-position = Vector2(361, 818.722)
-rotation = 1.54454
-texture = ExtResource("9_lcojr")
 
 [connection signal="pressed" from="Node2D3/VBoxContainer/TutorialButton" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="Node2D3/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

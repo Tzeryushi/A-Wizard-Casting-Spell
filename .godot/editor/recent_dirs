@@ -1,3 +1,4 @@
+res://Scenes
 res://Scenes/NewLevels
 res://Assets/Tools
 res://Assets/Spells
@@ -6,7 +7,6 @@ res://Assets/Bodies/BodyResources
 res://Assets/Actors/Enemy/RedWizard
 res://Art/Particles
 res://Assets/HUD/OtherElements
-res://Scenes
 res://Assets/Actors/Player
 res://Assets/HUD
 res://Art

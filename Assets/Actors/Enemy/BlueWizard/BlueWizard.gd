@@ -20,6 +20,7 @@ func run_sight_follow_logic() -> void:
 				var space_found : bool = false
 				var space_state = get_world_2d().direct_space_state
 				var ray_query = PhysicsRayQueryParameters2D.create(player_ref.global_position, player_ref.global_position+base_vector, 0x0001)
+				var counter : int = 0
 				while !space_found:
 					var result = space_state.intersect_ray(ray_query)
 					if !result.is_empty():
@@ -30,6 +31,11 @@ func run_sight_follow_logic() -> void:
 					else:
 						space_found = true
 						set_movement_target(player_ref.global_position+base_vector.rotated(rotate_amount*1.2))
+					if !space_found:
+						counter += 1
+						if counter >= 180:
+							space_found = true
+							set_movement_target(player_ref.global_position)
 			elif (player_ref.global_position-global_position).length() > _distance_to_keep:
 				set_movement_target(player_ref.global_position)
 			else:

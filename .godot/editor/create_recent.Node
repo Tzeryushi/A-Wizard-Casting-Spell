@@ -1,3 +1,4 @@
+Polygon2D
 ColorRect
 TextureRect
 Timer
@@ -12,7 +13,6 @@ Area2D
 Sprite2D
 CanvasLayer
 Button
-Polygon2D
 Control
 AudioStreamPlayer
 AudioStreamPlayer2D

@@ -1,0 +1,116 @@
+[gd_scene load_steps=9 format=3 uid="uid://bv8cfu4sbhkfe"]
+
+[ext_resource type="PackedScene" uid="uid://b8wfayqf7mg1d" path="res://Scenes/WinScene.tscn" id="1_jds24"]
+[ext_resource type="Texture2D" uid="uid://dwyxjtyv6oyg0" path="res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizard0005.png" id="2_wglm7"]
+[ext_resource type="Texture2D" uid="uid://cs28wluuk31ee" path="res://Assets/Actors/Enemy/RedWizard/Sprites/RedWizardMissile.PNG" id="3_v3on7"]
+[ext_resource type="Texture2D" uid="uid://dorycdx4b6ey5" path="res://Assets/Actors/Enemy/BlueWizard/Sprites/BlueWizardMissile.PNG" id="4_n76lj"]
+[ext_resource type="Texture2D" uid="uid://chwum3bfpvjlv" path="res://Assets/Actors/Enemy/GreenWizard/Sprites/GreenWizardBody.PNG" id="5_6l5cb"]
+[ext_resource type="Texture2D" uid="uid://cr1mxkhyvywf3" path="res://Assets/Actors/Enemy/BlueWizard/Sprites/BlueWizard0009.png" id="6_hfpdn"]
+[ext_resource type="Texture2D" uid="uid://b2qfkxbog54tv" path="res://Assets/Actors/Enemy/GreenWizard/Sprites/GreenWizardMissile.PNG" id="7_akv7w"]
+[ext_resource type="Texture2D" uid="uid://symgj1hq37qt" path="res://Assets/Actors/Player/SlowVignette.png" id="8_ac8gs"]
+
+[node name="WinScene" instance=ExtResource("1_jds24")]
+
+[node name="ColorRect" parent="." index="0"]
+color = Color(0.247059, 0.466667, 0.384314, 1)
+
+[node name="SlowVignette" type="Sprite2D" parent="." index="1"]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(960, 589)
+texture = ExtResource("8_ac8gs")
+
+[node name="Polygon2D" type="Polygon2D" parent="." index="2"]
+position = Vector2(347.579, 764.788)
+rotation = 3.82341
+scale = Vector2(1.82152, 1.82152)
+color = Color(0.992157, 0.72549, 0.427451, 1)
+polygon = PackedVector2Array(-131.217, -295.819, -106.818, -95.0163, -255, -26, -84.8572, 27.8655, -55.5119, 188.592, 8, 47, 210, 105, 65.6928, -46.2499, 161.621, -218.151, -12.8187, -139.494)
+
+[node name="Polygon2D2" type="Polygon2D" parent="." index="3"]
+position = Vector2(312.579, 883.788)
+rotation = 1.88766
+scale = Vector2(1.32224, 1.32224)
+color = Color(0.345098, 0.517647, 0.796078, 1)
+polygon = PackedVector2Array(-86, -204, -87, -81, -255, -26, -81, 27, -74, 193, 8, 47, 210, 105, 50, -47, 87, -140, -11, -106)
+
+[node name="BlueWizard0009" parent="." index="4"]
+position = Vector2(1520, 709)
+
+[node name="BlueWizardMissile" parent="." index="5"]
+position = Vector2(1601, 774)
+rotation = 0.201988
+
+[node name="BlueWizard0010" parent="." index="6"]
+position = Vector2(1741, 763)
+
+[node name="GreenWizardBody" parent="." index="7"]
+position = Vector2(1690, 808)
+scale = Vector2(0.818436, 1.28205)
+
+[node name="GreenWizardMissile" parent="." index="8"]
+position = Vector2(1420, 790)
+rotation = -0.36065
+
+[node name="Spello4" parent="." index="9"]
+position = Vector2(315.579, 902.788)
+
+[node name="BlueSpell" parent="." index="10"]
+position = Vector2(412.579, 803.788)
+
+[node name="GreenSpell" parent="." index="11"]
+position = Vector2(333.579, 811.788)
+
+[node name="RedSpell" parent="." index="12"]
+position = Vector2(407.579, 873.788)
+
+[node name="RedWizard0005" type="Sprite2D" parent="." index="13"]
+position = Vector2(1501, 878)
+scale = Vector2(1.09, 1.09)
+texture = ExtResource("2_wglm7")
+
+[node name="RedWizard0006" type="Sprite2D" parent="." index="14"]
+position = Vector2(1356, 954)
+rotation = 0.991976
+scale = Vector2(1.09, 1.09)
+texture = ExtResource("2_wglm7")
+
+[node name="RedWizardMissile" type="Sprite2D" parent="." index="15"]
+position = Vector2(1805, 852)
+rotation = 0.321064
+texture = ExtResource("3_v3on7")
+
+[node name="BlueWizardMissile2" type="Sprite2D" parent="." index="16"]
+position = Vector2(1691, 872)
+texture = ExtResource("4_n76lj")
+
+[node name="GreenWizardBody2" type="Sprite2D" parent="." index="17"]
+position = Vector2(1559.25, 1000)
+scale = Vector2(0.846369, 1.30769)
+texture = ExtResource("5_6l5cb")
+
+[node name="BlueWizard0011" type="Sprite2D" parent="." index="18"]
+position = Vector2(1468, 1030)
+texture = ExtResource("6_hfpdn")
+
+[node name="GreenWizardMissile2" type="Sprite2D" parent="." index="19"]
+position = Vector2(1610, 896)
+texture = ExtResource("7_akv7w")
+
+[node name="RedWizard0007" type="Sprite2D" parent="." index="20"]
+position = Vector2(1537, 1043)
+texture = ExtResource("2_wglm7")
+
+[node name="RedWizard0008" type="Sprite2D" parent="." index="21"]
+position = Vector2(1758, 959)
+rotation = 2.32094
+texture = ExtResource("2_wglm7")
+
+[node name="GreenWizardBody3" type="Sprite2D" parent="." index="22"]
+position = Vector2(1741, 1059)
+scale = Vector2(0.846369, 1.30769)
+texture = ExtResource("5_6l5cb")
+
+[node name="RichTextLabel8" parent="Node2D2" index="0"]
+text = "[center]You beat all the terrible wizards! Fantastic work!!
+
+Thanks for playing!"

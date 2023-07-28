@@ -29,3 +29,9 @@ res://Scenes/NewLevels/11-RedMenace.tscn
 res://Assets/Spells/EnemySpells/RedSpell.tscn
 res://Assets/Actors/Enemy/RedWizard/RedWizard.tscn
 res://Scenes/Levels/Tutorial.tscn
+res://Scenes/NewLevels/12-SimpleSolutions.tscn
+res://Scenes/NewLevels/13-PuttingItAllTogether.tscn
+res://Assets/Actors/Enemy/BlueWizard/BlueWizard.gd
+res://Scenes/NewWinScene.tscn
+res://Scenes/WinScene.tscn
+res://Scenes/WinScene.gd
