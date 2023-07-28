@@ -177,13 +177,15 @@ clip_contents = false
 offset_left = 8904.0
 offset_top = 441.0
 offset_right = 9658.0
-offset_bottom = 487.0
+offset_bottom = 633.0
 theme_override_colors/default_color = Color(0.611765, 0.290196, 0.0862745, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
-text = "[center]Well, that's about the gist of it. best of luck out there!"
+text = "[center]If you're ever stuck, press [wave]R[/wave] to restart a level. If you press it now, it'll send you to the start of the tutorial! Neat!
+
+Well, that's about the gist of it. best of luck out there!"
 scroll_active = false
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="." index="16"]

@@ -13,8 +13,8 @@ config_version=5
 config/name="GMTK 2023"
 run/main_scene="res://Scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
-config/icon="res://Art/Icon.png"
-config/windows_native_icon="res://Art/Icon.ico"
+config/icon="res://Art/Icon2.png"
+config/windows_native_icon="res://Art/Icon2.ico"
 
 [autoload]
 
